@@ -1,0 +1,750 @@
+2021-12-01T01:50:55.369Z - normal: Load ~/.CocosCreator/settings.json
+2021-12-01T01:50:55.415Z - normal: Initializing Asset Database
+2021-12-01T01:50:55.417Z - normal: checking language setting...
+2021-12-01T01:50:55.417Z - normal: Language: en
+2021-12-01T01:50:56.005Z - success: preview server running at http://localhost:7456
+2021-12-01T01:50:56.026Z - success: protocol editor-framework registered
+2021-12-01T01:50:56.026Z - success: protocol app registered
+2021-12-01T01:50:56.026Z - success: protocol theme registered
+2021-12-01T01:50:56.026Z - success: protocol packages registered
+2021-12-01T01:50:56.027Z - success: protocol uuid registerred
+2021-12-01T01:50:56.027Z - success: protocol db registerred
+2021-12-01T01:50:56.027Z - success: protocol thumbnail registerred
+2021-12-01T01:50:56.027Z - success: protocol unpack registerred
+2021-12-01T01:50:56.027Z - success: protocol disable-commonjs registerred
+2021-12-01T01:50:57.652Z - normal: connected!
+2021-12-01T01:50:57.653Z - normal: Check project /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/helloworld
+2021-12-01T01:50:57.655Z - normal: Initializing project /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/helloworld
+2021-12-01T01:50:57.956Z - normal: Initializing Cocos2d
+2021-12-01T01:50:58.512Z - normal: Initializing engine extends
+2021-12-01T01:50:58.558Z - success: alipay-adapter loaded
+2021-12-01T01:50:58.571Z - success: asset-db-debugger loaded
+2021-12-01T01:50:58.575Z - success: baidu-adapter loaded
+2021-12-01T01:50:58.578Z - success: color-picker loaded
+2021-12-01T01:50:58.712Z - success: fb-audience-network loaded
+2021-12-01T01:50:58.757Z - success: fb-live-stream loaded
+2021-12-01T01:50:58.760Z - success: google-play-instant loaded
+2021-12-01T01:50:58.765Z - success: huawei-runtime loaded
+2021-12-01T01:50:58.949Z - success: cpk-publish loaded
+2021-12-01T01:50:58.950Z - success: jsb-adapter loaded
+2021-12-01T01:50:58.955Z - success: oppo-runtime loaded
+2021-12-01T01:50:58.963Z - success: package-manager loaded
+2021-12-01T01:50:59.080Z - success: qqplay-adapter loaded
+2021-12-01T01:50:59.082Z - success: runtime-dev-tools loaded
+2021-12-01T01:50:59.091Z - success: sdkbox loaded
+2021-12-01T01:50:59.099Z - success: tester loaded
+2021-12-01T01:50:59.106Z - success: ui-kit-preview-extra loaded
+2021-12-01T01:50:59.113Z - success: ui-kit-preview loaded
+2021-12-01T01:50:59.120Z - success: ui-kit loaded
+2021-12-01T01:50:59.124Z - success: vivo-runtime loaded
+2021-12-01T01:50:59.125Z - success: weapp-adapter loaded
+2021-12-01T01:50:59.126Z - success: xiaomi-adapter loaded
+2021-12-01T01:50:59.128Z - success: alipay-minigame loaded
+2021-12-01T01:50:59.165Z - success: assets loaded
+2021-12-01T01:50:59.173Z - success: builder loaded
+2021-12-01T01:50:59.411Z - success: cocos-services loaded
+2021-12-01T01:50:59.421Z - success: console loaded
+2021-12-01T01:50:59.449Z - success: fb-instant-games loaded
+2021-12-01T01:50:59.457Z - success: game-window loaded
+2021-12-01T01:50:59.458Z - success: google-instant-games loaded
+2021-12-01T01:50:59.468Z - success: hierarchy loaded
+2021-12-01T01:50:59.476Z - success: inspector loaded
+2021-12-01T01:50:59.477Z - success: keystore loaded
+2021-12-01T01:50:59.486Z - success: node-library loaded
+2021-12-01T01:50:59.487Z - success: package-asset loaded
+2021-12-01T01:50:59.488Z - success: preferences loaded
+2021-12-01T01:50:59.494Z - success: project-exporter loaded
+2021-12-01T01:50:59.502Z - success: project-importer loaded
+2021-12-01T01:50:59.509Z - success: project-settings loaded
+2021-12-01T01:50:59.518Z - success: scene loaded
+2021-12-01T01:50:59.519Z - success: simulator-debugger loaded
+2021-12-01T01:50:59.520Z - success: sprite-editor loaded
+2021-12-01T01:50:59.528Z - success: store loaded
+2021-12-01T01:50:59.539Z - success: timeline loaded
+2021-12-01T01:50:59.542Z - success: xiaomi-runtime loaded
+2021-12-01T01:51:00.177Z - normal: Loading packages
+2021-12-01T01:51:00.181Z - normal: Watching packages
+2021-12-01T01:51:00.250Z - normal: Run Application
+2021-12-01T01:51:07.289Z - info: Cocos Services load base data!
+2021-12-01T02:34:56.138Z - error: scene not saved. Please build project after saveing project.
+    at Editor.Ipc.sendToPanel (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/builtin/builder/panel/builder.js:1:7875)
+    at EventEmitter.o.on.n (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/lib/renderer/ipc.js:1:3757)
+    at emitMany (events.js:127:13)
+    at EventEmitter.emit (events.js:204:7)
+2021-12-01T02:35:56.548Z - normal: Start building with options : {
+  "actualPlatform": "web-desktop",
+  "android-instant": {
+    "REMOTE_SERVER_ROOT": "",
+    "host": "",
+    "pathPattern": "",
+    "recordPath": "",
+    "scheme": "https",
+    "skipRecord": false
+  },
+  "apiLevel": "android-31",
+  "appABIs": [],
+  "appBundle": false,
+  "baidugame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "testappid",
+    "orientation": "portrait",
+    "subContext": ""
+  },
+  "buildPath": "/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/Web_Desktop",
+  "debug": true,
+  "dest": "/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/Web_Desktop/web-desktop",
+  "embedWebDebugger": false,
+  "encryptJs": false,
+  "excludeScenes": [],
+  "excludedModules": [],
+  "fb-instant-games": {},
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "md5Cache": true,
+  "mergeStartScene": false,
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "web-desktop",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait",
+    "zip": false
+  },
+  "scenes": [
+    "2d2f792f-a40c-49bb-a189-ed176a246e49"
+  ],
+  "sourceMaps": false,
+  "startScene": "2d2f792f-a40c-49bb-a189-ed176a246e49",
+  "template": "default",
+  "title": "hello_world",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wx6ac3f5090a6b99c5",
+    "orientation": "portrait",
+    "separate_engine": false,
+    "subContext": ""
+  },
+  "xxteaKey": "7bf179ae-e473-46",
+  "zipCompressJs": true,
+  "project": "/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/helloworld",
+  "projectName": "hello_world",
+  "debugBuildWorker": false
+}
+2021-12-01T02:35:56.551Z - normal: Building /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/helloworld
+2021-12-01T02:35:56.551Z - normal: Destination /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/Web_Desktop/web-desktop
+2021-12-01T02:35:56.652Z - normal: Delete /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/Web_Desktop/web-desktop/subpackages/**/*,/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/Web_Desktop/web-desktop/**/*
+2021-12-01T02:36:28.175Z - normal: Start building assets
+2021-12-01T02:36:28.176Z - normal: Start spawn build-worker
+2021-12-01T02:36:28.619Z - normal: Finish spawn build-worker
+2021-12-01T02:36:28.619Z - normal: Start init build-worker
+2021-12-01T02:36:30.452Z - normal: Finish init build-worker
+2021-12-01T02:36:30.452Z - normal: Start build-assets in worker
+2021-12-01T02:36:30.612Z - normal: Finish build-assets in worker
+2021-12-01T02:36:30.614Z - normal: Finish building assets
+2021-12-01T02:36:30.626Z - normal: Start building plugin scripts
+2021-12-01T02:36:30.708Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
+2021-12-01T02:36:30.716Z - normal: Generating html from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/web-desktop/template-dev/index.html
+2021-12-01T02:36:30.938Z - normal: Built to "/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/Web_Desktop/web-desktop" successfully
+2021-12-01T02:37:38.982Z - normal: Start building with options : {
+  "actualPlatform": "web-mobile",
+  "android-instant": {
+    "REMOTE_SERVER_ROOT": "",
+    "host": "",
+    "pathPattern": "",
+    "recordPath": "",
+    "scheme": "https",
+    "skipRecord": false
+  },
+  "apiLevel": "android-31",
+  "appABIs": [],
+  "appBundle": false,
+  "baidugame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "testappid",
+    "orientation": "portrait",
+    "subContext": ""
+  },
+  "buildPath": "/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/Web_Desktop",
+  "debug": true,
+  "dest": "/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/Web_Desktop/web-mobile",
+  "embedWebDebugger": false,
+  "encryptJs": false,
+  "excludeScenes": [],
+  "excludedModules": [],
+  "fb-instant-games": {},
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "md5Cache": true,
+  "mergeStartScene": false,
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "web-mobile",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait",
+    "zip": false
+  },
+  "scenes": [
+    "2d2f792f-a40c-49bb-a189-ed176a246e49"
+  ],
+  "sourceMaps": false,
+  "startScene": "2d2f792f-a40c-49bb-a189-ed176a246e49",
+  "template": "default",
+  "title": "hello_world",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wx6ac3f5090a6b99c5",
+    "orientation": "portrait",
+    "separate_engine": false,
+    "subContext": ""
+  },
+  "xxteaKey": "7bf179ae-e473-46",
+  "zipCompressJs": true,
+  "project": "/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/helloworld",
+  "projectName": "hello_world",
+  "debugBuildWorker": false
+}
+2021-12-01T02:37:38.985Z - normal: Building /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/helloworld
+2021-12-01T02:37:38.986Z - normal: Destination /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/Web_Desktop/web-mobile
+2021-12-01T02:37:38.987Z - normal: Delete /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/Web_Desktop/web-mobile/subpackages/**/*,/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/Web_Desktop/web-mobile/**/*
+2021-12-01T02:38:14.365Z - normal: Start building assets
+2021-12-01T02:38:14.366Z - normal: Start spawn build-worker
+2021-12-01T02:38:14.825Z - normal: Finish spawn build-worker
+2021-12-01T02:38:14.825Z - normal: Start init build-worker
+2021-12-01T02:38:16.704Z - normal: Finish init build-worker
+2021-12-01T02:38:16.704Z - normal: Start build-assets in worker
+2021-12-01T02:38:16.865Z - normal: Finish build-assets in worker
+2021-12-01T02:38:16.867Z - normal: Finish building assets
+2021-12-01T02:38:16.872Z - normal: Start building plugin scripts
+2021-12-01T02:38:16.924Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
+2021-12-01T02:38:16.929Z - normal: Generating html from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/web-mobile/template-dev/index.html
+2021-12-01T02:38:17.087Z - normal: Built to "/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/Web_Desktop/web-mobile" successfully
+2021-12-01T02:38:45.384Z - normal: Start building with options : {
+  "actualPlatform": "android",
+  "android-instant": {
+    "REMOTE_SERVER_ROOT": "",
+    "host": "",
+    "pathPattern": "",
+    "recordPath": "",
+    "scheme": "https",
+    "skipRecord": false
+  },
+  "apiLevel": "android-31",
+  "appABIs": [],
+  "appBundle": false,
+  "baidugame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "testappid",
+    "orientation": "portrait",
+    "subContext": ""
+  },
+  "buildPath": "/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/Web_Desktop",
+  "debug": true,
+  "dest": "/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/Web_Desktop/jsb-default",
+  "embedWebDebugger": false,
+  "encryptJs": false,
+  "excludeScenes": [],
+  "excludedModules": [],
+  "fb-instant-games": {},
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "md5Cache": true,
+  "mergeStartScene": false,
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "android",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait",
+    "zip": false
+  },
+  "scenes": [
+    "2d2f792f-a40c-49bb-a189-ed176a246e49"
+  ],
+  "sourceMaps": false,
+  "startScene": "2d2f792f-a40c-49bb-a189-ed176a246e49",
+  "template": "default",
+  "title": "hello_world",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wx6ac3f5090a6b99c5",
+    "orientation": "portrait",
+    "separate_engine": false,
+    "subContext": ""
+  },
+  "xxteaKey": "7bf179ae-e473-46",
+  "zipCompressJs": true,
+  "project": "/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/helloworld",
+  "projectName": "hello_world",
+  "debugBuildWorker": false
+}
+2021-12-01T02:38:45.385Z - normal: Building /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/helloworld
+2021-12-01T02:38:45.385Z - normal: Destination /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/Web_Desktop/jsb-default
+2021-12-01T02:38:45.386Z - normal: Delete /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/Web_Desktop/jsb-default/subpackages/**/*,/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/Web_Desktop/jsb-default/res/**/*,/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/Web_Desktop/jsb-default/src/**/*
+2021-12-01T02:38:45.405Z - error: Build Failed: Error: Can't find [NDK Root] path: /Volumes/Android NDK r23b/AndroidNDK7779620.app
+    at s (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/core/native-utils.js:1:2394)
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/core/native-utils.js:1:2709
+    at K (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/core/native-utils.js:1:2969)
+    at Object.build (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/core/native-utils.js:1:14231)
+    at Gulp.<anonymous> (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/core/gulp-build.js:1:28791)
+    at module.exports (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/orchestrator/lib/runTask.js:34:7)
+    at Gulp.Orchestrator._runTask (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/orchestrator/index.js:273:3)
+    at Gulp.Orchestrator._runStep (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/orchestrator/index.js:214:10)
+    at Gulp.Orchestrator.start (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/orchestrator/index.js:134:8)
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/gulp-sequence/index.js:63:12
+    at r.waterfall.r (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/lib/builder/index.js:1:3393)
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/async/lib/async.js:52:16
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/async/lib/async.js:696:30
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/async/lib/async.js:167:37
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/async/lib/async.js:1209:30
+    at Gulp.doneCallback (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/core/gulp-build.js:1:29866)
+    at Gulp.Orchestrator.stop (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/orchestrator/index.js:150:9)
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/orchestrator/index.js:277:22
+    at finish (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/orchestrator/lib/runTask.js:21:8)
+2021-12-01T02:38:47.335Z - normal: Start building with options : {
+  "actualPlatform": "android",
+  "android-instant": {
+    "REMOTE_SERVER_ROOT": "",
+    "host": "",
+    "pathPattern": "",
+    "recordPath": "",
+    "scheme": "https",
+    "skipRecord": false
+  },
+  "apiLevel": "android-31",
+  "appABIs": [],
+  "appBundle": false,
+  "baidugame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "testappid",
+    "orientation": "portrait",
+    "subContext": ""
+  },
+  "buildPath": "/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/Web_Desktop",
+  "debug": true,
+  "dest": "/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/Web_Desktop/jsb-default",
+  "embedWebDebugger": false,
+  "encryptJs": false,
+  "excludeScenes": [],
+  "excludedModules": [],
+  "fb-instant-games": {},
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "md5Cache": true,
+  "mergeStartScene": false,
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "android",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait",
+    "zip": false
+  },
+  "scenes": [
+    "2d2f792f-a40c-49bb-a189-ed176a246e49"
+  ],
+  "sourceMaps": false,
+  "startScene": "2d2f792f-a40c-49bb-a189-ed176a246e49",
+  "template": "default",
+  "title": "hello_world",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wx6ac3f5090a6b99c5",
+    "orientation": "portrait",
+    "separate_engine": false,
+    "subContext": ""
+  },
+  "xxteaKey": "7bf179ae-e473-46",
+  "zipCompressJs": true,
+  "project": "/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/helloworld",
+  "projectName": "hello_world",
+  "debugBuildWorker": false
+}
+2021-12-01T02:38:47.335Z - normal: Building /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/helloworld
+2021-12-01T02:38:47.336Z - normal: Destination /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/Web_Desktop/jsb-default
+2021-12-01T02:38:47.336Z - normal: Delete /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/Web_Desktop/jsb-default/subpackages/**/*,/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/Web_Desktop/jsb-default/res/**/*,/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/Web_Desktop/jsb-default/src/**/*
+2021-12-01T02:38:47.340Z - error: Build Failed: Error: Can't find [NDK Root] path: /Volumes/Android NDK r23b/AndroidNDK7779620.app
+    at s (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/core/native-utils.js:1:2394)
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/core/native-utils.js:1:2709
+    at K (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/core/native-utils.js:1:2969)
+    at Object.build (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/core/native-utils.js:1:14231)
+    at Gulp.<anonymous> (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/core/gulp-build.js:1:28791)
+    at module.exports (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/orchestrator/lib/runTask.js:34:7)
+    at Gulp.Orchestrator._runTask (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/orchestrator/index.js:273:3)
+    at Gulp.Orchestrator._runStep (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/orchestrator/index.js:214:10)
+    at Gulp.Orchestrator.start (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/orchestrator/index.js:134:8)
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/gulp-sequence/index.js:63:12
+    at r.waterfall.r (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/lib/builder/index.js:1:3393)
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/async/lib/async.js:52:16
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/async/lib/async.js:696:30
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/async/lib/async.js:167:37
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/async/lib/async.js:1209:30
+    at Gulp.doneCallback (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/core/gulp-build.js:1:29866)
+    at Gulp.Orchestrator.stop (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/orchestrator/index.js:150:9)
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/orchestrator/index.js:277:22
+    at finish (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/orchestrator/lib/runTask.js:21:8)
+2021-12-01T02:38:48.353Z - normal: Start building with options : {
+  "actualPlatform": "android",
+  "android-instant": {
+    "REMOTE_SERVER_ROOT": "",
+    "host": "",
+    "pathPattern": "",
+    "recordPath": "",
+    "scheme": "https",
+    "skipRecord": false
+  },
+  "apiLevel": "android-31",
+  "appABIs": [],
+  "appBundle": false,
+  "baidugame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "testappid",
+    "orientation": "portrait",
+    "subContext": ""
+  },
+  "buildPath": "/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/Web_Desktop",
+  "debug": true,
+  "dest": "/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/Web_Desktop/jsb-default",
+  "embedWebDebugger": false,
+  "encryptJs": false,
+  "excludeScenes": [],
+  "excludedModules": [],
+  "fb-instant-games": {},
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "md5Cache": true,
+  "mergeStartScene": false,
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "android",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait",
+    "zip": false
+  },
+  "scenes": [
+    "2d2f792f-a40c-49bb-a189-ed176a246e49"
+  ],
+  "sourceMaps": false,
+  "startScene": "2d2f792f-a40c-49bb-a189-ed176a246e49",
+  "template": "default",
+  "title": "hello_world",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wx6ac3f5090a6b99c5",
+    "orientation": "portrait",
+    "separate_engine": false,
+    "subContext": ""
+  },
+  "xxteaKey": "7bf179ae-e473-46",
+  "zipCompressJs": true,
+  "project": "/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/helloworld",
+  "projectName": "hello_world",
+  "debugBuildWorker": false
+}
+2021-12-01T02:38:48.354Z - normal: Building /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/helloworld
+2021-12-01T02:38:48.354Z - normal: Destination /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/Web_Desktop/jsb-default
+2021-12-01T02:38:48.355Z - normal: Delete /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/Web_Desktop/jsb-default/subpackages/**/*,/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/Web_Desktop/jsb-default/res/**/*,/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/Web_Desktop/jsb-default/src/**/*
+2021-12-01T02:38:48.359Z - error: Build Failed: Error: Can't find [NDK Root] path: /Volumes/Android NDK r23b/AndroidNDK7779620.app
+    at s (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/core/native-utils.js:1:2394)
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/core/native-utils.js:1:2709
+    at K (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/core/native-utils.js:1:2969)
+    at Object.build (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/core/native-utils.js:1:14231)
+    at Gulp.<anonymous> (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/core/gulp-build.js:1:28791)
+    at module.exports (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/orchestrator/lib/runTask.js:34:7)
+    at Gulp.Orchestrator._runTask (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/orchestrator/index.js:273:3)
+    at Gulp.Orchestrator._runStep (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/orchestrator/index.js:214:10)
+    at Gulp.Orchestrator.start (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/orchestrator/index.js:134:8)
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/gulp-sequence/index.js:63:12
+    at r.waterfall.r (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/lib/builder/index.js:1:3393)
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/async/lib/async.js:52:16
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/async/lib/async.js:696:30
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/async/lib/async.js:167:37
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/async/lib/async.js:1209:30
+    at Gulp.doneCallback (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/core/gulp-build.js:1:29866)
+    at Gulp.Orchestrator.stop (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/orchestrator/index.js:150:9)
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/orchestrator/index.js:277:22
+    at finish (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/orchestrator/lib/runTask.js:21:8)
+2021-12-01T02:38:49.435Z - failed: Error: Can't find [NDK Root] path: /Volumes/Android NDK r23b/AndroidNDK7779620.app
+    at s (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/core/native-utils.js:1:2394)
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/core/native-utils.js:1:2709
+    at K (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/core/native-utils.js:1:2969)
+    at Object.compile (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/core/native-utils.js:1:17576)
+    at r.series.t (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/lib/builder/index.js:1:4860)
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/async/lib/async.js:718:13
+    at iterate (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/async/lib/async.js:262:13)
+    at async.forEachOfSeries.async.eachOfSeries (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/async/lib/async.js:281:9)
+    at _parallel (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/async/lib/async.js:717:9)
+    at Object.async.series (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/async/lib/async.js:739:9)
+2021-12-01T02:38:50.554Z - normal: Start building with options : {
+  "actualPlatform": "android",
+  "android-instant": {
+    "REMOTE_SERVER_ROOT": "",
+    "host": "",
+    "pathPattern": "",
+    "recordPath": "",
+    "scheme": "https",
+    "skipRecord": false
+  },
+  "apiLevel": "android-31",
+  "appABIs": [],
+  "appBundle": false,
+  "baidugame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "testappid",
+    "orientation": "portrait",
+    "subContext": ""
+  },
+  "buildPath": "/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/Web_Desktop",
+  "debug": true,
+  "dest": "/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/Web_Desktop/jsb-default",
+  "embedWebDebugger": false,
+  "encryptJs": false,
+  "excludeScenes": [],
+  "excludedModules": [],
+  "fb-instant-games": {},
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "md5Cache": true,
+  "mergeStartScene": false,
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "android",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait",
+    "zip": false
+  },
+  "scenes": [
+    "2d2f792f-a40c-49bb-a189-ed176a246e49"
+  ],
+  "sourceMaps": false,
+  "startScene": "2d2f792f-a40c-49bb-a189-ed176a246e49",
+  "template": "default",
+  "title": "hello_world",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wx6ac3f5090a6b99c5",
+    "orientation": "portrait",
+    "separate_engine": false,
+    "subContext": ""
+  },
+  "xxteaKey": "7bf179ae-e473-46",
+  "zipCompressJs": true,
+  "project": "/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/helloworld",
+  "projectName": "hello_world",
+  "debugBuildWorker": false
+}
+2021-12-01T02:38:50.554Z - normal: Building /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/helloworld
+2021-12-01T02:38:50.554Z - normal: Destination /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/Web_Desktop/jsb-default
+2021-12-01T02:38:50.554Z - normal: Delete /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/Web_Desktop/jsb-default/subpackages/**/*,/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/Web_Desktop/jsb-default/res/**/*,/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/Web_Desktop/jsb-default/src/**/*
+2021-12-01T02:38:50.558Z - error: Build Failed: Error: Can't find [NDK Root] path: /Volumes/Android NDK r23b/AndroidNDK7779620.app
+    at s (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/core/native-utils.js:1:2394)
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/editor/core/native-utils.js:1:2709
+    at K (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/core/native-utils.js:1:2969)
+    at Object.build (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/core/native-utils.js:1:14231)
+    at Gulp.<anonymous> (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/core/gulp-build.js:1:28791)
+    at module.exports (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/orchestrator/lib/runTask.js:34:7)
+    at Gulp.Orchestrator._runTask (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/orchestrator/index.js:273:3)
+    at Gulp.Orchestrator._runStep (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/orchestrator/index.js:214:10)
+    at Gulp.Orchestrator.start (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/orchestrator/index.js:134:8)
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/gulp-sequence/index.js:63:12
+    at r.waterfall.r (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/lib/builder/index.js:1:3393)
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/async/lib/async.js:52:16
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/async/lib/async.js:696:30
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/async/lib/async.js:167:37
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/async/lib/async.js:1209:30
+    at Gulp.doneCallback (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/core/gulp-build.js:1:29866)
+    at Gulp.Orchestrator.stop (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/orchestrator/index.js:150:9)
+    at /Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/orchestrator/index.js:277:22
+    at finish (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/orchestrator/lib/runTask.js:21:8)
+2021-12-01T02:43:51.054Z - normal: Start building with options : {
+  "actualPlatform": "android",
+  "android-instant": {
+    "REMOTE_SERVER_ROOT": "",
+    "host": "",
+    "pathPattern": "",
+    "recordPath": "",
+    "scheme": "https",
+    "skipRecord": false
+  },
+  "apiLevel": "android-31",
+  "appABIs": [],
+  "appBundle": false,
+  "baidugame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "testappid",
+    "orientation": "portrait",
+    "subContext": ""
+  },
+  "buildPath": "/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/Web_Desktop",
+  "debug": true,
+  "dest": "/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/Web_Desktop/jsb-default",
+  "embedWebDebugger": false,
+  "encryptJs": false,
+  "excludeScenes": [],
+  "excludedModules": [],
+  "fb-instant-games": {},
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "md5Cache": true,
+  "mergeStartScene": false,
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "platform": "android",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait",
+    "zip": false
+  },
+  "scenes": [
+    "2d2f792f-a40c-49bb-a189-ed176a246e49"
+  ],
+  "sourceMaps": false,
+  "startScene": "2d2f792f-a40c-49bb-a189-ed176a246e49",
+  "template": "default",
+  "title": "hello_world",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wx6ac3f5090a6b99c5",
+    "orientation": "portrait",
+    "separate_engine": false,
+    "subContext": ""
+  },
+  "xxteaKey": "7bf179ae-e473-46",
+  "zipCompressJs": true,
+  "project": "/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/helloworld",
+  "projectName": "hello_world",
+  "debugBuildWorker": false
+}
+2021-12-01T02:43:51.056Z - normal: Building /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/helloworld
+2021-12-01T02:43:51.057Z - normal: Destination /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/Web_Desktop/jsb-default
+2021-12-01T02:43:51.057Z - normal: Delete /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/Web_Desktop/jsb-default/subpackages/**/*,/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/Web_Desktop/jsb-default/res/**/*,/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/Web_Desktop/jsb-default/src/**/*
+2021-12-01T02:43:51.085Z - normal: Checked Python Version [2.7.10]
+2021-12-01T02:43:52.320Z - normal: Creating native cocos project to  /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/Web_Desktop/jsb-default
+2021-12-01T02:43:57.746Z - normal: Start building assets
+2021-12-01T02:43:57.746Z - normal: Start spawn build-worker
+2021-12-01T02:43:58.180Z - normal: Finish spawn build-worker
+2021-12-01T02:43:58.180Z - normal: Start init build-worker
+2021-12-01T02:43:59.966Z - normal: Finish init build-worker
+2021-12-01T02:43:59.966Z - normal: Start build-assets in worker
+2021-12-01T02:44:00.056Z - info: Enable "Inline all SpriteFrames" in native platform will increase the package size used in hot update.
+2021-12-01T02:44:00.121Z - normal: Finish build-assets in worker
+2021-12-01T02:44:00.123Z - normal: Finish building assets
+2021-12-01T02:44:00.127Z - normal: Start building plugin scripts
+2021-12-01T02:44:00.167Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
+2021-12-01T02:44:00.279Z - normal: Built to "/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/Web_Desktop/jsb-default" successfully
+2021-12-01T02:44:12.745Z - normal: Checked Python Version [2.7.10]
+2021-12-01T02:44:13.859Z - normal: Start to compile native project. Please wait...
+2021-12-01T02:44:13.859Z - normal: The log file path [ /Users/fe-huuloc-fresher/.CocosCreator/logs/native.log ]
+2021-12-01T02:44:20.374Z - failed: Error: Compile failed. The log file path [ /Users/fe-huuloc-fresher/.CocosCreator/logs/native.log ]
+    at ChildProcess.q (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/core/native-utils.js:1:18946)
+    at ChildProcess.r.on (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/core/native-utils.js:1:6589)
+    at emitTwo (events.js:106:13)
+    at ChildProcess.emit (events.js:194:7)
+    at maybeClose (internal/child_process.js:899:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
+2021-12-01T02:44:38.385Z - normal: Checked Python Version [2.7.10]
+2021-12-01T02:44:39.545Z - normal: Start to compile native project. Please wait...
+2021-12-01T02:44:39.546Z - normal: The log file path [ /Users/fe-huuloc-fresher/.CocosCreator/logs/native.log ]
+2021-12-01T02:44:40.671Z - failed: Error: Compile failed. The log file path [ /Users/fe-huuloc-fresher/.CocosCreator/logs/native.log ]
+    at ChildProcess.q (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/core/native-utils.js:1:18946)
+    at ChildProcess.r.on (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/core/native-utils.js:1:6589)
+    at emitTwo (events.js:106:13)
+    at ChildProcess.emit (events.js:194:7)
+    at maybeClose (internal/child_process.js:899:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
+2021-12-01T02:44:42.344Z - normal: Checked Python Version [2.7.10]
+2021-12-01T02:44:43.468Z - normal: Start to compile native project. Please wait...
+2021-12-01T02:44:43.468Z - normal: The log file path [ /Users/fe-huuloc-fresher/.CocosCreator/logs/native.log ]
+2021-12-01T02:44:44.551Z - failed: Error: Compile failed. The log file path [ /Users/fe-huuloc-fresher/.CocosCreator/logs/native.log ]
+    at ChildProcess.q (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/core/native-utils.js:1:18946)
+    at ChildProcess.r.on (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/core/native-utils.js:1:6589)
+    at emitTwo (events.js:106:13)
+    at ChildProcess.emit (events.js:194:7)
+    at maybeClose (internal/child_process.js:899:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)

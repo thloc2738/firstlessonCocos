@@ -1,0 +1,19 @@
+{
+  "actualPlatform": "android",
+  "apiLevel": "android-31",
+  "appABIs": [],
+  "buildPath": "/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/Web_Desktop",
+  "debug": true,
+  "embedWebDebugger": false,
+  "keystoreAlias": "",
+  "keystoreAliasPassword": "",
+  "keystorePassword": "",
+  "keystorePath": "",
+  "platform": "android",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "sourceMaps": false,
+  "template": "default",
+  "useDebugKeystore": true,
+  "vsVersion": "auto"
+}
