@@ -1,0 +1,68 @@
+2021-12-04T04:43:23.255Z - normal: Load ~/.CocosCreator/settings.json
+2021-12-04T04:43:23.290Z - normal: Initializing Asset Database
+2021-12-04T04:43:23.291Z - normal: checking language setting...
+2021-12-04T04:43:23.291Z - normal: Language: en
+2021-12-04T04:43:23.703Z - success: preview server running at http://localhost:7456
+2021-12-04T04:43:23.724Z - success: protocol editor-framework registered
+2021-12-04T04:43:23.724Z - success: protocol app registered
+2021-12-04T04:43:23.724Z - success: protocol theme registered
+2021-12-04T04:43:23.724Z - success: protocol packages registered
+2021-12-04T04:43:23.724Z - success: protocol uuid registerred
+2021-12-04T04:43:23.725Z - success: protocol db registerred
+2021-12-04T04:43:23.725Z - success: protocol thumbnail registerred
+2021-12-04T04:43:23.725Z - success: protocol unpack registerred
+2021-12-04T04:43:23.725Z - success: protocol disable-commonjs registerred
+2021-12-04T04:43:24.889Z - normal: connected!
+2021-12-04T04:43:24.890Z - normal: Check project /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest
+2021-12-04T04:43:24.892Z - normal: Initializing project /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest
+2021-12-04T04:43:25.129Z - normal: Initializing Cocos2d
+2021-12-04T04:43:25.556Z - normal: Initializing engine extends
+2021-12-04T04:43:25.575Z - success: alipay-adapter loaded
+2021-12-04T04:43:25.589Z - success: asset-db-debugger loaded
+2021-12-04T04:43:25.593Z - success: baidu-adapter loaded
+2021-12-04T04:43:25.596Z - success: color-picker loaded
+2021-12-04T04:43:25.685Z - success: fb-audience-network loaded
+2021-12-04T04:43:25.730Z - success: fb-live-stream loaded
+2021-12-04T04:43:25.732Z - success: google-play-instant loaded
+2021-12-04T04:43:25.735Z - success: huawei-runtime loaded
+2021-12-04T04:43:25.869Z - success: cpk-publish loaded
+2021-12-04T04:43:25.870Z - success: jsb-adapter loaded
+2021-12-04T04:43:25.872Z - success: oppo-runtime loaded
+2021-12-04T04:43:25.882Z - success: package-manager loaded
+2021-12-04T04:43:25.956Z - success: qqplay-adapter loaded
+2021-12-04T04:43:25.957Z - success: runtime-dev-tools loaded
+2021-12-04T04:43:25.965Z - success: sdkbox loaded
+2021-12-04T04:43:25.972Z - success: tester loaded
+2021-12-04T04:43:25.981Z - success: ui-kit-preview-extra loaded
+2021-12-04T04:43:25.988Z - success: ui-kit-preview loaded
+2021-12-04T04:43:25.997Z - success: ui-kit loaded
+2021-12-04T04:43:26.000Z - success: vivo-runtime loaded
+2021-12-04T04:43:26.001Z - success: weapp-adapter loaded
+2021-12-04T04:43:26.001Z - success: xiaomi-adapter loaded
+2021-12-04T04:43:26.003Z - success: alipay-minigame loaded
+2021-12-04T04:43:26.039Z - success: assets loaded
+2021-12-04T04:43:26.049Z - success: builder loaded
+2021-12-04T04:43:26.218Z - success: cocos-services loaded
+2021-12-04T04:43:26.232Z - success: console loaded
+2021-12-04T04:43:26.259Z - success: fb-instant-games loaded
+2021-12-04T04:43:26.267Z - success: game-window loaded
+2021-12-04T04:43:26.268Z - success: google-instant-games loaded
+2021-12-04T04:43:26.279Z - success: hierarchy loaded
+2021-12-04T04:43:26.287Z - success: inspector loaded
+2021-12-04T04:43:26.288Z - success: keystore loaded
+2021-12-04T04:43:26.304Z - success: node-library loaded
+2021-12-04T04:43:26.306Z - success: package-asset loaded
+2021-12-04T04:43:26.307Z - success: preferences loaded
+2021-12-04T04:43:26.315Z - success: project-exporter loaded
+2021-12-04T04:43:26.323Z - success: project-importer loaded
+2021-12-04T04:43:26.332Z - success: project-settings loaded
+2021-12-04T04:43:26.340Z - success: scene loaded
+2021-12-04T04:43:26.341Z - success: simulator-debugger loaded
+2021-12-04T04:43:26.342Z - success: sprite-editor loaded
+2021-12-04T04:43:26.350Z - success: store loaded
+2021-12-04T04:43:26.360Z - success: timeline loaded
+2021-12-04T04:43:26.363Z - success: xiaomi-runtime loaded
+2021-12-04T04:43:26.980Z - normal: Loading packages
+2021-12-04T04:43:26.986Z - normal: Watching packages
+2021-12-04T04:43:27.054Z - normal: Run Application
+2021-12-04T04:43:27.919Z - info: Cocos Services load base data!
