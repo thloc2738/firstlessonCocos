@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "grey-line-png-6",
+    "texture": "3cdf7a6f-2e56-45e1-a905-3a53f2951ed6",
+    "atlas": "",
+    "rect": [
+      177,
+      62,
+      1814,
+      14
+    ],
+    "offset": [
+      40,
+      3
+    ],
+    "originalSize": [
+      2088,
+      144
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}
