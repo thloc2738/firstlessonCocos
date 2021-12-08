@@ -66,7 +66,7 @@
   {
     "__type__": "cc.Node",
     "_name": "Canvas",
-    "_objFlags": 0,
+    "_objFlags": 512,
     "_parent": {
       "__id__": 1
     },
@@ -374,7 +374,7 @@
   {
     "__type__": "cc.Node",
     "_name": "mainmenucontroller",
-    "_objFlags": 0,
+    "_objFlags": 512,
     "_parent": {
       "__id__": 1
     },
@@ -449,7 +449,7 @@
   {
     "__type__": "cc.Node",
     "_name": "New Sprite(Splash)",
-    "_objFlags": 0,
+    "_objFlags": 512,
     "_parent": {
       "__id__": 9
     },
@@ -543,7 +543,7 @@
   {
     "__type__": "cc.Node",
     "_name": "Menu",
-    "_objFlags": 0,
+    "_objFlags": 512,
     "_parent": {
       "__id__": 9
     },
@@ -1771,7 +1771,7 @@
   {
     "__type__": "cc.Node",
     "_name": "Tutorial",
-    "_objFlags": 0,
+    "_objFlags": 512,
     "_parent": {
       "__id__": 9
     },
@@ -2607,7 +2607,7 @@
   {
     "__type__": "cc.Node",
     "_name": "Option",
-    "_objFlags": 0,
+    "_objFlags": 512,
     "_parent": {
       "__id__": 9
     },
