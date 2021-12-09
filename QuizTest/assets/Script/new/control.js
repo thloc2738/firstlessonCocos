@@ -12,6 +12,7 @@ cc.Class({
         frameEnd: 30,
         _count: 0,
         btn_Reset: cc.Button,
+        animflag: false,
     },
     onLoad() {
         Emitter.instance = new Emitter();
@@ -23,10 +24,12 @@ cc.Class({
         if (this.flagLeft || this.flagJump || this.flafRight) {
             if (this._count > this.frameEnd) {
                 this.visibleBtn(true);
+                this.animflag = false;
                 this.resetFlag();
                 return;
             }
             if (this.flagLeft) {
+                this.animflag = true;
                 this.target.scaleX = 0.5;
                 this.target.x -= this.moveSpeed;
                 this.visibleBtn(false);
@@ -34,6 +37,7 @@ cc.Class({
                     this.target.x = 85;
                 }
             } else if (this.flafRight) {
+                this.animflag = true;
                 this.target.scaleX = -0.5;
                 this.target.x += this.moveSpeed;
                 this.visibleBtn(false);
@@ -41,6 +45,7 @@ cc.Class({
                     this.target.x = 872;
                 }
             } else if (this.flagJump) {
+                this.animflag = true;
                 this.visibleBtn(false);
                 if (this._count < this.frameEnd / 3) {
                     this.target.y += this.moveSpeed;
@@ -55,8 +60,9 @@ cc.Class({
                     }
 
                 }
-
+     
             }
+
             this._count++;
         }
 
