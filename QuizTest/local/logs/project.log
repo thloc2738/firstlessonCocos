@@ -1,68 +1,289 @@
-2021-12-04T04:43:23.255Z - normal: Load ~/.CocosCreator/settings.json
-2021-12-04T04:43:23.290Z - normal: Initializing Asset Database
-2021-12-04T04:43:23.291Z - normal: checking language setting...
-2021-12-04T04:43:23.291Z - normal: Language: en
-2021-12-04T04:43:23.703Z - success: preview server running at http://localhost:7456
-2021-12-04T04:43:23.724Z - success: protocol editor-framework registered
-2021-12-04T04:43:23.724Z - success: protocol app registered
-2021-12-04T04:43:23.724Z - success: protocol theme registered
-2021-12-04T04:43:23.724Z - success: protocol packages registered
-2021-12-04T04:43:23.724Z - success: protocol uuid registerred
-2021-12-04T04:43:23.725Z - success: protocol db registerred
-2021-12-04T04:43:23.725Z - success: protocol thumbnail registerred
-2021-12-04T04:43:23.725Z - success: protocol unpack registerred
-2021-12-04T04:43:23.725Z - success: protocol disable-commonjs registerred
-2021-12-04T04:43:24.889Z - normal: connected!
-2021-12-04T04:43:24.890Z - normal: Check project /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest
-2021-12-04T04:43:24.892Z - normal: Initializing project /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest
-2021-12-04T04:43:25.129Z - normal: Initializing Cocos2d
-2021-12-04T04:43:25.556Z - normal: Initializing engine extends
-2021-12-04T04:43:25.575Z - success: alipay-adapter loaded
-2021-12-04T04:43:25.589Z - success: asset-db-debugger loaded
-2021-12-04T04:43:25.593Z - success: baidu-adapter loaded
-2021-12-04T04:43:25.596Z - success: color-picker loaded
-2021-12-04T04:43:25.685Z - success: fb-audience-network loaded
-2021-12-04T04:43:25.730Z - success: fb-live-stream loaded
-2021-12-04T04:43:25.732Z - success: google-play-instant loaded
-2021-12-04T04:43:25.735Z - success: huawei-runtime loaded
-2021-12-04T04:43:25.869Z - success: cpk-publish loaded
-2021-12-04T04:43:25.870Z - success: jsb-adapter loaded
-2021-12-04T04:43:25.872Z - success: oppo-runtime loaded
-2021-12-04T04:43:25.882Z - success: package-manager loaded
-2021-12-04T04:43:25.956Z - success: qqplay-adapter loaded
-2021-12-04T04:43:25.957Z - success: runtime-dev-tools loaded
-2021-12-04T04:43:25.965Z - success: sdkbox loaded
-2021-12-04T04:43:25.972Z - success: tester loaded
-2021-12-04T04:43:25.981Z - success: ui-kit-preview-extra loaded
-2021-12-04T04:43:25.988Z - success: ui-kit-preview loaded
-2021-12-04T04:43:25.997Z - success: ui-kit loaded
-2021-12-04T04:43:26.000Z - success: vivo-runtime loaded
-2021-12-04T04:43:26.001Z - success: weapp-adapter loaded
-2021-12-04T04:43:26.001Z - success: xiaomi-adapter loaded
-2021-12-04T04:43:26.003Z - success: alipay-minigame loaded
-2021-12-04T04:43:26.039Z - success: assets loaded
-2021-12-04T04:43:26.049Z - success: builder loaded
-2021-12-04T04:43:26.218Z - success: cocos-services loaded
-2021-12-04T04:43:26.232Z - success: console loaded
-2021-12-04T04:43:26.259Z - success: fb-instant-games loaded
-2021-12-04T04:43:26.267Z - success: game-window loaded
-2021-12-04T04:43:26.268Z - success: google-instant-games loaded
-2021-12-04T04:43:26.279Z - success: hierarchy loaded
-2021-12-04T04:43:26.287Z - success: inspector loaded
-2021-12-04T04:43:26.288Z - success: keystore loaded
-2021-12-04T04:43:26.304Z - success: node-library loaded
-2021-12-04T04:43:26.306Z - success: package-asset loaded
-2021-12-04T04:43:26.307Z - success: preferences loaded
-2021-12-04T04:43:26.315Z - success: project-exporter loaded
-2021-12-04T04:43:26.323Z - success: project-importer loaded
-2021-12-04T04:43:26.332Z - success: project-settings loaded
-2021-12-04T04:43:26.340Z - success: scene loaded
-2021-12-04T04:43:26.341Z - success: simulator-debugger loaded
-2021-12-04T04:43:26.342Z - success: sprite-editor loaded
-2021-12-04T04:43:26.350Z - success: store loaded
-2021-12-04T04:43:26.360Z - success: timeline loaded
-2021-12-04T04:43:26.363Z - success: xiaomi-runtime loaded
-2021-12-04T04:43:26.980Z - normal: Loading packages
-2021-12-04T04:43:26.986Z - normal: Watching packages
-2021-12-04T04:43:27.054Z - normal: Run Application
-2021-12-04T04:43:27.919Z - info: Cocos Services load base data!
+2021-12-09T07:09:35.146Z - normal: Load ~/.CocosCreator/settings.json
+2021-12-09T07:09:35.184Z - normal: Initializing Asset Database
+2021-12-09T07:09:35.190Z - normal: checking language setting...
+2021-12-09T07:09:35.190Z - normal: Language: en
+2021-12-09T07:09:35.658Z - success: preview server running at http://localhost:7456
+2021-12-09T07:09:35.668Z - success: protocol editor-framework registered
+2021-12-09T07:09:35.668Z - success: protocol app registered
+2021-12-09T07:09:35.668Z - success: protocol theme registered
+2021-12-09T07:09:35.668Z - success: protocol packages registered
+2021-12-09T07:09:35.669Z - success: protocol uuid registerred
+2021-12-09T07:09:35.669Z - success: protocol db registerred
+2021-12-09T07:09:35.669Z - success: protocol thumbnail registerred
+2021-12-09T07:09:35.669Z - success: protocol unpack registerred
+2021-12-09T07:09:35.669Z - success: protocol disable-commonjs registerred
+2021-12-09T07:09:36.834Z - normal: connected!
+2021-12-09T07:09:36.836Z - normal: Check project /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest
+2021-12-09T07:09:36.837Z - normal: Initializing project /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest
+2021-12-09T07:09:37.109Z - normal: Initializing Cocos2d
+2021-12-09T07:09:37.552Z - normal: Initializing engine extends
+2021-12-09T07:09:37.573Z - success: alipay-adapter loaded
+2021-12-09T07:09:37.579Z - success: asset-db-debugger loaded
+2021-12-09T07:09:37.582Z - success: baidu-adapter loaded
+2021-12-09T07:09:37.587Z - success: color-picker loaded
+2021-12-09T07:09:37.689Z - success: fb-audience-network loaded
+2021-12-09T07:09:37.723Z - success: fb-live-stream loaded
+2021-12-09T07:09:37.724Z - success: google-play-instant loaded
+2021-12-09T07:09:37.727Z - success: huawei-runtime loaded
+2021-12-09T07:09:37.873Z - success: cpk-publish loaded
+2021-12-09T07:09:37.873Z - success: jsb-adapter loaded
+2021-12-09T07:09:37.876Z - success: oppo-runtime loaded
+2021-12-09T07:09:37.879Z - success: package-manager loaded
+2021-12-09T07:09:37.964Z - success: qqplay-adapter loaded
+2021-12-09T07:09:37.965Z - success: runtime-dev-tools loaded
+2021-12-09T07:09:37.969Z - success: sdkbox loaded
+2021-12-09T07:09:37.972Z - success: tester loaded
+2021-12-09T07:09:37.974Z - success: ui-kit-preview-extra loaded
+2021-12-09T07:09:37.975Z - success: ui-kit-preview loaded
+2021-12-09T07:09:37.978Z - success: ui-kit loaded
+2021-12-09T07:09:37.981Z - success: vivo-runtime loaded
+2021-12-09T07:09:37.981Z - success: weapp-adapter loaded
+2021-12-09T07:09:37.982Z - success: xiaomi-adapter loaded
+2021-12-09T07:09:37.983Z - success: alipay-minigame loaded
+2021-12-09T07:09:38.016Z - success: assets loaded
+2021-12-09T07:09:38.019Z - success: builder loaded
+2021-12-09T07:09:38.193Z - success: cocos-services loaded
+2021-12-09T07:09:38.197Z - success: console loaded
+2021-12-09T07:09:38.220Z - success: fb-instant-games loaded
+2021-12-09T07:09:38.223Z - success: game-window loaded
+2021-12-09T07:09:38.225Z - success: google-instant-games loaded
+2021-12-09T07:09:38.228Z - success: hierarchy loaded
+2021-12-09T07:09:38.231Z - success: inspector loaded
+2021-12-09T07:09:38.232Z - success: keystore loaded
+2021-12-09T07:09:38.236Z - success: node-library loaded
+2021-12-09T07:09:38.238Z - success: package-asset loaded
+2021-12-09T07:09:38.239Z - success: preferences loaded
+2021-12-09T07:09:38.242Z - success: project-exporter loaded
+2021-12-09T07:09:38.245Z - success: project-importer loaded
+2021-12-09T07:09:38.248Z - success: project-settings loaded
+2021-12-09T07:09:38.252Z - success: scene loaded
+2021-12-09T07:09:38.253Z - success: simulator-debugger loaded
+2021-12-09T07:09:38.254Z - success: sprite-editor loaded
+2021-12-09T07:09:38.257Z - success: store loaded
+2021-12-09T07:09:38.262Z - success: timeline loaded
+2021-12-09T07:09:38.266Z - success: xiaomi-runtime loaded
+2021-12-09T07:09:41.608Z - normal: Loading packages
+2021-12-09T07:09:41.612Z - normal: Watching packages
+2021-12-09T07:09:41.685Z - normal: Run Application
+2021-12-09T07:09:41.763Z - info: Cocos Services load base data!
+2021-12-09T07:34:49.842Z - warn: Script attached to "New Node" is missing or invalid. Detailed information:
+Node path: "New Node"
+Script UUID: "eb7636d4-6889-499d-9fda-417ed9cfc86e"
+Class ID: "eb763bUaIlJnZ/aQX7Zz8hu"
+
+2021-12-09T07:54:06.283Z - failed: load script [mEmitter] failed : Error: Cannot find module 'mEmitter'
+    at Module._resolveFilename (module.js:470:15)
+    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:35:12)
+    at Function.s._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:941)
+    at Function.Module._load (module.js:418:25)
+    at Module.require (module.js:498:17)
+    at require (internal/module.js:20:19)
+    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:589)
+    at /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/evenKeyBoard.js:1:354
+    at __define (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/evenKeyBoard.js:7:15)
+    at /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/evenKeyBoard.js:36:13
+2021-12-09T08:36:33.164Z - error: Property 'control.properties' must define at least one of 'default', 'get' or 'set'.
+    at Object.cc.errorID (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/CCDebug.js:167:16)
+    at Object.exports.preprocessAttrs (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/preprocess-class.js:215:36)
+    at declareProperties (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:631:28)
+    at Object.CCClass [as Class] (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:674:17)
+    at __define (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:8:4)
+    at /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:115:13
+    at Object.<anonymous> (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:122:11)
+    at Object.<anonymous> (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:125:3)
+    at Module._compile (module.js:571:32)
+2021-12-09T08:36:33.165Z - error: Can not declare control.onLoad, it is already defined in the prototype of control
+    at Object.cc.errorID (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/CCDebug.js:167:16)
+    at defineProp (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:121:24)
+    at declareProperties (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:635:25)
+    at Object.CCClass [as Class] (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:674:17)
+    at __define (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:8:4)
+    at /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:115:13
+    at Object.<anonymous> (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:122:11)
+    at Object.<anonymous> (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:125:3)
+    at Module._compile (module.js:571:32)
+2021-12-09T08:36:33.165Z - error: Can not declare control.update, it is already defined in the prototype of control
+    at Object.cc.errorID (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/CCDebug.js:167:16)
+    at defineProp (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:121:24)
+    at declareProperties (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:635:25)
+    at Object.CCClass [as Class] (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:674:17)
+    at __define (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:8:4)
+    at /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:115:13
+    at Object.<anonymous> (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:122:11)
+    at Object.<anonymous> (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:125:3)
+    at Module._compile (module.js:571:32)
+2021-12-09T08:38:40.414Z - error: Property 'control.properties' must define at least one of 'default', 'get' or 'set'.
+    at Object.cc.errorID (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/CCDebug.js:167:16)
+    at Object.exports.preprocessAttrs (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/preprocess-class.js:215:36)
+    at declareProperties (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:631:28)
+    at Object.CCClass [as Class] (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:674:17)
+    at __define (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:8:4)
+    at /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:115:13
+    at Object.<anonymous> (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:122:11)
+    at Object.<anonymous> (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:125:3)
+    at Module._compile (module.js:571:32)
+2021-12-09T08:38:40.416Z - error: Can not declare control.onLoad, it is already defined in the prototype of control
+    at Object.cc.errorID (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/CCDebug.js:167:16)
+    at defineProp (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:121:24)
+    at declareProperties (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:635:25)
+    at Object.CCClass [as Class] (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:674:17)
+    at __define (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:8:4)
+    at /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:115:13
+    at Object.<anonymous> (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:122:11)
+    at Object.<anonymous> (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:125:3)
+    at Module._compile (module.js:571:32)
+2021-12-09T08:38:40.416Z - error: Can not declare control.update, it is already defined in the prototype of control
+    at Object.cc.errorID (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/CCDebug.js:167:16)
+    at defineProp (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:121:24)
+    at declareProperties (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:635:25)
+    at Object.CCClass [as Class] (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:674:17)
+    at __define (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:8:4)
+    at /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:115:13
+    at Object.<anonymous> (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:122:11)
+    at Object.<anonymous> (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:125:3)
+    at Module._compile (module.js:571:32)
+2021-12-09T08:39:42.540Z - error: Property 'control.properties' must define at least one of 'default', 'get' or 'set'.
+    at Object.cc.errorID (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/CCDebug.js:167:16)
+    at Object.exports.preprocessAttrs (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/preprocess-class.js:215:36)
+    at declareProperties (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:631:28)
+    at Object.CCClass [as Class] (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:674:17)
+    at __define (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:8:4)
+    at /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:115:13
+    at Object.<anonymous> (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:122:11)
+    at Object.<anonymous> (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:125:3)
+    at Module._compile (module.js:571:32)
+2021-12-09T08:39:42.541Z - error: Can not declare control.onLoad, it is already defined in the prototype of control
+    at Object.cc.errorID (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/CCDebug.js:167:16)
+    at defineProp (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:121:24)
+    at declareProperties (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:635:25)
+    at Object.CCClass [as Class] (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:674:17)
+    at __define (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:8:4)
+    at /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:115:13
+    at Object.<anonymous> (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:122:11)
+    at Object.<anonymous> (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:125:3)
+    at Module._compile (module.js:571:32)
+2021-12-09T08:39:42.541Z - error: Can not declare control.update, it is already defined in the prototype of control
+    at Object.cc.errorID (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/CCDebug.js:167:16)
+    at defineProp (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:121:24)
+    at declareProperties (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:635:25)
+    at Object.CCClass [as Class] (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:674:17)
+    at __define (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:8:4)
+    at /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:115:13
+    at Object.<anonymous> (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:122:11)
+    at Object.<anonymous> (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:125:3)
+    at Module._compile (module.js:571:32)
+2021-12-09T08:42:09.483Z - error: Property 'control.properties' must define at least one of 'default', 'get' or 'set'.
+    at Object.cc.errorID (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/CCDebug.js:167:16)
+    at Object.exports.preprocessAttrs (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/preprocess-class.js:215:36)
+    at declareProperties (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:631:28)
+    at Object.CCClass [as Class] (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:674:17)
+    at __define (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:8:4)
+    at /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:115:13
+    at Object.<anonymous> (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:122:11)
+    at Object.<anonymous> (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:125:3)
+    at Module._compile (module.js:571:32)
+2021-12-09T08:42:09.485Z - error: Can not declare control.onLoad, it is already defined in the prototype of control
+    at Object.cc.errorID (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/CCDebug.js:167:16)
+    at defineProp (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:121:24)
+    at declareProperties (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:635:25)
+    at Object.CCClass [as Class] (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:674:17)
+    at __define (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:8:4)
+    at /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:115:13
+    at Object.<anonymous> (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:122:11)
+    at Object.<anonymous> (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:125:3)
+    at Module._compile (module.js:571:32)
+2021-12-09T08:42:09.485Z - error: Can not declare control.update, it is already defined in the prototype of control
+    at Object.cc.errorID (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/CCDebug.js:167:16)
+    at defineProp (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:121:24)
+    at declareProperties (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:635:25)
+    at Object.CCClass [as Class] (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:674:17)
+    at __define (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:8:4)
+    at /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:115:13
+    at Object.<anonymous> (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:122:11)
+    at Object.<anonymous> (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:125:3)
+    at Module._compile (module.js:571:32)
+2021-12-09T08:42:12.260Z - failed: Failed to import script db://assets/Script/new/library'.js: Compile error: SyntaxError: Unterminated string constant (2:138) while parsing /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/library'.js while parsing file: /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/library'.js
+    at DestroyableTransform.end [as _flush] (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/insert-module-globals/index.js:96:21)
+    at DestroyableTransform.prefinish (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/readable-stream/lib/_stream_transform.js:138:10)
+    at emitNone (events.js:86:13)
+    at DestroyableTransform.emit (events.js:188:7)
+    at prefinish (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/readable-stream/lib/_stream_writable.js:619:14)
+    at finishMaybe (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/readable-stream/lib/_stream_writable.js:627:5)
+    at endWritable (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/readable-stream/lib/_stream_writable.js:638:3)
+    at DestroyableTransform.Writable.end (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/readable-stream/lib/_stream_writable.js:594:41)
+    at DestroyableTransform.onend (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/readable-stream/lib/_stream_readable.js:577:10)
+    at Object.onceWrapper (events.js:293:19)
+2021-12-09T08:42:12.592Z - error: Property 'control.properties' must define at least one of 'default', 'get' or 'set'.
+    at Object.cc.errorID (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/CCDebug.js:167:16)
+    at Object.exports.preprocessAttrs (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/preprocess-class.js:215:36)
+    at declareProperties (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:631:28)
+    at Object.CCClass [as Class] (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:674:17)
+    at __define (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:8:4)
+    at /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:115:13
+    at Object.<anonymous> (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:122:11)
+    at Object.<anonymous> (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:125:3)
+    at Module._compile (module.js:571:32)
+2021-12-09T08:42:12.593Z - error: Can not declare control.onLoad, it is already defined in the prototype of control
+    at Object.cc.errorID (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/CCDebug.js:167:16)
+    at defineProp (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:121:24)
+    at declareProperties (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:635:25)
+    at Object.CCClass [as Class] (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:674:17)
+    at __define (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:8:4)
+    at /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:115:13
+    at Object.<anonymous> (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:122:11)
+    at Object.<anonymous> (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:125:3)
+    at Module._compile (module.js:571:32)
+2021-12-09T08:42:12.594Z - error: Can not declare control.update, it is already defined in the prototype of control
+    at Object.cc.errorID (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/CCDebug.js:167:16)
+    at defineProp (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:121:24)
+    at declareProperties (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:635:25)
+    at Object.CCClass [as Class] (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:674:17)
+    at __define (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:8:4)
+    at /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:115:13
+    at Object.<anonymous> (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:122:11)
+    at Object.<anonymous> (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:125:3)
+    at Module._compile (module.js:571:32)
+2021-12-09T08:42:12.594Z - failed: load script [/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/library'.js] failed : /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/library'.js:1
+(function (exports, require, module, __filename, __dirname, process, global, Buffer) { return function (exports, require, module, __filename, __dirname) { (function() {"use strict";var __module = CC_EDITOR ? module : {exports:{}};var __filename = 'preview-scripts/assets/Script/new/library'.js';var __require = CC_EDITOR ? function (request) {return cc.require(request, require);} : function (request) {return cc.require(request, __filename);};function __define (exports, require, module) {"use strict";
+                                                                                                                                                                                                                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: Invalid or unexpected token
+    at createScript (vm.js:53:10)
+    at Object.runInThisContext (vm.js:95:10)
+    at Module._compile (module.js:543:28)
+    at Object.Module._extensions..js (module.js:580:10)
+    at Module.load (module.js:488:32)
+    at tryModuleLoad (module.js:447:12)
+    at Function.Module._load (module.js:439:3)
+    at Module.require (module.js:498:17)
+    at require (internal/module.js:20:19)
+    at c (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:458)
+2021-12-09T08:42:15.826Z - error: Property 'control.properties' must define at least one of 'default', 'get' or 'set'.
+    at Object.cc.errorID (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/CCDebug.js:167:16)
+    at Object.exports.preprocessAttrs (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/preprocess-class.js:215:36)
+    at declareProperties (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:631:28)
+    at Object.CCClass [as Class] (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:674:17)
+    at __define (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:8:4)
+    at /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:115:13
+    at Object.<anonymous> (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:122:11)
+    at Object.<anonymous> (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:125:3)
+    at Module._compile (module.js:571:32)
+2021-12-09T08:42:15.827Z - error: Can not declare control.onLoad, it is already defined in the prototype of control
+    at Object.cc.errorID (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/CCDebug.js:167:16)
+    at defineProp (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:121:24)
+    at declareProperties (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:635:25)
+    at Object.CCClass [as Class] (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:674:17)
+    at __define (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:8:4)
+    at /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:115:13
+    at Object.<anonymous> (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:122:11)
+    at Object.<anonymous> (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:125:3)
+    at Module._compile (module.js:571:32)
+2021-12-09T08:42:15.827Z - error: Can not declare control.update, it is already defined in the prototype of control
+    at Object.cc.errorID (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/CCDebug.js:167:16)
+    at defineProp (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:121:24)
+    at declareProperties (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:635:25)
+    at Object.CCClass [as Class] (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:674:17)
+    at __define (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:8:4)
+    at /Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:115:13
+    at Object.<anonymous> (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:122:11)
+    at Object.<anonymous> (/Users/fe-huuloc-fresher/Desktop/APK/HelloWorld/QuizTest/temp/quick-scripts/assets/Script/new/control.js:125:3)
+    at Module._compile (module.js:571:32)
