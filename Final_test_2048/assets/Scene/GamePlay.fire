@@ -4491,7 +4491,7 @@
     "_position": {
       "__type__": "cc.Vec3",
       "x": -5,
-      "y": 227,
+      "y": 194.457,
       "z": 0
     },
     "_scale": {
@@ -7707,6 +7707,8 @@
     "list": {
       "__id__": 96
     },
+    "listItem": [],
+    "test": 5,
     "_id": "5bLhvryXxAzY5KoMJcepfM"
   }
 ]

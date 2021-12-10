@@ -23,47 +23,52 @@ cc.Class({
 
     },
     update(dt) {
-        if (this.flagLeft || this.flagJump || this.flafRight) {
-            if (this._count > this.frameEnd) {
-                this.visibleBtn(true);
-                this.resetFlag();
-                // Emitter.instance.emit("LOCKPRESS", true);
-                return;
-            }
-            else {
-                // Emitter.instance.emit("LOCKPRESS", false);
-                if (this.flagLeft) {
-                    this.target.scaleX = 0.5;
-                    this.target.x -= this.moveSpeed;
-                    this.visibleBtn(false);
-                    if (this.target.x < 85) {
-                        this.target.x = 85;
-                    }
-                } else if (this.flafRight) {
-                    this.target.scaleX = -0.5;
-                    this.target.x += this.moveSpeed;
-                    this.visibleBtn(false);
-                    if (this.target.x >= 872) {
-                        this.target.x = 872;
-                    }
-                } else if (this.flagJump) {
-                    this.visibleBtn(false);
-                    if (this._count < this.frameEnd / 3) {
-                        this.target.y += this.moveSpeed;
-                    } else if (this._count >= this.frameEnd * 2 / 3) {
-                        this.target.y -= this.moveSpeed;
-                    } else if (this._count >= this.frameEnd / 3 && this._count < this.frameEnd * 2 / 3) {
-                        if (this.target.scaleX < 0) {
-                            this.target.angle -= 360 / (this.frameEnd / 3);
-                        }
-                        else {
-                            this.target.angle += 360 / (this.frameEnd / 3);
-                        }
-                    }
-                }
-            }
-            this._count++;
-        }
+        // if (this.flagLeft || this.flagJump || this.flafRight) {
+        //     if (this._count > this.frameEnd) {
+        //         this.visibleBtn(true);
+        //         this.resetFlag();
+        //         // Emitter.instance.emit("LOCKPRESS", true);
+        //         return;
+        //     }
+        //     else {
+        //         // Emitter.instance.emit("LOCKPRESS", false);
+        //         if (this.flagLeft) {
+        //             this.target.scaleX = 0.5;
+        //             this.target.x -= this.moveSpeed;
+        //             this.visibleBtn(false);
+        //             if (this.target.x < 85) {
+        //                 this.target.x = 85;
+        //             }
+        //         } else if (this.flafRight) {
+        //             this.target.scaleX = -0.5;
+        //             this.target.x += this.moveSpeed;
+        //             this.visibleBtn(false);
+        //             if (this.target.x >= 872) {
+        //                 this.target.x = 872;
+        //             }
+        //         } else if (this.flagJump) {
+        //             this.visibleBtn(false);
+        //             if (this._count < this.frameEnd / 3) {
+        //                 this.target.y += this.moveSpeed;
+        //             } else if (this._count >= this.frameEnd * 2 / 3) {
+        //                 this.target.y -= this.moveSpeed;
+        //             } else if (this._count >= this.frameEnd / 3 && this._count < this.frameEnd * 2 / 3) {
+        //                 if (this.target.scaleX < 0) {
+        //                     this.target.angle -= 360 / (this.frameEnd / 3);
+        //                 }
+        //                 else {
+        //                     this.target.angle += 360 / (this.frameEnd / 3);
+        //                 }
+        //             }
+        //         }
+        //     }
+        //     this._count++;
+        // }
+
+    },
+    move_LeftSide() {
+        var action = cc.moveTo(5, 700, 230);
+        this.target.runAction(action);
     },
     disablePress(value) {
 

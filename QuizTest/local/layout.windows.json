@@ -6,10 +6,10 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 0,
-      "y": 0,
-      "width": 1680,
-      "height": 1050,
+      "x": 105,
+      "y": 44,
+      "width": 1283,
+      "height": 723,
       "layout": {
         "children": [
           {
@@ -88,32 +88,6 @@
         "cocos-services",
         "node-library",
         "scene"
-      ]
-    },
-    "window-1639061428775": {
-      "main": false,
-      "url": "unpack://static/window.html",
-      "windowType": "dockable",
-      "x": 489,
-      "y": 133,
-      "width": 601,
-      "height": 566,
-      "layout": {
-        "children": [
-          {
-            "active": 0,
-            "children": [
-              "preferences"
-            ],
-            "height": 544,
-            "type": "panel",
-            "width": 601
-          }
-        ],
-        "type": "dock-v"
-      },
-      "panels": [
-        "preferences"
       ]
     }
   },
