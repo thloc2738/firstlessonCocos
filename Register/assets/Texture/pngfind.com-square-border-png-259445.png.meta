@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.4",
+  "ver": "2.3.3",
   "uuid": "f2f1da6d-2c0b-4e70-9dbb-9ba5c5f5f5d1",
   "type": "sprite",
   "wrapMode": "clamp",
@@ -7,8 +7,6 @@
   "premultiplyAlpha": false,
   "genMipmaps": false,
   "packable": true,
-  "width": 989,
-  "height": 989,
   "platformSettings": {},
   "subMetas": {
     "pngfind.com-square-border-png-259445": {

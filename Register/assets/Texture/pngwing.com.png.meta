@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.4",
+  "ver": "2.3.3",
   "uuid": "d55219dd-479f-40e9-84ac-d0e44a7b6e08",
   "type": "sprite",
   "wrapMode": "clamp",
@@ -7,8 +7,6 @@
   "premultiplyAlpha": false,
   "genMipmaps": false,
   "packable": true,
-  "width": 7959,
-  "height": 8000,
   "platformSettings": {},
   "subMetas": {
     "pngwing.com": {

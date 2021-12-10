@@ -1,0 +1,154 @@
+2021-12-09T10:42:28.953Z - normal: Load ~/.CocosCreator/settings.json
+2021-12-09T10:42:28.988Z - normal: Initializing Asset Database
+2021-12-09T10:42:28.991Z - normal: checking language setting...
+2021-12-09T10:42:28.991Z - normal: Language: en
+2021-12-09T10:42:29.422Z - success: preview server running at http://localhost:7457
+2021-12-09T10:42:29.432Z - success: protocol editor-framework registered
+2021-12-09T10:42:29.432Z - success: protocol app registered
+2021-12-09T10:42:29.432Z - success: protocol theme registered
+2021-12-09T10:42:29.432Z - success: protocol packages registered
+2021-12-09T10:42:29.432Z - success: protocol uuid registerred
+2021-12-09T10:42:29.432Z - success: protocol db registerred
+2021-12-09T10:42:29.432Z - success: protocol thumbnail registerred
+2021-12-09T10:42:29.432Z - success: protocol unpack registerred
+2021-12-09T10:42:29.432Z - success: protocol disable-commonjs registerred
+2021-12-09T10:42:31.794Z - normal: connected!
+2021-12-09T10:42:31.795Z - normal: Check project /Users/fe-huuloc-fresher/Desktop/firstlessonCocos/Register
+2021-12-09T10:42:31.796Z - normal: Initializing project /Users/fe-huuloc-fresher/Desktop/firstlessonCocos/Register
+2021-12-09T10:42:32.057Z - normal: Initializing Cocos2d
+2021-12-09T10:42:32.551Z - normal: Initializing engine extends
+2021-12-09T10:42:32.573Z - success: alipay-adapter loaded
+2021-12-09T10:42:32.584Z - success: asset-db-debugger loaded
+2021-12-09T10:42:32.587Z - success: baidu-adapter loaded
+2021-12-09T10:42:32.591Z - success: color-picker loaded
+2021-12-09T10:42:32.710Z - success: fb-audience-network loaded
+2021-12-09T10:42:32.746Z - success: fb-live-stream loaded
+2021-12-09T10:42:32.748Z - success: google-play-instant loaded
+2021-12-09T10:42:32.762Z - success: huawei-runtime loaded
+2021-12-09T10:42:32.905Z - success: cpk-publish loaded
+2021-12-09T10:42:32.905Z - success: jsb-adapter loaded
+2021-12-09T10:42:32.908Z - success: oppo-runtime loaded
+2021-12-09T10:42:32.912Z - success: package-manager loaded
+2021-12-09T10:42:32.994Z - success: qqplay-adapter loaded
+2021-12-09T10:42:32.995Z - success: runtime-dev-tools loaded
+2021-12-09T10:42:32.999Z - success: sdkbox loaded
+2021-12-09T10:42:33.002Z - success: tester loaded
+2021-12-09T10:42:33.005Z - success: ui-kit-preview-extra loaded
+2021-12-09T10:42:33.009Z - success: ui-kit-preview loaded
+2021-12-09T10:42:33.012Z - success: ui-kit loaded
+2021-12-09T10:42:33.017Z - success: vivo-runtime loaded
+2021-12-09T10:42:33.018Z - success: weapp-adapter loaded
+2021-12-09T10:42:33.018Z - success: xiaomi-adapter loaded
+2021-12-09T10:42:33.020Z - success: alipay-minigame loaded
+2021-12-09T10:42:33.054Z - success: assets loaded
+2021-12-09T10:42:33.057Z - success: builder loaded
+2021-12-09T10:42:33.227Z - success: cocos-services loaded
+2021-12-09T10:42:33.232Z - success: console loaded
+2021-12-09T10:42:33.256Z - success: fb-instant-games loaded
+2021-12-09T10:42:33.259Z - success: game-window loaded
+2021-12-09T10:42:33.260Z - success: google-instant-games loaded
+2021-12-09T10:42:33.264Z - success: hierarchy loaded
+2021-12-09T10:42:33.266Z - success: inspector loaded
+2021-12-09T10:42:33.267Z - success: keystore loaded
+2021-12-09T10:42:33.271Z - success: node-library loaded
+2021-12-09T10:42:33.272Z - success: package-asset loaded
+2021-12-09T10:42:33.273Z - success: preferences loaded
+2021-12-09T10:42:33.275Z - success: project-exporter loaded
+2021-12-09T10:42:33.279Z - success: project-importer loaded
+2021-12-09T10:42:33.281Z - success: project-settings loaded
+2021-12-09T10:42:33.285Z - success: scene loaded
+2021-12-09T10:42:33.286Z - success: simulator-debugger loaded
+2021-12-09T10:42:33.286Z - success: sprite-editor loaded
+2021-12-09T10:42:33.289Z - success: store loaded
+2021-12-09T10:42:33.296Z - success: timeline loaded
+2021-12-09T10:42:33.299Z - success: xiaomi-runtime loaded
+2021-12-09T10:42:38.044Z - normal: Loading packages
+2021-12-09T10:42:38.050Z - normal: Watching packages
+2021-12-09T10:42:38.121Z - normal: Run Application
+2021-12-09T10:42:41.829Z - warn: Please change the definition of property 'fail' in class 'controller'. Starting from v1.10,
+properties in CCClass can not be abbreviated if they are of type RawAsset.
+Please use the complete form.
+For example, if the type is Texture2D, the previous definition is:
+    fail: cc.Texture2D,
+If you use JS, it should be changed to:
+    fail: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+      default: null,     // object's default value is null
+    },
+If you use TS, it should be changed to:
+    %s: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+    }
+    %s: cc.Texture2D = null;
+(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
+2021-12-09T10:42:41.829Z - warn: Please change the definition of property 'success' in class 'controller'. Starting from v1.10,
+properties in CCClass can not be abbreviated if they are of type RawAsset.
+Please use the complete form.
+For example, if the type is Texture2D, the previous definition is:
+    success: cc.Texture2D,
+If you use JS, it should be changed to:
+    success: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+      default: null,     // object's default value is null
+    },
+If you use TS, it should be changed to:
+    %s: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+    }
+    %s: cc.Texture2D = null;
+(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
+2021-12-09T10:42:41.830Z - warn: Please change the definition of property 'infoSuccess' in class 'controller'. Starting from v1.10,
+properties in CCClass can not be abbreviated if they are of type RawAsset.
+Please use the complete form.
+For example, if the type is Texture2D, the previous definition is:
+    infoSuccess: cc.Texture2D,
+If you use JS, it should be changed to:
+    infoSuccess: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+      default: null,     // object's default value is null
+    },
+If you use TS, it should be changed to:
+    %s: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+    }
+    %s: cc.Texture2D = null;
+(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
+2021-12-09T10:42:41.830Z - warn: Please change the definition of property 'backAudio' in class 'controller'. Starting from v1.10,
+properties in CCClass can not be abbreviated if they are of type RawAsset.
+Please use the complete form.
+For example, if the type is Texture2D, the previous definition is:
+    backAudio: cc.Texture2D,
+If you use JS, it should be changed to:
+    backAudio: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+      default: null,     // object's default value is null
+    },
+If you use TS, it should be changed to:
+    %s: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+    }
+    %s: cc.Texture2D = null;
+(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
+2021-12-09T10:42:41.830Z - warn: Please change the definition of property 'nextAudio' in class 'controller'. Starting from v1.10,
+properties in CCClass can not be abbreviated if they are of type RawAsset.
+Please use the complete form.
+For example, if the type is Texture2D, the previous definition is:
+    nextAudio: cc.Texture2D,
+If you use JS, it should be changed to:
+    nextAudio: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+      default: null,     // object's default value is null
+    },
+If you use TS, it should be changed to:
+    %s: {
+      type: cc.Texture2D // use 'type:' to define Texture2D object directly
+    }
+    %s: cc.Texture2D = null;
+(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
+2021-12-09T10:42:41.916Z - warn: Script attached to "Canvas" in scene "helloworld.fire" is missing or invalid. Detailed information:
+Node path: "Canvas"
+Asset url: "db://assets/Scene/helloworld.fire"
+Script UUID: "280c3aec-6492-4a9d-9f51-a9b00b570b4a"
+Class ID: "280c3rsZJJKnZ9RqbALVwtK"
+
+2021-12-09T10:53:30.917Z - info: shutdown preview server
