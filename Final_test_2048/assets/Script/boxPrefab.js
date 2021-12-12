@@ -1,4 +1,4 @@
-
+const Emitter = require('registerEvent');
 cc.Class({
     extends: cc.Component,
 
@@ -8,7 +8,9 @@ cc.Class({
     },
 
 
-    // onLoad () {},
+    onLoad () {
+      
+    },
 
     start () {
 
