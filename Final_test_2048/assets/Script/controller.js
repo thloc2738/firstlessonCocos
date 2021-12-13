@@ -55,7 +55,6 @@ cc.Class({
     },
     onLoad(){
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.moveRight, this);
-        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
         
         this.emptyTable(false);
         this.createTable()
@@ -78,6 +77,7 @@ cc.Class({
         this.isFill[number] = true;
         }
     },
+
     moveRight: function (event) {
         switch(event.keyCode) {
             case cc.macro.KEY.right:
@@ -87,14 +87,7 @@ cc.Class({
         }
     },
 
-    onKeyDown: function (event) {
-        switch(event.keyCode) {
-            case cc.macro.KEY.right:
-                console.log('Press a key');
-                this.rightMoment(this.isFill);
-                break;
-        }
-    },
+    
 
     rightMoment(list){
         cc.log("aa "+ this.fillTable);
@@ -121,7 +114,7 @@ cc.Class({
                 cc.log("ac " + index2);
                 if(this.mainScene.children[index1] && this.mainScene.children[index2]){
                     this.mainScene.children[index2].x = this.mainScene.children[index1].x; 
-                    this.mainScene.children[index2].y = this.mainScene.children[index1].y;
+                    this.mainScene.children[index2].y = this.mainScene.children[index].y;
                 }
                 break;
                 // if(list[i] == false){
