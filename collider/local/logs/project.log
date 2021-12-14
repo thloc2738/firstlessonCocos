@@ -1,0 +1,151 @@
+2021-12-14T06:39:47.272Z - normal: Load ~/.CocosCreator/settings.json
+2021-12-14T06:39:47.308Z - normal: Initializing Asset Database
+2021-12-14T06:39:47.311Z - normal: checking language setting...
+2021-12-14T06:39:47.311Z - normal: Language: en
+2021-12-14T06:39:47.743Z - success: preview server running at http://localhost:7457
+2021-12-14T06:39:47.752Z - success: protocol editor-framework registered
+2021-12-14T06:39:47.752Z - success: protocol app registered
+2021-12-14T06:39:47.752Z - success: protocol theme registered
+2021-12-14T06:39:47.753Z - success: protocol packages registered
+2021-12-14T06:39:47.753Z - success: protocol uuid registerred
+2021-12-14T06:39:47.753Z - success: protocol db registerred
+2021-12-14T06:39:47.753Z - success: protocol thumbnail registerred
+2021-12-14T06:39:47.753Z - success: protocol unpack registerred
+2021-12-14T06:39:47.753Z - success: protocol disable-commonjs registerred
+2021-12-14T06:39:49.190Z - normal: connected!
+2021-12-14T06:39:49.191Z - normal: Check project /Users/fe-huuloc-fresher/Downloads/trainning
+2021-12-14T06:39:49.192Z - normal: Initializing project /Users/fe-huuloc-fresher/Downloads/trainning
+2021-12-14T06:39:49.432Z - normal: Initializing Cocos2d
+2021-12-14T06:39:49.860Z - normal: Initializing engine extends
+2021-12-14T06:39:49.875Z - success: alipay-adapter loaded
+2021-12-14T06:39:49.883Z - success: asset-db-debugger loaded
+2021-12-14T06:39:49.887Z - success: baidu-adapter loaded
+2021-12-14T06:39:49.890Z - success: color-picker loaded
+2021-12-14T06:39:49.981Z - success: fb-audience-network loaded
+2021-12-14T06:39:50.024Z - success: fb-live-stream loaded
+2021-12-14T06:39:50.026Z - success: google-play-instant loaded
+2021-12-14T06:39:50.029Z - success: huawei-runtime loaded
+2021-12-14T06:39:50.169Z - success: cpk-publish loaded
+2021-12-14T06:39:50.170Z - success: jsb-adapter loaded
+2021-12-14T06:39:50.177Z - success: oppo-runtime loaded
+2021-12-14T06:39:50.180Z - success: package-manager loaded
+2021-12-14T06:39:50.250Z - success: qqplay-adapter loaded
+2021-12-14T06:39:50.251Z - success: runtime-dev-tools loaded
+2021-12-14T06:39:50.255Z - success: sdkbox loaded
+2021-12-14T06:39:50.258Z - success: tester loaded
+2021-12-14T06:39:50.260Z - success: ui-kit-preview-extra loaded
+2021-12-14T06:39:50.262Z - success: ui-kit-preview loaded
+2021-12-14T06:39:50.265Z - success: ui-kit loaded
+2021-12-14T06:39:50.268Z - success: vivo-runtime loaded
+2021-12-14T06:39:50.268Z - success: weapp-adapter loaded
+2021-12-14T06:39:50.269Z - success: xiaomi-adapter loaded
+2021-12-14T06:39:50.270Z - success: alipay-minigame loaded
+2021-12-14T06:39:50.304Z - success: assets loaded
+2021-12-14T06:39:50.306Z - success: builder loaded
+2021-12-14T06:39:50.472Z - success: cocos-services loaded
+2021-12-14T06:39:50.479Z - success: console loaded
+2021-12-14T06:39:50.504Z - success: fb-instant-games loaded
+2021-12-14T06:39:50.507Z - success: game-window loaded
+2021-12-14T06:39:50.508Z - success: google-instant-games loaded
+2021-12-14T06:39:50.511Z - success: hierarchy loaded
+2021-12-14T06:39:50.517Z - success: inspector loaded
+2021-12-14T06:39:50.518Z - success: keystore loaded
+2021-12-14T06:39:50.522Z - success: node-library loaded
+2021-12-14T06:39:50.523Z - success: package-asset loaded
+2021-12-14T06:39:50.523Z - success: preferences loaded
+2021-12-14T06:39:50.525Z - success: project-exporter loaded
+2021-12-14T06:39:50.529Z - success: project-importer loaded
+2021-12-14T06:39:50.532Z - success: project-settings loaded
+2021-12-14T06:39:50.536Z - success: scene loaded
+2021-12-14T06:39:50.537Z - success: simulator-debugger loaded
+2021-12-14T06:39:50.537Z - success: sprite-editor loaded
+2021-12-14T06:39:50.540Z - success: store loaded
+2021-12-14T06:39:50.545Z - success: timeline loaded
+2021-12-14T06:39:50.548Z - success: xiaomi-runtime loaded
+2021-12-14T06:39:53.124Z - info: Cocos Services load base data!
+2021-12-14T06:39:54.587Z - normal: Loading packages
+2021-12-14T06:39:54.591Z - normal: Watching packages
+2021-12-14T06:39:54.664Z - normal: Run Application
+2021-12-14T07:43:15.431Z - info: Only the prefab node "HelloWorld" and its child nodes are saved.
+2021-12-14T07:48:28.901Z - failed: [db-task][sync-changes] Failed to import asset /Users/fe-huuloc-fresher/Downloads/trainning/assets/Script/playerControl.js, message: Compile error: SyntaxError: /Users/fe-huuloc-fresher/Downloads/trainning/assets/Script/playerControl.js: Unexpected token, expected , (6:22)
+  4 | 
+  5 |     properties: {
+> 6 |         isTouch: false;
+    |                       ^
+  7 |     },
+  8 | 
+  9 |     // LIFE-CYCLE CALLBACKS:
+    at Parser.pp$5.raise (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.pp.unexpected (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:1761:8)
+    at Parser.pp.expect (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:1749:33)
+    at Parser.pp$3.parseObj (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3978:12)
+    at Parser.pp$3.parseExprAtom (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3719:19)
+    at Parser.pp$3.parseExprSubscripts (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3494:19)
+    at Parser.pp$3.parseMaybeUnary (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3474:19)
+    at Parser.pp$3.parseExprOps (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3404:19)
+    at Parser.pp$3.parseMaybeConditional (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3381:19)
+    at Parser.pp$3.parseMaybeAssign (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3344:19)
+2021-12-14T08:14:58.396Z - error: Load text file failed: /Users/fe-huuloc-fresher/Downloads/trainning/library/imports/03/037c05a9-86cd-4215-bd89-b99a3ccf01c0.json?_t=1639469698313(error)
+    at /Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/uuid-loader.js:126:36
+    at LoadingItems.onComplete (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/CCLoader.js:179:17)
+    at LoadingItems.proto.allComplete (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/loading-items.js:282:22)
+    at LoadingItems.proto.itemComplete (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/loading-items.js:360:22)
+    at Function.LoadingItems.itemComplete (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/loading-items.js:176:23)
+    at CCLoader.proto.flowOut (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/pipeline.js:154:26)
+    at /Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/pipeline.js:46:38
+    at /Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/uuid-loader.js:152:21
+    at LoadingItems.onComplete (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/CCLoader.js:179:17)
+2021-12-14T08:14:58.397Z - error: Load text file failed: /Users/fe-huuloc-fresher/Downloads/trainning/library/imports/03/037c05a9-86cd-4215-bd89-b99a3ccf01c0.json?_t=1639469698313(error)
+    at /Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/uuid-loader.js:126:36
+    at LoadingItems.onComplete (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/CCLoader.js:179:17)
+    at LoadingItems.proto.allComplete (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/loading-items.js:282:22)
+    at LoadingItems.proto.itemComplete (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/loading-items.js:360:22)
+    at Function.LoadingItems.itemComplete (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/loading-items.js:176:23)
+    at CCLoader.proto.flowOut (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/pipeline.js:154:26)
+    at /Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/pipeline.js:46:38
+    at /Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/uuid-loader.js:152:21
+    at LoadingItems.onComplete (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/CCLoader.js:179:17)
+2021-12-14T08:14:58.398Z - error: Load text file failed: /Users/fe-huuloc-fresher/Downloads/trainning/library/imports/03/037c05a9-86cd-4215-bd89-b99a3ccf01c0.json?_t=1639469698313(error)
+    at /Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/uuid-loader.js:126:36
+    at LoadingItems.onComplete (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/CCLoader.js:179:17)
+    at LoadingItems.proto.allComplete (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/loading-items.js:282:22)
+    at LoadingItems.proto.itemComplete (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/loading-items.js:360:22)
+    at Function.LoadingItems.itemComplete (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/loading-items.js:176:23)
+    at CCLoader.proto.flowOut (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/pipeline.js:154:26)
+    at /Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/pipeline.js:46:38
+    at /Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/uuid-loader.js:152:21
+    at LoadingItems.onComplete (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/load-pipeline/CCLoader.js:179:17)
+2021-12-14T08:29:22.707Z - warn: Script attached to "New Sprite(Splash)" is missing or invalid. Detailed information:
+Node path: "New Sprite(Splash)"
+Script UUID: "19456deb-c1c4-4bf7-a164-67cc52090ca3"
+Class ID: "194563rwcRL96FkZ8xSCQyj"
+
+2021-12-14T08:40:54.386Z - failed: [db-task][sync-changes] Failed to import asset /Users/fe-huuloc-fresher/Downloads/trainning/assets/Script/playerControl.js, message: Compile error: SyntaxError: /Users/fe-huuloc-fresher/Downloads/trainning/assets/Script/playerControl.js: Invalid number (38:45)
+  36 |     jump() {
+  37 |         this.animJump();
+> 38 |         var seq = cc.sequence(cc.moveBy(0.4, 00, 70), cc.moveBy(0.4, 00, -70))
+     |                                              ^
+  39 |         this.player.runAction(seq);
+  40 |     },
+  41 |     animJump() {
+    at Parser.pp$5.raise (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:4454:13)
+    at Parser.readNumber (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:1268:12)
+    at Parser.getTokenFromCode (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:1102:21)
+    at Parser.readToken (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:776:19)
+    at Parser.nextToken (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:766:19)
+    at Parser.next (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:691:10)
+    at Parser.eat (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:698:12)
+    at Parser.pp.expect (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:1749:15)
+    at Parser.pp$3.parseCallExpressionArguments (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3564:12)
+    at Parser.pp$3.parseSubscripts (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3533:31)
+2021-12-14T09:33:50.333Z - error: Can not find cc.Component in the script 194563rwcRL96FkZ8xSCQyj.
+    at Object.addComponent (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/scene-utils/utils/scene.js:1:6036)
+    at HTMLElement.add-component (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/builtin/scene/panel/messages/scene-operation.js:1:1171)
+    at Object.e._dispatch (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/lib/renderer/panel.js:1:1941)
+    at EventEmitter.o.on.s (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor-framework/lib/renderer/ipc.js:1:2921)
+    at emitMany (events.js:127:13)
+    at EventEmitter.emit (events.js:204:7)
+2021-12-14T09:54:06.380Z - info: Only the prefab node "HelloWorld" and its child nodes are saved.
+2021-12-14T10:07:10.701Z - info: Only the prefab node "pokemon-3" and its child nodes are saved.
+2021-12-14T10:10:05.665Z - info: Only the prefab node "HelloWorld" and its child nodes are saved.
+2021-12-14T10:55:12.433Z - info: shutdown preview server
