@@ -54,15 +54,14 @@ cc.Class({
     },
     onLoad() {
 
-        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.moveRight, this);
+        // cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.moveRight, this);
 
-        this.emptyTable(false);
-        this.createTable()
-        let number;
-        this.mainScene.on(cc.Node.EventType.MOUSE_DOWN, function (event) {
-            this.addItemInBox(this.isFill);
-
-        }, this);
+        // this.emptyTable(0);
+        // this.createTable()
+        // let number;
+        // this.mainScene.on(cc.Node.EventType.MOUSE_DOWN, function (event) {
+        //     this.addItemInBox(this.isFill);
+        // }, this);
     },
     addItemInBox(listItem) {
         let number;
@@ -70,12 +69,12 @@ cc.Class({
             do {
                 number = Math.floor(Math.random() * 16);
 
-            } while (this.isCreate(number, this.fillTable) == true && this.fillTable.length <= 15 && listItem[number] == true);
+            } while (this.isCreate(number, this.fillTable) == true && this.fillTable.length <= 15 && listItem[number] != 0);
             cc.log("NUMBER: " + this.fillTable.length);
 
             this.createItem(number, this.count);
             this.fillTable.push(number);
-            listItem[number] = true;
+            listItem[number] = 2;
             cc.log(listItem);
         }
     },
@@ -88,51 +87,64 @@ cc.Class({
                 break;
         }
     },
-
-
-    rightMoment(list) {
-        cc.log("aa " + this.fillTable);
-        for (let i = 0; i < 16; i++) {
-            if (this.fillTable.length > 0) {
-                if (i % 4 == 3) {
-                    if (this.isFill[i] == false) { // i = false
-                        if (this.isFill[i - 1] == true) {   // i-1 = true
-                            for (let j = 0; j < this.fillTable.length; j++) { // i-1 -> i
-                                if ((i - 1) == this.fillTable[j]) {
-                                    this.isFill[i - 1] = false;
-                                    this.isFill[i] = true;
-                                    this.fillTable[j] = i;
-                                    this.mainScene.children[j].x = this.xPosition[i];
-                                    this.mainScene.children[j].y = this.yPosition[i];
-                                }
-                            }
-                            if (this.isFill[i - 2] == true) { // i-2 = true
-                                for (let j = 0; j < this.fillTable.length; j++) {
-                                    if ((i - 2) == this.fillTable[j]) {
-                                        this.isFill[i - 2] = false;
-                                        this.isFill[i - 1] = true;
-                                        this.fillTable[j] = i - 1;
-                                        this.mainScene.children[j].x = this.xPosition[i - 1];
-                                        this.mainScene.children[j].y = this.yPosition[i - 1];
-                                    }
-                                }
-                            }
+    goRight(list){
+        for (let i = list.length - 1 ; i >= 0; i--) {
+            let k = i;
+            if (i > 0) {
+                if(i%4 == 3){
+                    while(this.arr[i] == 0 && k > 0){
+                        if(this.arr[k-1] == 0){
+                            k--;
                         }
-                        else {               //[i-1] = false
-
-                        }
-
-                        for (let k = 0; k < this.fillTable.length; k++) {
-
-                        }
-                    }
-                    else {           // i = true
-                        if (this.isFill[i - 1] == false) {
-
+                        else{
+                            this.arr[i] = this.arr[k-1];
+                            this.arr[k-1] = 0;
+                            k--;
                         }
                     }
                 }
+                
             }
+        }
+        for(let i = list.length -1 ; i > 0; i--) {
+            let k = i;
+            if(i%4 == 3){
+                if(this.arr[i] != this.arr[i-1]){
+                }
+                else{
+                    this.arr[i] += this.arr[i-1];
+                    this.arr[i-1] = 0;
+                }
+            }
+            
+
+        }
+        for (let i = list.length -1 ; i >= 0; i--) {
+            let k = i;
+            if (i > 0) {
+                if(i%4 == 3){
+                    while(this.arr[i] == 0 && k > 0){
+                        if(this.arr[k-1] == 0){
+                            k--;
+                        }
+                        else{
+                            this.arr[i] = this.arr[k-1];
+                            this.arr[k-1] = 0;
+                            k--;
+                        }
+                    }
+                }
+               
+            }
+        }
+        cc.log(this.arr)
+    },
+
+    rightMoment(list) {
+        for (let i = 0; i < 16; i++) {
+           if(this.fillTable.length > 0){
+
+           }
         }
         cc.log(this.isFill);
     },
