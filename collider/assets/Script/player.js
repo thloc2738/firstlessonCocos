@@ -6,6 +6,7 @@ cc.Class({
         target: cc.Node,
         isTouch: false,
         deltatime: 0,
+
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -14,6 +15,11 @@ cc.Class({
         let manager = cc.director.getCollisionManager();
         manager.enabled = true;
         manager.enabledDebugDraw = true;
+        this.spAnim.setEventListener((entry, event) => {
+            const { data } = event;
+            cc.log(data.name);
+
+        });
     },
 
     start() {

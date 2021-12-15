@@ -21,14 +21,19 @@
       false,
       true,
       false,
-      false
+      false,
+      null,
+      null,
+      true
     ],
     [
       false,
       true,
       false,
       false,
-      false
+      false,
+      null,
+      true
     ],
     [
       false,
@@ -36,6 +41,16 @@
       false,
       false,
       false,
+      false,
+      true
+    ],
+    [
+      false,
+      false,
+      false,
+      true,
+      true,
+      true,
       false
     ]
   ],
@@ -60,9 +75,10 @@
     "Ground",
     "pipe",
     "wall",
-    "Enemy"
+    "Enemy",
+    "bullet"
   ],
-  "last-module-event-record-time": 0,
+  "last-module-event-record-time": 1639558255697,
   "simulator-orientation": false,
   "simulator-resolution": {
     "height": 640,

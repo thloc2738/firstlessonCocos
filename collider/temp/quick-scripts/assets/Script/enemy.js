@@ -4,6 +4,7 @@ cc._RF.push(module, '4e58f1dRN9MnZxSiacN9Ruk', 'enemy', __filename);
 
 'use strict';
 
+var Emitter = require('registerEvent');
 cc.Class({
     extends: cc.Component,
 
@@ -15,13 +16,16 @@ cc.Class({
     },
 
     onCollisionEnter: function onCollisionEnter(other, self) {
-        var _this = this;
-
         console.log('on collision enter');
-        var action = cc.sequence(cc.delayTime(0.25), cc.callFunc(function () {
-            _this.node.destroy();
-        }));
-        this.node.runAction(action);
+        if (other.tag == 3 && self.tag == 1) {
+            this.node.destroy();
+        }
+
+        // let action = cc.sequence(cc.delayTime(0.35), cc.callFunc(() => {
+        //     this.node.destroy();
+        // }));
+        // this.node.runAction(action);
+
     },
     onCollisionStay: function onCollisionStay(other, self) {
         console.log('on collision stay');

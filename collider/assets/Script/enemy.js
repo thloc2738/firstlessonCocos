@@ -1,4 +1,4 @@
-
+const Emitter = require('registerEvent');
 cc.Class({
     extends: cc.Component,
 
@@ -14,10 +14,14 @@ cc.Class({
     },
     onCollisionEnter: function (other, self) {
         console.log('on collision enter');
-        let action = cc.sequence(cc.delayTime(0.25), cc.callFunc(() => {
+        if (other.tag == 3 && self.tag == 1) {
             this.node.destroy();
-        }));
-        this.node.runAction(action);
+        }
+
+        // let action = cc.sequence(cc.delayTime(0.35), cc.callFunc(() => {
+        //     this.node.destroy();
+        // }));
+        // this.node.runAction(action);
 
 
     },
