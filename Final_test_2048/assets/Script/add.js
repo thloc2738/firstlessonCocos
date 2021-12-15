@@ -15,9 +15,9 @@ cc.Class({
         this.arr.push(0);
 
         this.arr.push(2);
-        this.arr.push(0);
         this.arr.push(2);
-        this.arr.push(0);
+        this.arr.push(2);
+        this.arr.push(4);
 
         this.arr.push(2);
         this.arr.push(2);
@@ -53,13 +53,17 @@ cc.Class({
         for(let i = this.arr.length -1; i > 0; i--) {
             let k = i;
             if(i > 0){
-
-                    if(this.arr[i] != this.arr[i-1]){
+                while(this.arr[i] !=0 &&(k % 4) >0){
+                    if(this.arr[i] != this.arr[k-1]){
+                        k--
                     }
                     else{
                         this.arr[i] += this.arr[i-1];
                         this.arr[i-1] = 0;
+                        k--
                     }
+                }
+                    
                 
             }
            
