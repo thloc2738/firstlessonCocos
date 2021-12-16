@@ -37,9 +37,10 @@ cc.Class({
     },
     createItem(value) {
         let _item = cc.instantiate(this.item);
-        // _item.setParent(this.mainScene);
-        // this.mainScene.children[value].setParent(this.mainScene);
         this.mainScene.children[value] = _item;
+        // _item.setParent(this.mainScene);
+        this.mainScene.children[value].setParent(this.mainScene);
+        // this.mainScene.children[value] = 
         cc.log(this.mainScene.children)
         this.mainScene.children[value].x = this.xPosition[value];
         this.mainScene.children[value].y = this.yPosition[value];
@@ -56,15 +57,15 @@ cc.Class({
         return false;
     },
     onLoad() {
-        // this.createEmptyParentNode();
+        this.createEmptyParentNode();
 
-        // this.emptyTable(this.isFill, 0);
-        // cc.log(this.isFill);
-        // this.createTable()
-        // cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.moveRight, this);
-        // this.mainScene.on(cc.Node.EventType.MOUSE_DOWN, function (event) {
-        //     this.addItemInBox(this.isFill);
-        // }, this);
+        this.emptyTable(this.isFill, 0);
+        cc.log(this.isFill);
+        this.createTable()
+        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.moveRight, this);
+        this.mainScene.on(cc.Node.EventType.MOUSE_DOWN, function (event) {
+            this.addItemInBox(this.isFill);
+        }, this);
     },
     addItemInBox(listItem) {
         let number;
@@ -142,7 +143,57 @@ cc.Class({
         }
         cc.log(array)
     },
+    goLeft(){
+        for (let i = array.length - 1; i >= 0; i--) {
+            let k = i;
+            if (i > 0) {
+                while (array[i] == 0 && (k % 4) > 0) {
+                    if (array[k - 1] == 0) {
+                        k--;
+                    }
+                    else {
+                        array[i] += array[k - 1];
+                        array[k - 1] = 0;
+                        k--;
+                    }
+                }
+            }
 
+        }
+
+        for (let i = array.length - 1; i > 0; i--) {
+            let k = i;
+            if (i > 0) {
+                while (array[i] != 0 && (k % 4) > 0) {
+                    if (array[i] != array[k - 1]) {
+                        k--
+                    }
+                    else {
+                        array[i] += array[i - 1];
+                        array[i - 1] = 0;
+                        k--
+                    }
+                }
+            }
+        }
+        for (let i = array.length - 1; i >= 0; i--) {
+            let k = i;
+            if (i > 0) {
+                while (array[i] == 0 && (k % 4) > 0) {
+                    if (array[k - 1] == 0) {
+                        k--;
+                    }
+                    else {
+                        array[i] = array[k - 1];
+                        array[k - 1] = 0;
+                        k--;
+                    }
+                }
+
+            }
+        }
+        cc.log(array)
+    },
     rightMoment(list) {
         for (let i = 0; i < 16; i++) {
             if (this.fillTable.length > 0) {
