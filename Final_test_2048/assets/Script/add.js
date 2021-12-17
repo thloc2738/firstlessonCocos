@@ -20,15 +20,30 @@ cc.Class({
         // this.arr.push(2);
 
         // this.arr.push(4);
-        // this.arr.push(0);
+        // this.arr.push(8);
+        // this.arr.push(8);
+        // this.arr.push(2);
+
+        // this.arr.push(8);
+        // this.arr.push(8);
         // this.arr.push(2);
         // this.arr.push(2);
 
-        // this.arr.push(2);
-        // this.arr.push(0);
-        // this.arr.push(2);
-        // this.arr.push(2);
-        
+        // for (let i = 0; i < this.arr.length - 1; i++) {
+        //     let j = i;
+        //     while (this.arr[i] == 8 && i < this.arr.length) {
+        //         if (this.arr[j + 1] == 8) {
+        //             j++;
+        //         }
+        //         else {
+        //             this.arr[i] = this.arr[j + 1];
+        //             this.arr.length--;
+
+        //         }
+        //     }
+        // }
+        // cc.log(this.arr);
+        // cc.log(this.arr.length)
         // cc.log(this.arr);
         // for (let i = 0; i < this.arr.length; i++) {
         //     let k = i;
@@ -75,12 +90,12 @@ cc.Class({
         //                     k--;
         //                 }
         //             }
-                
+
         //     }
         // }
         // cc.log(this.arr)
     },
-    
+
 
     start() {
 

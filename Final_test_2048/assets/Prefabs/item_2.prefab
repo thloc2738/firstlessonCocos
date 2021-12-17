@@ -78,7 +78,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "New Label",
+    "_name": "numb",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -104,7 +104,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 22.25,
+      "width": 0,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -150,8 +150,8 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "2",
-    "_N$string": "2",
+    "_string": "",
+    "_N$string": "",
     "_fontSize": 40,
     "_lineHeight": 40,
     "_enableWrapText": true,
