@@ -44,12 +44,12 @@ cc.Class({
         let _item = cc.instantiate(this.item);
         this.mainScene.addChild(_item);
         this.mainScene.children[index].getChildByName("numb").getComponent(cc.Label).string = 2;
-        cc.log(this.mainScene.children[index])
         this.mainScene.children[index].position = this.xyPosition[value];
         cc.tween(this.mainScene.children[index])
             .to(0.5, { scale: 1 })
             .start()
         this.count++;
+        return this.mainScene.children[index];
     },
     isCreate(node, list) {
         for (let index = 0; index <= list.length; index++) {
@@ -77,7 +77,8 @@ cc.Class({
             } while (this.isCreate(number, this.fillTable) == true && this.fillTable.length <= 15 && listItem[number] != 0);
 
             this.createItem(number, this.count);
-            this.fillTable.push(number);
+            this.fillTable.push(this.createItem(number, this.count));
+            cc.log(this.fillTable)
             listItem[number] = 2;
             cc.log(listItem);
             cc.log(this.fillTable)
@@ -90,8 +91,6 @@ cc.Class({
                 cc.log("right");
                 this.right_table();
                 this.goRight(this.isFill);
-                // cc.log(this.isFill);
-                // this.goRight(this.arr);
                 break;
         }
     },
@@ -123,19 +122,13 @@ cc.Class({
         }
         // cc.log(array)
 
-        for (let i = array.length - 1; i > 0; i--) {
+        for (let i = array.length - 1; i >= 0; i--) {
             let k = i;
             if (i > 0) {
-                while (array[i] != 0 && (k % 4) > 0) {
-                    if (array[i] != array[k - 1]) {
-                        k--
-                    }
-                    else if (array[i] == array[k - 1]) {
-                        array[i] += array[i];
-                        array[i - 1] = 0;
-                        k--
-                    }
-                }
+               while(array[i] == array[k-1] && i > 0){
+                   array[i] += array[k-1];
+                   array[k-1] = 0;
+               }
             }
         }
         // cc.log(array)
