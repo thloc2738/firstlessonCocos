@@ -42,9 +42,11 @@ cc.Class({
         cc.log(this.xyPosition)
     },
     onLoad() {
-        this.createPrefabsTable(this.mainScene, this.emptyPrefab)
+        
+        
         this.emptyTable(this.isFill, 0);
         this.createTable()
+        this.createPrefabsTable(this.mainScene, this.emptyPrefab)
         // cc.log(this.fillTable[0].childrenCount)
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.moveRight, this);
         this.mainScene.on(cc.Node.EventType.MOUSE_DOWN, function (event) {
@@ -54,7 +56,7 @@ cc.Class({
         
     },
     createItem(value) {
-        cc.log("Object: " + this.mainScene)
+        cc.log(this.mainScene)
         this.mainScene.children[value].addChild(cc.instantiate(this.item));
         this.mainScene.children[value].children[1].getChildByName("numb").getComponent(cc.Label).string = 2;
         this.mainScene.children[value].position = this.xyPosition[value];
@@ -64,8 +66,6 @@ cc.Class({
             .start()
         this._count++;
         this.fillTable[value] = this.mainScene.children[value];
-        cc.log(this.fillTable[value].childrenCount)
-       
         return this.mainScene.children[value];
     },
 
@@ -74,20 +74,12 @@ cc.Class({
     addItemInBox(listItem) {
         if(this.checkAddItem()){
             let number;
-            // cc.log(this.fillTable.length)
-            // cc.log(this.fillTable.length + " length")
             do {
                 number = Math.floor(Math.random() * 16);
-                cc.log("Number: "+number);
+                // cc.log("Number: "+number);
             } while (listItem[number] != 0);
-            
             this.createItem(number);
-            // this.fillTable[number] = this.createItem(number);
-            // cc.log(this.fillTable);
             listItem[number] = 2;
-            
-            // cc.log("1 "+listItem.length);
-            // cc.log(this.fillTable[number].children[1].getChildByName("numb").getComponent(cc.Label).string)
         }
     },
 
@@ -103,9 +95,9 @@ cc.Class({
     moveRight: function (event) {
         switch (event.keyCode) {
             case cc.macro.KEY.right:
-                cc.log(this.isFill)
                 // this.right_table();
-                this.goRight(this.fillTable);
+                this.goRight_1(this.fillTable);
+                // this.goRight_2(this.fillTable);
                 break;
         }
     },
@@ -113,56 +105,102 @@ cc.Class({
         
         cc.log(this.fillTable);
     },
-    goRight(array) {
-        
+    goRight_1(array) {
+        let isMove = true;
         for (let i = array.length - 1; i >= 0; i--) {
             let k = i;
             if (i > 0) {
-                while (array[i].childrenCount != 2 && (k % 4) > 0) {
-                    cc.log("Array[i] " + array[i])
-                    if (array[k - 1].childrenCount != 2) {
-                        cc.log("321" + array[i])
+                while (array[i].childrenCount < 2 && (k % 4) > 0)  {
+                    if (array[k - 1].childrenCount < 2) {
                         k--;
                     }
                     else {
-                        cc.log(array[i]+ "123")
-                        // array[i].children[2].getChildByName("numb").getComponent(cc.Label).string += array[k - 1].children[2].getChildByName("numb").getComponent(cc.Label).string;
-                        // array[k - 1].children[2].destroy();
+                        array[i].addChild(cc.instantiate(this.item));
+                        array[i].position = this.xyPosition[i];
+                        array[i].children[1].scale = 1;
+                        cc.tween(array[i].children[1])
+                        .to(0.5, { scale: 1 })
+                        .start()
+                        array[i].children[1].getChildByName("numb").getComponent(cc.Label).string = parseInt(array[k - 1].children[1].getChildByName("numb").getComponent(cc.Label).string);
+                        this.isFill[k-1] = 0;
+                        this.isFill[i] = array[i].children[1].getChildByName("numb").getComponent(cc.Label);
+                        array[k-1].removeChild(array[k-1].children[1]);
                         k--;
                     }
                 }
             }
         }
-        // cc.log(array)
         for (let i = array.length - 1; i >= 0; i--) {
             let k = i;
             if (i > 0) {
-                if(array[i]!=0){
-                    while(array[i] == array[k-1] && i > 0){
-                        array[i] += array[k-1];
-                        array[k-1] = 0;
+                if(array[i].childrenCount == 2){
+                    //cc.log(array[5].children[1].getChildByName("numb"), " undefined");
+                    if(array[k-1].childrenCount == 2){
+                        while((array[i].children[1].getChildByName("numb").getComponent(cc.Label).string == array[k-1].children[1].getChildByName("numb").getComponent(cc.Label).string) && (k % 4) > 0){
+                            cc.log(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string, " i");
+                            cc.log(array[k-1].children[1].getChildByName("numb").getComponent(cc.Label).string, " k-1");
+                            array[i].children[1].getChildByName("numb").getComponent(cc.Label).string = parseInt(array[k - 1].children[1].getChildByName("numb").getComponent(cc.Label).string) + parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string) ;
+                            array[k-1].removeChild(array[k-1].children[1]);
+                            // array[k-1].children[1].destroy();
+                            // if(k-1>0){
+                            //     k--;
+                            // }
+                        }
+                        
                     }
+                    
                 }
+            }
+        }
                
-            }
-        }
+        //     }
+        // }
+        // // cc.log(array)
+        // for (let i = array.length - 1; i >= 0; i--) {
+        //     let k = i;
+        //     if (i > 0) {
+        //         while (array[i].childrenCount != 2 && (k % 4) > 0) {
+        //             if (array[k - 1].childrenCount != 2) {
+        //                 k--;
+        //             }
+        //             else {
+        //                 // array[i].addChild(cc.instantiate(this.item));
+        //                 array[i].position = this.xyPosition[i];
+        //                 cc.tween(array[i].children[1])
+        //                 .to(0.5, { scale: 1 })
+        //                 .start()
+        //                 array[i].children[1].getChildByName("numb").getComponent(cc.Label).string = parseInt(array[k - 1].children[1].getChildByName("numb").getComponent(cc.Label).string) + parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string) ;
+        //                 array[k - 1].children[1].destroy();
+        //                 k--;
+        //             }
+        //         }
+        //     }
+        // }
         // cc.log(array)
+    },
+    goRight_2(array){
         for (let i = array.length - 1; i >= 0; i--) {
             let k = i;
             if (i > 0) {
-                while (array[i].childrenCount != 2 && (k % 4) > 0) {
-                    if (array[k - 1].childrenCount != 2) {
-                        k--;
+                if(array[i].childrenCount == 2){
+                    cc.log(array[1].children[1].getChildByName("numb"), " k-1");
+                    if(array[k-1].childrenCount == 2){
+                        while((array[i].children[1].getChildByName("numb").getComponent(cc.Label).string == array[k-1].children[1].getChildByName("numb").getComponent(cc.Label).string) && (k % 4) > 0){
+                            cc.log(array[i].children[1].getChildByName("numb"), " i");
+                            cc.log(array[k-1].children[1].getChildByName("numb"), " k-1");
+                            array[i].children[1].getChildByName("numb").getComponent(cc.Label).string = parseInt(array[k - 1].children[1].getChildByName("numb").getComponent(cc.Label).string) + parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string) ;
+                            array[k-1].removeChild(array[k-1].children[1]);
+                            // array[k-1].children[1].destroy();
+                            if(k-1>0){
+                                k--;
+                            }
+                        }
+                        
                     }
-                    else {
-                        array[i] = array[k - 1];
-                        array[k - 1] = 0;
-                        k--;
-                    }
+                    
                 }
             }
         }
-        // cc.log(array)
     },
     goLeft() {
         for (let i = array.length - 1; i >= 0; i--) {
@@ -236,13 +274,13 @@ cc.Class({
         }
 
     },
-    createPrefabsTable(parentNode ,prefab){
+    createPrefabsTable(){
         for(let index = 0; index < 16; index++){
-            let item = cc.instantiate(prefab);
-            parentNode.addChild(item);
-            parentNode.children[index].addChild(cc.instantiate(this.emptyPrefab))
-            this.fillTable[index] = parentNode.children;
+            // let item = cc.instantiate(prefab);
+            this.mainScene.addChild(cc.instantiate(this.emptyPrefab));
+            this.mainScene.children[index].addChild(cc.instantiate(this.emptyPrefab))
+            this.fillTable[index] = this.mainScene.children[index];
         }
-        cc.log(parentNode.children[0].childrenCount)
+        
     }
 });
