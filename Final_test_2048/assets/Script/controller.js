@@ -100,6 +100,9 @@ cc.Class({
     },
 
     move2048: function (event) {
+        // if(parseInt(this.bestScore.string) >= parseInt(this.score.string)){
+        //     this.bestScore.string == parseInt(this.score.string);
+        // }
         switch (event.keyCode) {
             case cc.macro.KEY.right:
                 this.moveSound.play();
@@ -107,10 +110,11 @@ cc.Class({
                 this.goRight_1(this.fillTable);
                 this.goRight_2(this.fillTable);
                 this.goRight_3(this.fillTable);
+                if(parseInt(this.bestScore.string) >= parseInt(this.score.string)){
+                    this.bestScore.string == parseInt(this.score.string);
+                }
                 if(!this.equal_Array(this.isFill, this.checkList))
                     this.addItemInBox(this.isFill);
-                    cc.log(this.checkList, "List");
-                    cc.log(this.isFill, "Fill");
                 break;
             case cc.macro.KEY.left:
                 this.moveSound.play();
@@ -118,10 +122,11 @@ cc.Class({
                 this.goLeft_1(this.fillTable);
                 this.goLeft_2(this.fillTable);
                 this.goLeft_3(this.fillTable);
+                if(parseInt(this.bestScore.string) >= parseInt(this.score.string)){
+                    this.bestScore.string == parseInt(this.score.string);
+                }
                 if(!this.equal_Array(this.isFill, this.checkList))
                     this.addItemInBox(this.isFill);
-                    cc.log(this.checkList, "List");
-                    cc.log(this.isFill, "Fill");
                 break;
             case cc.macro.KEY.up:
                 this.moveSound.play();
@@ -129,10 +134,11 @@ cc.Class({
                 this.goUp_1(this.fillTable);
                 this.goUp_2(this.fillTable);
                 this.goUp_3(this.fillTable);
+                if(parseInt(this.bestScore.string) >= parseInt(this.score.string)){
+                    this.bestScore.string == parseInt(this.score.string);
+                }
                 if(!this.equal_Array(this.isFill, this.checkList))
                     this.addItemInBox(this.isFill);
-                    cc.log(this.checkList, "List");
-                        cc.log(this.isFill, "Fill");
                 break;
             case cc.macro.KEY.down:
                 if (this._blockDown == false) {
@@ -141,12 +147,11 @@ cc.Class({
                     this.goDown_1(this.fillTable);
                     this.goDown_2(this.fillTable);
                     this.goDown_3(this.fillTable);
+                    if(parseInt(this.bestScore.string) >= parseInt(this.score.string)){
+                        this.bestScore.string == parseInt(this.score.string);
+                    }
                     if(!this.equal_Array(this.isFill, this.checkList))
                         this.addItemInBox(this.isFill);
-                        cc.log(this.checkList, "List");
-                        cc.log(this.isFill, "Fill");
-                        
-                        
                     break;
                 }
         }
