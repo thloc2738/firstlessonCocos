@@ -133,7 +133,7 @@ cc.Class({
                 this.goUp_2(this.fillTable);
                 this.goUp_3(this.fillTable);
                 this.addItemInBox(this.isFill);
-                if (this.isFill === this.checkList) {
+                if (this.equal_Array(this.fillTable, this.checkList) == true) {
 
                 }
                 break;
@@ -147,18 +147,26 @@ cc.Class({
 
                     cc.warn(this.isFill);
                     cc.error(this.checkList)
-                    if (this.isFill == this.checkList) {
+                    if (this.equal_Array(this.fillTable, this.checkList) == true) {
+                        cc.error("dfghjk");
                         this._blockDown = true;
-                        cc.log("sdfghjk")
                     }
                     else {
                         this.addItemInBox(this.isFill);
                     }
+                    break;
                 }
-                break;
         }
     },
+    equal_Array(arrayA, arrayB) {
+        for (let i = 0; i < arrayA.length; i++) {
+            if (arrayA[i] !== arrayB[i]) {
+                return false;
+            }
+        }
+        return true;
 
+    },
     tempArray(arrayA, arrayB) {
         for (let i = 0; i < arrayA.length; i++) {
             arrayB[i] = arrayA[i];
