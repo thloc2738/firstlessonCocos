@@ -35,8 +35,8 @@
     "_color": {
       "__type__": "cc.Color",
       "r": 255,
-      "g": 255,
-      "b": 255,
+      "g": 173,
+      "b": 0,
       "a": 255
     },
     "_contentSize": {
@@ -82,7 +82,7 @@
     },
     "_children": [],
     "_active": true,
-    "_level": 0,
+    "_level": 2,
     "_components": [
       {
         "__id__": 3
@@ -171,7 +171,7 @@
     "asset": {
       "__uuid__": "3b5f8c7d-eb17-4d0d-9c3b-4b5f21eed7f1"
     },
-    "fileId": "a1my+DfK5I+KeHqKMACQC6",
+    "fileId": "8by0Yy+d1FZ4AGU7xu5Xwy",
     "sync": false
   },
   {
@@ -190,7 +190,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "4db59029-7025-4399-817b-7ee9f680f24b"
+      "__uuid__": "a23235d1-15db-4b95-8439-a2e005bfff91"
     },
     "_type": 0,
     "_sizeMode": 0,
