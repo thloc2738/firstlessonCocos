@@ -10,10 +10,17 @@ cc.Class({
         boxLayout: cc.Layout,
         xyPosition: [],
         fillTable: [],
+        checkList: [],
         isFill: [],
         _count: 0,
         arr: [],
-        score: cc.Label
+        score: cc.Label,
+        bestScore: cc.Label,
+        moveSound: cc.AudioSource,
+        _blockLeft: false,
+        _blockRight: false,
+        _blockUp: false,
+        _blockDown: false,
     },
     createTable() {
         for (let i = 0; i < 16; i++) {
@@ -42,29 +49,26 @@ cc.Class({
         cc.log(this.xyPosition)
     },
     onLoad() {
-
-
+        this.bestScore.string = parseInt(20);
         this.emptyTable(this.isFill, 0);
+        this.emptyTable(this.checkList, 0)
         cc.log(this.isFill)
         this.createTable()
         this.createPrefabsTable(this.mainScene, this.emptyPrefab)
-        // cc.log(this.fillTable[0].childrenCount)
         this.addItemInBox(this.isFill);
-        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.moveRight, this);
-        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.moveLeft, this);
-        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.moveUp, this);
-        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.moveDown, this);
+        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.move2048, this);
         // this.mainScene.on(cc.Node.EventType.MOUSE_DOWN, function (event) {
-        //     this.addItemInBox(this.isFill);
-        // }, this);
+        //     this.mainScene.on(cc.Node.EventType.MOUSE_UP, function (event) {
+        //         // cc.Event.EventMouse.getLocation();
+        //     }, this);
 
+        // }, this);
     },
     createItem(value) {
-        cc.log(this.mainScene)
         this.mainScene.children[value].addChild(cc.instantiate(this.item));
         this.mainScene.children[value].children[1].getChildByName("numb").getComponent(cc.Label).string = 2;
         this.mainScene.children[value].position = this.xyPosition[value];
-        this.isFill[value] = 2
+        this.isFill[value] = 2;
         cc.tween(this.mainScene.children[value].children[1])
             .to(0.5, { scale: 1 })
             .start()
@@ -82,7 +86,7 @@ cc.Class({
                 number = Math.floor(Math.random() * 16);
             } while (listItem[number] != 0);
             this.createItem(number);
-            listItem[number] = 2;
+            // listItem[number] = 2;
         }
     },
 
@@ -95,52 +99,69 @@ cc.Class({
         return false
     },
 
-    moveRight: function (event) {
+    move2048: function (event) {
         switch (event.keyCode) {
             case cc.macro.KEY.right:
-                cc.log(this.isFill)
+                cc.log(this.isFill);
+                this.moveSound.play();
+                this.tempArray(this.isFill, this.checkList);
                 this.goRight_1(this.fillTable);
                 this.goRight_2(this.fillTable);
                 this.goRight_3(this.fillTable);
                 this.addItemInBox(this.isFill);
-                cc.log(this.isFill)
+                if (this.isFill === this.checkList) {
+
+                }
                 break;
-        }
-    },
-    moveLeft: function (event) {
-        switch (event.keyCode) {
             case cc.macro.KEY.left:
-                cc.log(this.isFill)
+                cc.log(this.isFill);
+                this.moveSound.play();
+                this.tempArray(this.isFill, this.checkList);
                 this.goLeft_1(this.fillTable);
                 this.goLeft_2(this.fillTable);
                 this.goLeft_3(this.fillTable);
                 this.addItemInBox(this.isFill);
-                cc.log(this.isFill)
+                if (this.isFill === this.checkList) {
+
+                }
                 break;
-        }
-    },
-    moveUp: function (event) {
-        switch (event.keyCode) {
             case cc.macro.KEY.up:
-                cc.log(this.isFill)
+                cc.log(this.isFill);
+                this.moveSound.play();
+                this.tempArray(this.isFill, this.checkList);
                 this.goUp_1(this.fillTable);
                 this.goUp_2(this.fillTable);
                 this.goUp_3(this.fillTable);
                 this.addItemInBox(this.isFill);
-                cc.log(this.isFill)
+                if (this.isFill === this.checkList) {
+
+                }
+                break;
+            case cc.macro.KEY.down:
+                if (this._blockDown == false) {
+                    this.moveSound.play();
+                    this.tempArray(this.isFill, this.checkList);
+                    this.goDown_1(this.fillTable);
+                    this.goDown_2(this.fillTable);
+                    this.goDown_3(this.fillTable);
+
+                    cc.warn(this.isFill);
+                    cc.error(this.checkList)
+                    if (this.isFill == this.checkList) {
+                        this._blockDown = true;
+                        cc.log("sdfghjk")
+                    }
+                    else {
+                        this.addItemInBox(this.isFill);
+                    }
+                }
                 break;
         }
     },
-    moveDown: function (event) {
-        switch (event.keyCode) {
-            case cc.macro.KEY.down:
-                cc.log(this.isFill)
-                this.goDown_1(this.fillTable);
-                this.goDown_2(this.fillTable);
-                this.goDown_3(this.fillTable);
-                this.addItemInBox(this.isFill);
-                cc.log(this.isFill)
-                break;
+
+    tempArray(arrayA, arrayB) {
+        for (let i = 0; i < arrayA.length; i++) {
+            arrayB[i] = arrayA[i];
         }
     },
     goDown_1(array) {
@@ -153,18 +174,22 @@ cc.Class({
                     }
                     else {
                         array[i].addChild(cc.instantiate(this.item));
+                        cc.tween(array[k - 4].children[1])
+                            .to(1, { position: this.xyPosition[i] })
+                            .start()
                         array[i].position = this.xyPosition[i];
                         array[i].children[1].scale = 1;
                         array[i].children[1].getChildByName("numb").getComponent(cc.Label).string = parseInt(array[k - 4].children[1].getChildByName("numb").getComponent(cc.Label).string);
                         this.isFill[k - 4] = 0;
-                        this.isFill[i] = array[i].children[1].getChildByName("numb").getComponent(cc.Label).string;
+                        this.isFill[i] = parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
                         array[k - 4].removeChild(array[k - 4].children[1]);
                         k -= 4;
                     }
                 }
             }
         }
-    }, goDown_2(array) {
+    },
+    goDown_2(array) {
         for (let i = array.length - 1; i >= 0; i--) {
             let k = i;
             if (i >= 4) {
@@ -176,8 +201,10 @@ cc.Class({
                                     array[i].children[1].getChildByName("numb").getComponent(cc.Label).string = parseInt(array[k - 4].children[1].getChildByName("numb").getComponent(cc.Label).string)
                                         + parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
                                     this.isFill[k - 4] = 0;
-                                    this.score.string = parseInt(this.score.string) + parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string)
-                                    this.isFill[i] = array[i].children[1].getChildByName("numb").getComponent(cc.Label).string;
+                                    var action = cc.sequence(cc.scaleTo(0.25, 1.25), cc.scaleTo(0.25, 1));
+                                    array[i].runAction(action);
+                                    this.score.string = parseInt(this.score.string) + parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
+                                    this.isFill[i] = parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
                                     array[k - 4].removeChild(array[k - 4].children[1]);
                                 }
                             }
@@ -198,12 +225,13 @@ cc.Class({
                     }
                     else {
                         array[i].addChild(cc.instantiate(this.item));
-                        array[i].position = this.xyPosition[i];
                         array[i].children[1].scale = 1;
+                        array[i].position = this.xyPosition[i];
+
                         array[i].children[1].getChildByName("numb").getComponent(cc.Label).string = parseInt(array[k - 4].children[1].getChildByName("numb").getComponent(cc.Label).string)
                             + parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
                         this.isFill[k - 4] = 0;
-                        this.isFill[i] = array[i].children[1].getChildByName("numb").getComponent(cc.Label).string;
+                        this.isFill[i] = parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
                         array[k - 4].removeChild(array[k - 4].children[1])
                         k -= 4;
                     }
@@ -225,7 +253,7 @@ cc.Class({
                         array[i].children[1].scale = 1;
                         array[i].children[1].getChildByName("numb").getComponent(cc.Label).string = parseInt(array[k + 4].children[1].getChildByName("numb").getComponent(cc.Label).string);
                         this.isFill[k + 4] = 0;
-                        this.isFill[i] = array[i].children[1].getChildByName("numb").getComponent(cc.Label).string;
+                        this.isFill[i] = parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
                         array[k + 4].removeChild(array[k + 4].children[1]);
                         k += 4;
                     }
@@ -244,9 +272,11 @@ cc.Class({
                                 if (array[i].children[1].getChildByName("numb").getComponent(cc.Label).string == array[k + 4].children[1].getChildByName("numb").getComponent(cc.Label).string) {
                                     array[i].children[1].getChildByName("numb").getComponent(cc.Label).string = parseInt(array[k + 4].children[1].getChildByName("numb").getComponent(cc.Label).string)
                                         + parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
-                                    this.score.string = parseInt(this.score.string) + parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string)
+                                    var action = cc.sequence(cc.scaleTo(0.25, 1.25), cc.scaleTo(0.25, 1));
+                                    array[i].runAction(action);
+                                    this.score.string = parseInt(this.score.string) + parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
                                     this.isFill[k + 4] = 0;
-                                    this.isFill[i] = array[i].children[1].getChildByName("numb").getComponent(cc.Label).string;
+                                    this.isFill[i] = parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
                                     array[k + 4].removeChild(array[k + 4].children[1]);
                                 }
                             }
@@ -272,7 +302,7 @@ cc.Class({
                         array[i].children[1].getChildByName("numb").getComponent(cc.Label).string = parseInt(array[k + 4].children[1].getChildByName("numb").getComponent(cc.Label).string)
                             + parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
                         this.isFill[k + 4] = 0;
-                        this.isFill[i] = array[i].children[1].getChildByName("numb").getComponent(cc.Label).string;
+                        this.isFill[i] = parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
                         array[k + 4].removeChild(array[k + 4].children[1])
                         k += 4;
                     }
@@ -294,7 +324,7 @@ cc.Class({
                         array[i].children[1].scale = 1;
                         array[i].children[1].getChildByName("numb").getComponent(cc.Label).string = parseInt(array[k + 1].children[1].getChildByName("numb").getComponent(cc.Label).string);
                         this.isFill[k + 1] = 0;
-                        this.isFill[i] = array[i].children[1].getChildByName("numb").getComponent(cc.Label).string;
+                        this.isFill[i] = parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
                         array[k + 1].removeChild(array[k + 1].children[1]);
                         k++;
                     }
@@ -313,9 +343,11 @@ cc.Class({
                                 if (array[i].children[1].getChildByName("numb").getComponent(cc.Label).string == array[k + 1].children[1].getChildByName("numb").getComponent(cc.Label).string) {
                                     array[i].children[1].getChildByName("numb").getComponent(cc.Label).string = parseInt(array[k + 1].children[1].getChildByName("numb").getComponent(cc.Label).string)
                                         + parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
-                                    this.score.string = parseInt(this.score.string) + parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string)
+                                    this.score.string = parseInt(this.score.string) + parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
+                                    var action = cc.sequence(cc.scaleTo(0.25, 1.25), cc.scaleTo(0.25, 1));
+                                    array[i].runAction(action);
                                     this.isFill[k + 1] = 0;
-                                    this.isFill[i] = array[i].children[1].getChildByName("numb").getComponent(cc.Label).string;
+                                    this.isFill[i] = parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
                                     array[k + 1].removeChild(array[k + 1].children[1]);
                                 }
                             }
@@ -341,7 +373,7 @@ cc.Class({
                         array[i].children[1].getChildByName("numb").getComponent(cc.Label).string = parseInt(array[k + 1].children[1].getChildByName("numb").getComponent(cc.Label).string)
                             + parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
                         this.isFill[k + 1] = 0;
-                        this.isFill[i] = array[i].children[1].getChildByName("numb").getComponent(cc.Label).string;
+                        this.isFill[i] = parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
                         array[k + 1].removeChild(array[k + 1].children[1])
                         k++;
                     }
@@ -363,7 +395,7 @@ cc.Class({
                         array[i].children[1].scale = 1;
                         array[i].children[1].getChildByName("numb").getComponent(cc.Label).string = parseInt(array[k - 1].children[1].getChildByName("numb").getComponent(cc.Label).string);
                         this.isFill[k - 1] = 0;
-                        this.isFill[i] = array[i].children[1].getChildByName("numb").getComponent(cc.Label).string;
+                        this.isFill[i] = parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
                         array[k - 1].removeChild(array[k - 1].children[1]);
                         k--;
                     }
@@ -382,9 +414,11 @@ cc.Class({
                                 if (array[i].children[1].getChildByName("numb").getComponent(cc.Label).string == array[k - 1].children[1].getChildByName("numb").getComponent(cc.Label).string) {
                                     array[i].children[1].getChildByName("numb").getComponent(cc.Label).string = parseInt(array[k - 1].children[1].getChildByName("numb").getComponent(cc.Label).string)
                                         + parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
-                                    this.score.string = parseInt(this.score.string) + parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string)
+                                    this.score.string = parseInt(this.score.string) + parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
+                                    var action = cc.sequence(cc.scaleTo(0.25, 1.25), cc.scaleTo(0.25, 1));
+                                    array[i].runAction(action);
                                     this.isFill[k - 1] = 0;
-                                    this.isFill[i] = array[i].children[1].getChildByName("numb").getComponent(cc.Label).string;
+                                    this.isFill[i] = parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
                                     array[k - 1].removeChild(array[k - 1].children[1]);
                                 }
                             }
@@ -410,7 +444,7 @@ cc.Class({
                         array[i].children[1].getChildByName("numb").getComponent(cc.Label).string = parseInt(array[k - 1].children[1].getChildByName("numb").getComponent(cc.Label).string)
                             + parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
                         this.isFill[k - 1] = 0;
-                        this.isFill[i] = array[i].children[1].getChildByName("numb").getComponent(cc.Label).string;
+                        this.isFill[i] = parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
                         array[k - 1].removeChild(array[k - 1].children[1])
                         k--;
                     }
@@ -426,7 +460,6 @@ cc.Class({
     },
     createPrefabsTable() {
         for (let index = 0; index < 16; index++) {
-            // let item = cc.instantiate(prefab);
             this.mainScene.addChild(cc.instantiate(this.emptyPrefab));
             this.mainScene.children[index].addChild(cc.instantiate(this.emptyPrefab))
             this.fillTable[index] = this.mainScene.children[index];
