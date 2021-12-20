@@ -829,7 +829,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "New Sprite(Splash)",
+    "_name": "Score",
     "_objFlags": 0,
     "_parent": {
       "__id__": 13
@@ -897,7 +897,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "New Label",
+    "_name": "scoreText",
     "_objFlags": 0,
     "_parent": {
       "__id__": 18
@@ -985,7 +985,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "New Label",
+    "_name": "scoreNumber",
     "_objFlags": 0,
     "_parent": {
       "__id__": 18
@@ -1055,8 +1055,8 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "9",
-    "_N$string": "9",
+    "_string": "0",
+    "_N$string": "0",
     "_fontSize": 40,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -3891,6 +3891,9 @@
     "isFill": [],
     "_count": 0,
     "arr": [],
+    "score": {
+      "__id__": 22
+    },
     "_id": "4cBYQ0K/ZC3qviSNXzmOF5"
   },
   {

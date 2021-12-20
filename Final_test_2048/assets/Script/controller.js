@@ -14,6 +14,7 @@ cc.Class({
         isFill: [],
         _count: 0,
         arr: [],
+        score: cc.Label
     },
     createTable() {
         for (let i = 0; i < 16; i++) {
@@ -106,7 +107,6 @@ cc.Class({
         cc.log(this.fillTable);
     },
     goRight_1(array) {
-        let isMove = true;
         for (let i = array.length - 1; i >= 0; i--) {
             let k = i;
             if (i > 0) {
@@ -134,28 +134,31 @@ cc.Class({
             let k = i;
             if (i > 0) {
                 if(array[i].childrenCount == 2){
-                    //cc.log(array[5].children[1].getChildByName("numb"), " undefined");
-                    if(array[k-1].childrenCount == 2){
-                        while((array[i].children[1].getChildByName("numb").getComponent(cc.Label).string == array[k-1].children[1].getChildByName("numb").getComponent(cc.Label).string) && (k % 4) > 0){
-                            cc.log(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string, " i");
-                            cc.log(array[k-1].children[1].getChildByName("numb").getComponent(cc.Label).string, " k-1");
-                            array[i].children[1].getChildByName("numb").getComponent(cc.Label).string = parseInt(array[k - 1].children[1].getChildByName("numb").getComponent(cc.Label).string) + parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string) ;
-                            array[k-1].removeChild(array[k-1].children[1]);
-                            // array[k-1].children[1].destroy();
-                            // if(k-1>0){
-                            //     k--;
-                            // }
+                    while(((array[i].childrenCount == 2 && array[k-1].childrenCount == 2 ) && (k % 4)) > 0){
+                        if(array[k-1].childrenCount < 2){
+                            k--;
                         }
-                        
+                        else{
+                            if(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string == array[k-1].children[1].getChildByName("numb").getComponent(cc.Label).string){
+                                array[i].children[1].getChildByName("numb").getComponent(cc.Label).string = parseInt(array[k - 1].children[1].getChildByName("numb").getComponent(cc.Label).string) + parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string) ;
+                                array[k-1].removeChild(array[k-1].children[1]);
+                                if(k-1 > 0){
+                                    k--;
+                                }
+                            }
+                            else{
+                                k--;
+                            }
+                        }
+                            
                     }
-                    
                 }
             }
+            else{
+                cc.log("end")
+            }
+            
         }
-               
-        //     }
-        // }
-        // // cc.log(array)
         // for (let i = array.length - 1; i >= 0; i--) {
         //     let k = i;
         //     if (i > 0) {
@@ -164,39 +167,35 @@ cc.Class({
         //                 k--;
         //             }
         //             else {
-        //                 // array[i].addChild(cc.instantiate(this.item));
+        //                 array[i].addChild(cc.instantiate(this.item));
         //                 array[i].position = this.xyPosition[i];
-        //                 cc.tween(array[i].children[1])
-        //                 .to(0.5, { scale: 1 })
-        //                 .start()
+        //                 array[i].children[1].scale = 1
         //                 array[i].children[1].getChildByName("numb").getComponent(cc.Label).string = parseInt(array[k - 1].children[1].getChildByName("numb").getComponent(cc.Label).string) + parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string) ;
-        //                 array[k - 1].children[1].destroy();
+        //                 array[k - 1].removeChild(array[k - 1].children[1])
         //                 k--;
         //             }
         //         }
         //     }
         // }
-        // cc.log(array)
     },
     goRight_2(array){
         for (let i = array.length - 1; i >= 0; i--) {
             let k = i;
             if (i > 0) {
                 if(array[i].childrenCount == 2){
-                    cc.log(array[1].children[1].getChildByName("numb"), " k-1");
                     if(array[k-1].childrenCount == 2){
-                        while((array[i].children[1].getChildByName("numb").getComponent(cc.Label).string == array[k-1].children[1].getChildByName("numb").getComponent(cc.Label).string) && (k % 4) > 0){
-                            cc.log(array[i].children[1].getChildByName("numb"), " i");
-                            cc.log(array[k-1].children[1].getChildByName("numb"), " k-1");
+                        while((array[i].childrenCount == 2 && array[i].children[1].getChildByName("numb").getComponent(cc.Label).string == array[k-1].children[1].getChildByName("numb").getComponent(cc.Label).string) && (k % 4) > 0){
+                            if(array[k-1].childrenCount < 2){
+                                k--;
+                            }
                             array[i].children[1].getChildByName("numb").getComponent(cc.Label).string = parseInt(array[k - 1].children[1].getChildByName("numb").getComponent(cc.Label).string) + parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string) ;
                             array[k-1].removeChild(array[k-1].children[1]);
-                            // array[k-1].children[1].destroy();
                             if(k-1>0){
                                 k--;
                             }
                         }
-                        
                     }
+                    
                     
                 }
             }
