@@ -86,7 +86,11 @@ cc.Class({
                 //         this.swipeDown();
                 //     }
                 // }
-                event.unuse;
+                firstXClick = null;
+                firstYClick = null;
+                secondXClick = null;
+                secondYClick = null;
+
             }, this);
         }, this);
     },
