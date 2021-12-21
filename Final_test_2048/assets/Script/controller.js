@@ -21,6 +21,7 @@ cc.Class({
         _blockRight: false,
         _blockUp: false,
         _blockDown: false,
+        arrFrame: [cc.SpriteFrame]
     },
     createTable() {
         for (let i = 0; i < 16; i++) {
@@ -49,7 +50,9 @@ cc.Class({
         cc.log(this.xyPosition)
     },
     onLoad() {
-        this.bestScore.string = parseInt(20);
+        if (parseInt(this.bestScore.string) <= cc.sys.localStorage.getItem("Score")) {
+            this.bestScore.string = cc.sys.localStorage.getItem("Score");
+        }
         this.emptyTable(this.isFill, 0);
         this.emptyTable(this.checkList, 0)
         cc.log(this.isFill)
@@ -57,16 +60,40 @@ cc.Class({
         this.createPrefabsTable(this.mainScene, this.emptyPrefab)
         this.addItemInBox(this.isFill);
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.move2048, this);
-        // this.mainScene.on(cc.Node.EventType.MOUSE_DOWN, function (event) {
-        //     this.mainScene.on(cc.Node.EventType.MOUSE_UP, function (event) {
-        //         // cc.Event.EventMouse.getLocation();
-        //     }, this);
+        this.mainScene.on(cc.Node.EventType.MOUSE_DOWN, function (event) {
+            let firstXClick = event.getLocationX();
+            let firstYClick = event.getLocationY();
+            this.mainScene.on(cc.Node.EventType.MOUSE_UP, function (event) {
+                let secondXClick = event.getLocationX();
+                let secondYClick = event.getLocationY();
 
-        // }, this);
+                cc.warn(firstXClick, firstYClick);
+                cc.error(secondXClick, secondYClick)
+                // let deltaX = Math.abs(secondXClick - firstXClick);
+                // let deltaY = Math.abs(secondYClick - firstYClick);
+                // if (deltaX > deltaY) {
+                //     if (secondXClick - firstXClick > 0) {
+                //         this.swipeRight();
+                //     }
+                //     else {
+                //         this.swipeLeft();
+                //     }
+                // } else {
+                //     if (secondYClick - firstYClick > 0) {
+                //         this.swipeUp();
+                //     }
+                //     else {
+                //         this.swipeDown();
+                //     }
+                // }
+                event.unuse;
+            }, this);
+        }, this);
     },
     createItem(value) {
         this.mainScene.children[value].addChild(cc.instantiate(this.item));
         this.mainScene.children[value].children[1].getChildByName("numb").getComponent(cc.Label).string = 2;
+        this.mainScene.children[value].children[1].getComponent(cc.Sprite).spriteFrame = this.arrFrame[0];
         this.mainScene.children[value].position = this.xyPosition[value];
         this.isFill[value] = 2;
         cc.tween(this.mainScene.children[value].children[1])
@@ -76,9 +103,27 @@ cc.Class({
         this.fillTable[value] = this.mainScene.children[value];
         return this.mainScene.children[value];
     },
-
-
-
+    setColor(node) {
+        if (node.children[1].getChildByName("numb").getComponent(cc.Label).string == 2) {
+            node.children[1].getComponent(cc.Sprite).spriteFrame = this.arrFrame[0];
+        } else if (node.children[1].getChildByName("numb").getComponent(cc.Label).string == 4) {
+            node.children[1].getComponent(cc.Sprite).spriteFrame = this.arrFrame[1];
+        } else if (node.children[1].getChildByName("numb").getComponent(cc.Label).string == 8) {
+            node.children[1].getComponent(cc.Sprite).spriteFrame = this.arrFrame[2];
+        } else if (node.children[1].getChildByName("numb").getComponent(cc.Label).string == 16) {
+            node.children[1].getComponent(cc.Sprite).spriteFrame = this.arrFrame[3];
+        } else if (node.children[1].getChildByName("numb").getComponent(cc.Label).string == 32) {
+            node.children[1].getComponent(cc.Sprite).spriteFrame = this.arrFrame[4];
+        } else if (node.children[1].getChildByName("numb").getComponent(cc.Label).string == 64) {
+            node.children[1].getComponent(cc.Sprite).spriteFrame = this.arrFrame[5];
+        } else if (node.children[1].getChildByName("numb").getComponent(cc.Label).string == 128) {
+            node.children[1].getComponent(cc.Sprite).spriteFrame = this.arrFrame[6];
+        } else if (node.children[1].getChildByName("numb").getComponent(cc.Label).string == 256) {
+            node.children[1].getComponent(cc.Sprite).spriteFrame = this.arrFrame[7];
+        } else if (node.children[1].getChildByName("numb").getComponent(cc.Label).string == 512) {
+            node.children[1].getComponent(cc.Sprite).spriteFrame = this.arrFrame[8];
+        }
+    },
     addItemInBox(listItem) {
         if (this.checkAddItem()) {
             let number;
@@ -98,63 +143,142 @@ cc.Class({
         }
         return false
     },
-
+    swipeRight() {
+        this.moveSound.play();
+        this.tempArray(this.checkList, this.isFill);
+        this.goRight_1(this.fillTable);
+        this.goRight_2(this.fillTable);
+        this.goRight_3(this.fillTable);
+        if (!this.equal_Array(this.isFill, this.checkList))
+            this.addItemInBox(this.isFill);
+        else {
+            if (this.fullList(this.isFill) == true) {
+                this._blockRight = true;
+            }
+        }
+    },
+    swipeLeft() {
+        this.moveSound.play();
+        this.tempArray(this.checkList, this.isFill);
+        this.goLeft_1(this.fillTable);
+        this.goLeft_2(this.fillTable);
+        this.goLeft_3(this.fillTable);
+        if (!this.equal_Array(this.isFill, this.checkList))
+            this.addItemInBox(this.isFill);
+        else {
+            if (this.fullList(this.isFill) == true) {
+                this._blockLeft = true;
+            }
+        }
+    },
+    swipeUp() {
+        this.moveSound.play();
+        this.tempArray(this.checkList, this.isFill);
+        this.goUp_1(this.fillTable);
+        this.goUp_2(this.fillTable);
+        this.goUp_3(this.fillTable);
+        if (!this.equal_Array(this.isFill, this.checkList))
+            this.addItemInBox(this.isFill);
+        else {
+            if (this.fullList(this.isFill) == true) {
+                this._blockUp = true;
+            }
+        }
+    },
+    swipeDown() {
+        if (this._blockDown == false) {
+            this.moveSound.play();
+            this.tempArray(this.checkList, this.isFill);
+            this.goDown_1(this.fillTable);
+            this.goDown_2(this.fillTable);
+            this.goDown_3(this.fillTable);
+            if (!this.equal_Array(this.isFill, this.checkList))
+                this.addItemInBox(this.isFill);
+            else {
+                if (this.fullList(this.isFill) == true) {
+                    this._blockDown = true;
+                }
+            }
+        }
+    },
     move2048: function (event) {
-        // if(parseInt(this.bestScore.string) >= parseInt(this.score.string)){
-        //     this.bestScore.string == parseInt(this.score.string);
-        // }
         switch (event.keyCode) {
             case cc.macro.KEY.right:
                 this.moveSound.play();
-                this.tempArray(this.checkList,this.isFill);
+                this.tempArray(this.checkList, this.isFill);
                 this.goRight_1(this.fillTable);
                 this.goRight_2(this.fillTable);
                 this.goRight_3(this.fillTable);
-                if(parseInt(this.bestScore.string) >= parseInt(this.score.string)){
-                    this.bestScore.string == parseInt(this.score.string);
-                }
-                if(!this.equal_Array(this.isFill, this.checkList))
+                if (!this.equal_Array(this.isFill, this.checkList))
                     this.addItemInBox(this.isFill);
+                else {
+                    if (this.fullList(this.isFill) == true) {
+                        this._blockRight = true;
+                    }
+                }
                 break;
             case cc.macro.KEY.left:
                 this.moveSound.play();
-                this.tempArray(this.checkList,this.isFill);
+                this.tempArray(this.checkList, this.isFill);
                 this.goLeft_1(this.fillTable);
                 this.goLeft_2(this.fillTable);
                 this.goLeft_3(this.fillTable);
-                if(parseInt(this.bestScore.string) >= parseInt(this.score.string)){
-                    this.bestScore.string == parseInt(this.score.string);
-                }
-                if(!this.equal_Array(this.isFill, this.checkList))
+                if (!this.equal_Array(this.isFill, this.checkList))
                     this.addItemInBox(this.isFill);
+                else {
+                    if (this.fullList(this.isFill) == true) {
+                        this._blockLeft = true;
+                    }
+                }
                 break;
             case cc.macro.KEY.up:
                 this.moveSound.play();
-                this.tempArray(this.checkList,this.isFill);
+                this.tempArray(this.checkList, this.isFill);
                 this.goUp_1(this.fillTable);
                 this.goUp_2(this.fillTable);
                 this.goUp_3(this.fillTable);
-                if(parseInt(this.bestScore.string) >= parseInt(this.score.string)){
-                    this.bestScore.string == parseInt(this.score.string);
-                }
-                if(!this.equal_Array(this.isFill, this.checkList))
+                if (!this.equal_Array(this.isFill, this.checkList))
                     this.addItemInBox(this.isFill);
+                else {
+                    if (this.fullList(this.isFill) == true) {
+                        this._blockUp = true;
+                    }
+                }
                 break;
             case cc.macro.KEY.down:
                 if (this._blockDown == false) {
                     this.moveSound.play();
-                    this.tempArray(this.checkList,this.isFill);
+                    this.tempArray(this.checkList, this.isFill);
                     this.goDown_1(this.fillTable);
                     this.goDown_2(this.fillTable);
                     this.goDown_3(this.fillTable);
-                    if(parseInt(this.bestScore.string) >= parseInt(this.score.string)){
-                        this.bestScore.string == parseInt(this.score.string);
-                    }
-                    if(!this.equal_Array(this.isFill, this.checkList))
+                    if (!this.equal_Array(this.isFill, this.checkList))
                         this.addItemInBox(this.isFill);
+                    else {
+                        if (this.fullList(this.isFill) == true) {
+                            this._blockDown = true;
+                        }
+                    }
                     break;
                 }
         }
+        if (parseInt(this.bestScore.string) <= parseInt(this.score.string)) {
+            this.bestScore.string = this.score.string;
+        }
+        if (this._blockDown == true && this._blockUp == true && this._blockLeft == true && this._blockRight == true) {
+            cc.log("GAME OVER");
+            cc.sys.localStorage.setItem('Score', JSON.stringify(parseInt(this.score.string)));
+            cc.log(JSON.parse(cc.sys.localStorage.getItem('Score')));
+
+        }
+    },
+    fullList(array) {
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] == 0) {
+                return false;
+            }
+        }
+        return true;
     },
     equal_Array(arrayA, arrayB) {
         for (let i = 0; i < arrayA.length; i++) {
@@ -186,6 +310,7 @@ cc.Class({
                         array[i].position = this.xyPosition[i];
                         array[i].children[1].scale = 1;
                         array[i].children[1].getChildByName("numb").getComponent(cc.Label).string = parseInt(array[k - 4].children[1].getChildByName("numb").getComponent(cc.Label).string);
+                        this.setColor(array[i]);
                         this.isFill[k - 4] = 0;
                         this.isFill[i] = parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
                         array[k - 4].removeChild(array[k - 4].children[1]);
@@ -206,6 +331,7 @@ cc.Class({
                                 if (array[i].children[1].getChildByName("numb").getComponent(cc.Label).string == array[k - 4].children[1].getChildByName("numb").getComponent(cc.Label).string) {
                                     array[i].children[1].getChildByName("numb").getComponent(cc.Label).string = parseInt(array[k - 4].children[1].getChildByName("numb").getComponent(cc.Label).string)
                                         + parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
+                                    this.setColor(array[i]);
                                     this.isFill[k - 4] = 0;
                                     var action = cc.sequence(cc.scaleTo(0.25, 1.25), cc.scaleTo(0.25, 1));
                                     array[i].runAction(action);
@@ -236,6 +362,7 @@ cc.Class({
 
                         array[i].children[1].getChildByName("numb").getComponent(cc.Label).string = parseInt(array[k - 4].children[1].getChildByName("numb").getComponent(cc.Label).string)
                             + parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
+                        this.setColor(array[i]);
                         this.isFill[k - 4] = 0;
                         this.isFill[i] = parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
                         array[k - 4].removeChild(array[k - 4].children[1])
@@ -258,6 +385,7 @@ cc.Class({
                         array[i].position = this.xyPosition[i];
                         array[i].children[1].scale = 1;
                         array[i].children[1].getChildByName("numb").getComponent(cc.Label).string = parseInt(array[k + 4].children[1].getChildByName("numb").getComponent(cc.Label).string);
+                        this.setColor(array[i]);
                         this.isFill[k + 4] = 0;
                         this.isFill[i] = parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
                         array[k + 4].removeChild(array[k + 4].children[1]);
@@ -278,6 +406,7 @@ cc.Class({
                                 if (array[i].children[1].getChildByName("numb").getComponent(cc.Label).string == array[k + 4].children[1].getChildByName("numb").getComponent(cc.Label).string) {
                                     array[i].children[1].getChildByName("numb").getComponent(cc.Label).string = parseInt(array[k + 4].children[1].getChildByName("numb").getComponent(cc.Label).string)
                                         + parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
+                                    this.setColor(array[i]);
                                     var action = cc.sequence(cc.scaleTo(0.25, 1.25), cc.scaleTo(0.25, 1));
                                     array[i].runAction(action);
                                     this.score.string = parseInt(this.score.string) + parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
@@ -307,6 +436,7 @@ cc.Class({
                         array[i].children[1].scale = 1;
                         array[i].children[1].getChildByName("numb").getComponent(cc.Label).string = parseInt(array[k + 4].children[1].getChildByName("numb").getComponent(cc.Label).string)
                             + parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
+                        this.setColor(array[i]);
                         this.isFill[k + 4] = 0;
                         this.isFill[i] = parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
                         array[k + 4].removeChild(array[k + 4].children[1])
@@ -329,6 +459,7 @@ cc.Class({
                         array[i].position = this.xyPosition[i];
                         array[i].children[1].scale = 1;
                         array[i].children[1].getChildByName("numb").getComponent(cc.Label).string = parseInt(array[k + 1].children[1].getChildByName("numb").getComponent(cc.Label).string);
+                        this.setColor(array[i]);
                         this.isFill[k + 1] = 0;
                         this.isFill[i] = parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
                         array[k + 1].removeChild(array[k + 1].children[1]);
@@ -350,6 +481,8 @@ cc.Class({
                                     array[i].children[1].getChildByName("numb").getComponent(cc.Label).string = parseInt(array[k + 1].children[1].getChildByName("numb").getComponent(cc.Label).string)
                                         + parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
                                     this.score.string = parseInt(this.score.string) + parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
+                                    this.setColor(array[i]);
+                                    this.setColor(array[i]);
                                     var action = cc.sequence(cc.scaleTo(0.25, 1.25), cc.scaleTo(0.25, 1));
                                     array[i].runAction(action);
                                     this.isFill[k + 1] = 0;
@@ -378,6 +511,7 @@ cc.Class({
                         array[i].children[1].scale = 1;
                         array[i].children[1].getChildByName("numb").getComponent(cc.Label).string = parseInt(array[k + 1].children[1].getChildByName("numb").getComponent(cc.Label).string)
                             + parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
+                        this.setColor(array[i]);
                         this.isFill[k + 1] = 0;
                         this.isFill[i] = parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
                         array[k + 1].removeChild(array[k + 1].children[1])
@@ -400,6 +534,7 @@ cc.Class({
                         array[i].position = this.xyPosition[i];
                         array[i].children[1].scale = 1;
                         array[i].children[1].getChildByName("numb").getComponent(cc.Label).string = parseInt(array[k - 1].children[1].getChildByName("numb").getComponent(cc.Label).string);
+                        this.setColor(array[i]);
                         this.isFill[i] = parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
                         this.isFill[k - 1] = 0;
                         array[k - 1].removeChild(array[k - 1].children[1]);
@@ -421,9 +556,10 @@ cc.Class({
                                     array[i].children[1].getChildByName("numb").getComponent(cc.Label).string = parseInt(array[k - 1].children[1].getChildByName("numb").getComponent(cc.Label).string)
                                         + parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
                                     this.score.string = parseInt(this.score.string) + parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
+                                    this.setColor(array[i]);
                                     var action = cc.sequence(cc.scaleTo(0.25, 1.25), cc.scaleTo(0.25, 1));
                                     array[i].runAction(action);
-                                    
+
                                     this.isFill[i] = parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
                                     this.isFill[k - 1] = 0;
                                     array[k - 1].removeChild(array[k - 1].children[1]);
@@ -450,7 +586,7 @@ cc.Class({
                         array[i].children[1].scale = 1;
                         array[i].children[1].getChildByName("numb").getComponent(cc.Label).string = parseInt(array[k - 1].children[1].getChildByName("numb").getComponent(cc.Label).string)
                             + parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
-                        
+                        this.setColor(array[i]);
                         this.isFill[i] = parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
                         this.isFill[k - 1] = 0;
                         array[k - 1].removeChild(array[k - 1].children[1])
