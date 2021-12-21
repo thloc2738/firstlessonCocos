@@ -1,6 +1,6 @@
 {
   "ver": "2.3.3",
-  "uuid": "c8c95617-c38f-4eb2-909c-5a9f69f4414e",
+  "uuid": "48db7a29-cd15-4874-a335-5dddfc221f79",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -9,10 +9,10 @@
   "packable": true,
   "platformSettings": {},
   "subMetas": {
-    "exit": {
+    "unmusic": {
       "ver": "1.0.4",
-      "uuid": "1b7f6c69-ef4f-485b-9b45-0a3d04a4bb78",
-      "rawTextureUuid": "c8c95617-c38f-4eb2-909c-5a9f69f4414e",
+      "uuid": "637dfbf0-d643-452d-9f5e-50e580a41be5",
+      "rawTextureUuid": "48db7a29-cd15-4874-a335-5dddfc221f79",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

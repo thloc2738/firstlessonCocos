@@ -21,7 +21,9 @@ cc.Class({
         _blockRight: false,
         _blockUp: false,
         _blockDown: false,
-        arrFrame: [cc.SpriteFrame]
+        arrFrame: [cc.SpriteFrame],
+        aniFlag: true,
+        topRank: cc.Node,
     },
     createTable() {
         for (let i = 0; i < 16; i++) {
@@ -60,39 +62,14 @@ cc.Class({
         this.createPrefabsTable(this.mainScene, this.emptyPrefab)
         this.addItemInBox(this.isFill);
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.move2048, this);
-        this.mainScene.on(cc.Node.EventType.MOUSE_DOWN, function (event) {
-            let firstXClick = event.getLocationX();
-            let firstYClick = event.getLocationY();
-            this.mainScene.on(cc.Node.EventType.MOUSE_UP, function (event) {
-                let secondXClick = event.getLocationX();
-                let secondYClick = event.getLocationY();
-
-                cc.warn(firstXClick, firstYClick);
-                cc.error(secondXClick, secondYClick)
-                // let deltaX = Math.abs(secondXClick - firstXClick);
-                // let deltaY = Math.abs(secondYClick - firstYClick);
-                // if (deltaX > deltaY) {
-                //     if (secondXClick - firstXClick > 0) {
-                //         this.swipeRight();
-                //     }
-                //     else {
-                //         this.swipeLeft();
-                //     }
-                // } else {
-                //     if (secondYClick - firstYClick > 0) {
-                //         this.swipeUp();
-                //     }
-                //     else {
-                //         this.swipeDown();
-                //     }
-                // }
-                firstXClick = null;
-                firstYClick = null;
-                secondXClick = null;
-                secondYClick = null;
-
-            }, this);
-        }, this);
+    },
+    resetGame(){
+        this.emptyTable(this.isFill, 0);
+        this.emptyTable(this.checkList, 0)
+        cc.log(this.isFill)
+        this.createTable()
+        this.createPrefabsTable(this.mainScene, this.emptyPrefab)
+        this.addItemInBox(this.isFill);
     },
     createItem(value) {
         this.mainScene.children[value].addChild(cc.instantiate(this.item));
@@ -299,7 +276,7 @@ cc.Class({
         }
     },
     goDown_1(array) {
-        for (let i = array.length - 1; i >= 0; i--) {
+            for (let i = array.length - 1; i >= 0; i--) {
             let k = i;
             if (i >= 4) {
                 while (array[i].childrenCount < 2 && k - 4 >= 0) {
@@ -307,6 +284,7 @@ cc.Class({
                         k -= 4;
                     }
                     else {
+                        this.aniFlag = false;
                         array[i].addChild(cc.instantiate(this.item));
                         cc.tween(array[k - 4].children[1])
                             .to(1, { position: this.xyPosition[i] })
@@ -319,13 +297,14 @@ cc.Class({
                         this.isFill[i] = parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
                         array[k - 4].removeChild(array[k - 4].children[1]);
                         k -= 4;
+                        
                     }
                 }
             }
         }
     },
     goDown_2(array) {
-        for (let i = array.length - 1; i >= 0; i--) {
+            for (let i = array.length - 1; i >= 0; i--) {
             let k = i;
             if (i >= 4) {
                 if (array[i].childrenCount == 2) {
@@ -352,7 +331,7 @@ cc.Class({
         }
     },
     goDown_3(array) {
-        for (let i = array.length - 1; i >= 0; i--) {
+            for (let i = array.length - 1; i >= 0; i--) {
             let k = i;
             if (i >= 4) {
                 while (array[i].childrenCount < 2 && k - 4 >= 0) {
@@ -371,10 +350,12 @@ cc.Class({
                         this.isFill[i] = parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
                         array[k - 4].removeChild(array[k - 4].children[1])
                         k -= 4;
+                        // this.aniFlag = true;
                     }
                 }
             }
         }
+    
     },
     goUp_1(array) {
         for (let i = 0; i < array.length; i++) {
