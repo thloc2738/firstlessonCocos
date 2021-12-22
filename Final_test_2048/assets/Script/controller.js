@@ -17,32 +17,42 @@ cc.Class({
         score: cc.Label,
         bestScore: cc.Label,
         moveSound: cc.AudioSource,
+        clickSound: cc.AudioSource,
         _blockLeft: false,
         _blockRight: false,
         _blockUp: false,
         _blockDown: false,
         arrFrame: [cc.SpriteFrame],
         aniFlag: true,
-        topRank: cc.Node,
+        topRank: cc.Layout,
+        topRankPrefabs: cc.Prefab,
+        topScore: cc.Node,
+        scoreEnd: cc.Label,
+        gameOverPopUp: cc.Node,
+        gameOverTrans: cc.Node,
+        _topPlay: 0,
+        yourScore: cc.Label,
+        _blockMove: false,
+
     },
     createTable() {
         for (let i = 0; i < 16; i++) {
             let x, y, pos;
             if (i % 4 == 0) {
                 x = -232;
-                y = 27 + (i / 4) * (-155);
+                y = 245 + (i / 4) * (-155);
                 pos = cc.v3(x, y, 0);
             } else if (i % 4 == 1) {
                 x = -77;
-                y = 27 + ((i - 1) / 4) * (-155);
+                y = 245 + ((i - 1) / 4) * (-155);
                 pos = cc.v3(x, y, 0);
             } else if (i % 4 == 2) {
                 x = 77;
-                y = 27 + ((i - 2) / 4) * (-155);
+                y = 245 + ((i - 2) / 4) * (-155);
                 pos = cc.v3(x, y, 0);
             } else if (i % 4 == 3) {
                 x = 232;
-                y = 27 + ((i - 3) / 4) * (-155);
+                y = 245 + ((i - 3) / 4) * (-155);
                 pos = cc.v3(x, y, 0);
             }
             // cc.log(pos)
@@ -52,6 +62,12 @@ cc.Class({
         cc.log(this.xyPosition)
     },
     onLoad() {
+        Emitter.instance = new Emitter();
+        Emitter.instance.registerEvent("MOVELEFT", this.swipeLeft.bind(this));
+        Emitter.instance.registerEvent("MOVERIGHT", this.swipeRight.bind(this));
+        Emitter.instance.registerEvent("MOVEUP", this.swipeUp.bind(this));
+        Emitter.instance.registerEvent("MOVEDOWN", this.swipeDown.bind(this));
+        Emitter.instance.registerEvent("RESETGAME", this.resetGame.bind(this));
         if (parseInt(this.bestScore.string) <= cc.sys.localStorage.getItem("Score")) {
             this.bestScore.string = cc.sys.localStorage.getItem("Score");
         }
@@ -61,15 +77,30 @@ cc.Class({
         this.createTable()
         this.createPrefabsTable(this.mainScene, this.emptyPrefab)
         this.addItemInBox(this.isFill);
+        this.addItemInBox(this.isFill);
+
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.move2048, this);
     },
-    resetGame(){
-        this.emptyTable(this.isFill, 0);
-        this.emptyTable(this.checkList, 0)
-        cc.log(this.isFill)
-        this.createTable()
-        this.createPrefabsTable(this.mainScene, this.emptyPrefab)
+    resetGame() {
+        // this._blockMove = false;
+        this.mainScene.enabled = true;
+        this.gameOverPopUp.active = false;
+        this.gameOverTrans.active = false;
+        this.clickSound.play();
+        for (let i = 0; i < this.isFill.length; i++) {
+            this.isFill[i] = 0;
+            this.checkList[i] = 0;
+        }
+        for (let i = 0; i < this.fillTable.length; i++) {
+            this.fillTable[i].removeChild(this.fillTable[i].children[1]);
+        }
         this.addItemInBox(this.isFill);
+        this.addItemInBox(this.isFill);
+        this.score.string = parseInt(0);
+        this._blockDown = false;
+        this._blockLeft = false;
+        this._blockRight = false;
+        this._blockUp = false;
     },
     createItem(value) {
         this.mainScene.children[value].addChild(cc.instantiate(this.item));
@@ -105,7 +136,7 @@ cc.Class({
             node.children[1].getComponent(cc.Sprite).spriteFrame = this.arrFrame[8];
         }
     },
-    addItemInBox(listItem) {
+    addItemInBox(listItem) {    //random item
         if (this.checkAddItem()) {
             let number;
             do {
@@ -182,52 +213,66 @@ cc.Class({
             }
         }
     },
+    onSound(state) {
+        if (state == "on") {
+
+        }
+    },
     move2048: function (event) {
         switch (event.keyCode) {
             case cc.macro.KEY.right:
-                this.moveSound.play();
-                this.tempArray(this.checkList, this.isFill);
-                this.goRight_1(this.fillTable);
-                this.goRight_2(this.fillTable);
-                this.goRight_3(this.fillTable);
-                if (!this.equal_Array(this.isFill, this.checkList))
-                    this.addItemInBox(this.isFill);
-                else {
-                    if (this.fullList(this.isFill) == true) {
-                        this._blockRight = true;
+                if (!this._blockMove) {
+                    this.moveSound.play();
+                    this.tempArray(this.checkList, this.isFill);
+                    this.goRight_1(this.fillTable);
+                    this.goRight_2(this.fillTable);
+                    this.goRight_3(this.fillTable);
+                    if (!this.equal_Array(this.isFill, this.checkList))
+                        this.addItemInBox(this.isFill);
+                    else {
+                        if (this.fullList(this.isFill) == true) {
+                            this._blockRight = true;
+                        }
                     }
                 }
+                else cc.error("Stop");
                 break;
             case cc.macro.KEY.left:
-                this.moveSound.play();
-                this.tempArray(this.checkList, this.isFill);
-                this.goLeft_1(this.fillTable);
-                this.goLeft_2(this.fillTable);
-                this.goLeft_3(this.fillTable);
-                if (!this.equal_Array(this.isFill, this.checkList))
-                    this.addItemInBox(this.isFill);
-                else {
-                    if (this.fullList(this.isFill) == true) {
-                        this._blockLeft = true;
+                if (!this._blockMove) {
+                    this.moveSound.play();
+                    this.tempArray(this.checkList, this.isFill);
+                    this.goLeft_1(this.fillTable);
+                    this.goLeft_2(this.fillTable);
+                    this.goLeft_3(this.fillTable);
+                    if (!this.equal_Array(this.isFill, this.checkList))
+                        this.addItemInBox(this.isFill);
+                    else {
+                        if (this.fullList(this.isFill) == true) {
+                            this._blockLeft = true;
+                        }
                     }
                 }
+                else cc.error("Stop");
                 break;
             case cc.macro.KEY.up:
-                this.moveSound.play();
-                this.tempArray(this.checkList, this.isFill);
-                this.goUp_1(this.fillTable);
-                this.goUp_2(this.fillTable);
-                this.goUp_3(this.fillTable);
-                if (!this.equal_Array(this.isFill, this.checkList))
-                    this.addItemInBox(this.isFill);
-                else {
-                    if (this.fullList(this.isFill) == true) {
-                        this._blockUp = true;
+                if (!this._blockMove) {
+                    this.moveSound.play();
+                    this.tempArray(this.checkList, this.isFill);
+                    this.goUp_1(this.fillTable);
+                    this.goUp_2(this.fillTable);
+                    this.goUp_3(this.fillTable);
+                    if (!this.equal_Array(this.isFill, this.checkList))
+                        this.addItemInBox(this.isFill);
+                    else {
+                        if (this.fullList(this.isFill) == true) {
+                            this._blockUp = true;
+                        }
                     }
                 }
+                else cc.error("Stop");
                 break;
             case cc.macro.KEY.down:
-                if (this._blockDown == false) {
+                if (!this._blockMove) {
                     this.moveSound.play();
                     this.tempArray(this.checkList, this.isFill);
                     this.goDown_1(this.fillTable);
@@ -240,17 +285,40 @@ cc.Class({
                             this._blockDown = true;
                         }
                     }
-                    break;
                 }
+                else cc.error("Stop");
+                break;
         }
         if (parseInt(this.bestScore.string) <= parseInt(this.score.string)) {
             this.bestScore.string = this.score.string;
         }
+        //=============================== GAME OVER ====================================
         if (this._blockDown == true && this._blockUp == true && this._blockLeft == true && this._blockRight == true) {
+            this.gameOverPopUp.x = 380;
+            this.gameOverPopUp.y = 1670;
+            this.gameOverPopUp.scale = 1;
+            let top = cc.instantiate(this.topRankPrefabs);
+            top.getChildByName("name").getComponent(cc.Label).string = "Top " + ++this._topPlay + ": ";
+            top.getChildByName("score").getComponent(cc.Label).string = parseInt(this.score.string);
+            this.yourScore.string = this.score.string;
+            this.topRank.node.addChild(top);
+            this.gameOverTrans.active = true
+            this.gameOverPopUp.active = true;
             cc.log("GAME OVER");
+            var action = cc.moveTo(1, 380, 640);
+            action.easing(cc.easeBounceOut(1));
+            this.gameOverPopUp.runAction(action);
             cc.sys.localStorage.setItem('Score', JSON.stringify(parseInt(this.score.string)));
             cc.log(JSON.parse(cc.sys.localStorage.getItem('Score')));
+            this._blockMove = false;
 
+        }
+    },
+    checkTopRank(node, string) {
+        for (let i = 0; i < node.childrenCount; i++) {
+            if (parseInt(node.children[i].getChildByName("score").getComponent(cc.Label).string) < parseInt(string)) {
+
+            }
         }
     },
     fullList(array) {
@@ -276,7 +344,7 @@ cc.Class({
         }
     },
     goDown_1(array) {
-            for (let i = array.length - 1; i >= 0; i--) {
+        for (let i = array.length - 1; i >= 0; i--) {
             let k = i;
             if (i >= 4) {
                 while (array[i].childrenCount < 2 && k - 4 >= 0) {
@@ -297,14 +365,14 @@ cc.Class({
                         this.isFill[i] = parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
                         array[k - 4].removeChild(array[k - 4].children[1]);
                         k -= 4;
-                        
+
                     }
                 }
             }
         }
     },
     goDown_2(array) {
-            for (let i = array.length - 1; i >= 0; i--) {
+        for (let i = array.length - 1; i >= 0; i--) {
             let k = i;
             if (i >= 4) {
                 if (array[i].childrenCount == 2) {
@@ -331,7 +399,7 @@ cc.Class({
         }
     },
     goDown_3(array) {
-            for (let i = array.length - 1; i >= 0; i--) {
+        for (let i = array.length - 1; i >= 0; i--) {
             let k = i;
             if (i >= 4) {
                 while (array[i].childrenCount < 2 && k - 4 >= 0) {
@@ -355,7 +423,7 @@ cc.Class({
                 }
             }
         }
-    
+
     },
     goUp_1(array) {
         for (let i = 0; i < array.length; i++) {

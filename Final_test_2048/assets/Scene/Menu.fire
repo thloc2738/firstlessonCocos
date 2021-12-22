@@ -159,7 +159,7 @@
       "__type__": "cc.Vec3",
       "x": 0,
       "y": 0,
-      "z": 346.1936551628294
+      "z": 443.4050067376326
     },
     "_scale": {
       "__type__": "cc.Vec3",
@@ -2684,7 +2684,7 @@
         "__id__": 62
       }
     ],
-    "_active": false,
+    "_active": true,
     "_level": 0,
     "_components": [],
     "_prefab": null,
@@ -3740,6 +3740,7 @@
     "option": {
       "__id__": 59
     },
+    "clickSound": null,
     "_id": "46Vrk1aYtAI6bP5nu6f8jB"
   }
 ]

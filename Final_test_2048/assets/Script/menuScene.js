@@ -7,6 +7,7 @@ cc.Class({
         menu: cc.Node,
         tutorial: cc.Node,
         option: cc.Node,
+        clickSound: cc.AudioSource,
     },
     tutorialScenee() {
         this.menu.active = false;
@@ -18,18 +19,15 @@ cc.Class({
         this.tutorial.active = false;
         this.option.active = true;
     },
-    menuScene(){
+    menuScene() {
         this.tutorial.active = false;
         this.option.active = false;
         this.menu.active = true;
     },
-    exitGame() {
-        cc.game.end();
-    },
 
     // onLoad () {},
-    tutorialPage(){
-        if(this.pageView.getCurrentPageIndex() == 2){
+    tutorialPage() {
+        if (this.pageView.getCurrentPageIndex() == 2) {
             cc.director.loadScene("GamePlay");
             this.tutorial.active = false;
         }
