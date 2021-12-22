@@ -78,11 +78,15 @@ cc.Class({
         this.createPrefabsTable(this.mainScene, this.emptyPrefab)
         this.addItemInBox(this.isFill);
         this.addItemInBox(this.isFill);
-
-        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.move2048, this);
+        if(!this._blockMove){
+            cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.move2048, this);
+        }
+        
+        
+        
     },
     resetGame() {
-        // this._blockMove = false;
+        this._blockMove = false;
         this.mainScene.enabled = true;
         this.gameOverPopUp.active = false;
         this.gameOverTrans.active = false;
@@ -156,49 +160,55 @@ cc.Class({
         return false
     },
     swipeRight() {
-        this.moveSound.play();
-        this.tempArray(this.checkList, this.isFill);
-        this.goRight_1(this.fillTable);
-        this.goRight_2(this.fillTable);
-        this.goRight_3(this.fillTable);
-        if (!this.equal_Array(this.isFill, this.checkList))
-            this.addItemInBox(this.isFill);
-        else {
-            if (this.fullList(this.isFill) == true) {
-                this._blockRight = true;
+        if(!this._blockMove){
+            this.moveSound.play();
+            this.tempArray(this.checkList, this.isFill);
+            this.goRight_1(this.fillTable);
+            this.goRight_2(this.fillTable);
+            this.goRight_3(this.fillTable);
+            if (!this.equal_Array(this.isFill, this.checkList))
+                this.addItemInBox(this.isFill);
+            else {
+                if (this.fullList(this.isFill) == true) {
+                    this._blockRight = true;
+                }
             }
         }
     },
     swipeLeft() {
-        this.moveSound.play();
-        this.tempArray(this.checkList, this.isFill);
-        this.goLeft_1(this.fillTable);
-        this.goLeft_2(this.fillTable);
-        this.goLeft_3(this.fillTable);
-        if (!this.equal_Array(this.isFill, this.checkList))
-            this.addItemInBox(this.isFill);
-        else {
-            if (this.fullList(this.isFill) == true) {
-                this._blockLeft = true;
+        if(!this._blockMove){
+            this.moveSound.play();
+            this.tempArray(this.checkList, this.isFill);
+            this.goLeft_1(this.fillTable);
+            this.goLeft_2(this.fillTable);
+            this.goLeft_3(this.fillTable);
+            if (!this.equal_Array(this.isFill, this.checkList))
+                this.addItemInBox(this.isFill);
+            else {
+                if (this.fullList(this.isFill) == true) {
+                    this._blockLeft = true;
+                }
             }
         }
     },
     swipeUp() {
-        this.moveSound.play();
-        this.tempArray(this.checkList, this.isFill);
-        this.goUp_1(this.fillTable);
-        this.goUp_2(this.fillTable);
-        this.goUp_3(this.fillTable);
-        if (!this.equal_Array(this.isFill, this.checkList))
-            this.addItemInBox(this.isFill);
-        else {
-            if (this.fullList(this.isFill) == true) {
-                this._blockUp = true;
+        if(!this._blockMove){
+           this.moveSound.play();
+            this.tempArray(this.checkList, this.isFill);
+            this.goUp_1(this.fillTable);
+            this.goUp_2(this.fillTable);
+            this.goUp_3(this.fillTable);
+            if (!this.equal_Array(this.isFill, this.checkList))
+                this.addItemInBox(this.isFill);
+            else {
+                if (this.fullList(this.isFill) == true) {
+                    this._blockUp = true;
+                }
             }
         }
     },
     swipeDown() {
-        if (this._blockDown == false) {
+        if(!this._blockMove){
             this.moveSound.play();
             this.tempArray(this.checkList, this.isFill);
             this.goDown_1(this.fillTable);
@@ -219,9 +229,9 @@ cc.Class({
         }
     },
     move2048: function (event) {
-        switch (event.keyCode) {
+           switch (event.keyCode) {
             case cc.macro.KEY.right:
-                if (!this._blockMove) {
+                
                     this.moveSound.play();
                     this.tempArray(this.checkList, this.isFill);
                     this.goRight_1(this.fillTable);
@@ -234,11 +244,9 @@ cc.Class({
                             this._blockRight = true;
                         }
                     }
-                }
-                else cc.error("Stop");
+                
                 break;
             case cc.macro.KEY.left:
-                if (!this._blockMove) {
                     this.moveSound.play();
                     this.tempArray(this.checkList, this.isFill);
                     this.goLeft_1(this.fillTable);
@@ -251,11 +259,9 @@ cc.Class({
                             this._blockLeft = true;
                         }
                     }
-                }
-                else cc.error("Stop");
+                
                 break;
             case cc.macro.KEY.up:
-                if (!this._blockMove) {
                     this.moveSound.play();
                     this.tempArray(this.checkList, this.isFill);
                     this.goUp_1(this.fillTable);
@@ -268,11 +274,8 @@ cc.Class({
                             this._blockUp = true;
                         }
                     }
-                }
-                else cc.error("Stop");
                 break;
             case cc.macro.KEY.down:
-                if (!this._blockMove) {
                     this.moveSound.play();
                     this.tempArray(this.checkList, this.isFill);
                     this.goDown_1(this.fillTable);
@@ -285,40 +288,56 @@ cc.Class({
                             this._blockDown = true;
                         }
                     }
-                }
-                else cc.error("Stop");
+                
                 break;
         }
+    
         if (parseInt(this.bestScore.string) <= parseInt(this.score.string)) {
             this.bestScore.string = this.score.string;
         }
         //=============================== GAME OVER ====================================
         if (this._blockDown == true && this._blockUp == true && this._blockLeft == true && this._blockRight == true) {
-            this.gameOverPopUp.x = 380;
-            this.gameOverPopUp.y = 1670;
-            this.gameOverPopUp.scale = 1;
+           
+            if(!this._blockMove){
+                this.gameOverPopUp.x = 380;
+                this.gameOverPopUp.y = 1670;
+                this.gameOverPopUp.scale = 1;
+                // let top = cc.instantiate(this.topRankPrefabs);
+                // top.getChildByName("name").getComponent(cc.Label).string = "Top " + ++this._topPlay + ": ";
+                // top.getChildByName("score").getComponent(cc.Label).string = parseInt(this.score.string);
+                this.yourScore.string = this.score.string;
+                this.checkTopRank(this.topRank.node, this.score.string);
+                this.gameOverTrans.active = true
+                this.gameOverPopUp.active = true;
+                cc.log("GAME OVER");
+                var action = cc.moveTo(1, 380, 640);
+                action.easing(cc.easeBounceOut(1));
+                this.gameOverPopUp.runAction(action);
+                cc.sys.localStorage.setItem('Score', JSON.stringify(parseInt(this.score.string)));
+                cc.log(JSON.parse(cc.sys.localStorage.getItem('Score')));
+                this._blockMove = true;
+            }
+            
+        }
+    },
+    checkTopRank(topList, stringScore) {
+        if(topList.childrenCount > 0){
+                for (let i = 0; i < topList.childrenCount; i++) {
+                if (parseInt(topList.children[i].getChildByName("score").getComponent(cc.Label).string) < parseInt(stringScore)) {
+                    let temp = topList.children[i].getChildByName("score").getComponent(cc.Label).string;
+                    topList.children[i].getChildByName("score").getComponent(cc.Label).string = node.getChildByName("score").getComponent(cc.Label).string;
+                    node.getChildByName("score").getComponent(cc.Label).string = temp;
+                    topList.addChild(node);
+                }
+                
+            }
+        }
+        else{
             let top = cc.instantiate(this.topRankPrefabs);
             top.getChildByName("name").getComponent(cc.Label).string = "Top " + ++this._topPlay + ": ";
             top.getChildByName("score").getComponent(cc.Label).string = parseInt(this.score.string);
-            this.yourScore.string = this.score.string;
-            this.topRank.node.addChild(top);
-            this.gameOverTrans.active = true
-            this.gameOverPopUp.active = true;
-            cc.log("GAME OVER");
-            var action = cc.moveTo(1, 380, 640);
-            action.easing(cc.easeBounceOut(1));
-            this.gameOverPopUp.runAction(action);
-            cc.sys.localStorage.setItem('Score', JSON.stringify(parseInt(this.score.string)));
-            cc.log(JSON.parse(cc.sys.localStorage.getItem('Score')));
-            this._blockMove = false;
-
-        }
-    },
-    checkTopRank(node, string) {
-        for (let i = 0; i < node.childrenCount; i++) {
-            if (parseInt(node.children[i].getChildByName("score").getComponent(cc.Label).string) < parseInt(string)) {
-
-            }
+            // top.getChildByName("score").getComponent(cc.Label).string = parseInt(stringScore);
+            topList.addChild(top);
         }
     },
     fullList(array) {
