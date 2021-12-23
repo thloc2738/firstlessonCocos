@@ -33,7 +33,13 @@ cc.Class({
         _topPlay: 0,
         yourScore: cc.Label,
         _blockMove: false,
-
+        isMute: false,
+    },
+    offMoveSound() {
+        this.moveSound.volume = 0;
+    },
+    onMoveSound() {
+        this.moveSound.volume = 1;
     },
     createTable() {
         for (let i = 0; i < 16; i++) {
@@ -68,6 +74,8 @@ cc.Class({
         Emitter.instance.registerEvent("MOVEUP", this.swipeUp.bind(this));
         Emitter.instance.registerEvent("MOVEDOWN", this.swipeDown.bind(this));
         Emitter.instance.registerEvent("RESETGAME", this.resetGame.bind(this));
+        Emitter.instance.registerEvent("ONSOUND", this.onMoveSound.bind(this));
+        Emitter.instance.registerEvent("OFFSOUND", this.offMoveSound.bind(this));
         if (parseInt(this.bestScore.string) <= cc.sys.localStorage.getItem("Score")) {
             this.bestScore.string = cc.sys.localStorage.getItem("Score");
         }
@@ -78,12 +86,12 @@ cc.Class({
         this.createPrefabsTable(this.mainScene, this.emptyPrefab)
         this.addItemInBox(this.isFill);
         this.addItemInBox(this.isFill);
-        if(!this._blockMove){
+        if (!this._blockMove) {
             cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.move2048, this);
         }
-        
-        
-        
+
+
+
     },
     resetGame() {
         this._blockMove = false;
@@ -160,7 +168,7 @@ cc.Class({
         return false
     },
     swipeRight() {
-        if(!this._blockMove){
+        if (!this._blockMove) {
             this.moveSound.play();
             this.tempArray(this.checkList, this.isFill);
             this.goRight_1(this.fillTable);
@@ -176,7 +184,7 @@ cc.Class({
         }
     },
     swipeLeft() {
-        if(!this._blockMove){
+        if (!this._blockMove) {
             this.moveSound.play();
             this.tempArray(this.checkList, this.isFill);
             this.goLeft_1(this.fillTable);
@@ -192,8 +200,8 @@ cc.Class({
         }
     },
     swipeUp() {
-        if(!this._blockMove){
-           this.moveSound.play();
+        if (!this._blockMove) {
+            this.moveSound.play();
             this.tempArray(this.checkList, this.isFill);
             this.goUp_1(this.fillTable);
             this.goUp_2(this.fillTable);
@@ -208,7 +216,7 @@ cc.Class({
         }
     },
     swipeDown() {
-        if(!this._blockMove){
+        if (!this._blockMove) {
             this.moveSound.play();
             this.tempArray(this.checkList, this.isFill);
             this.goDown_1(this.fillTable);
@@ -229,84 +237,85 @@ cc.Class({
         }
     },
     move2048: function (event) {
-           switch (event.keyCode) {
+        switch (event.keyCode) {
             case cc.macro.KEY.right:
-                
-                    this.moveSound.play();
-                    this.tempArray(this.checkList, this.isFill);
-                    this.goRight_1(this.fillTable);
-                    this.goRight_2(this.fillTable);
-                    this.goRight_3(this.fillTable);
-                    if (!this.equal_Array(this.isFill, this.checkList))
-                        this.addItemInBox(this.isFill);
-                    else {
-                        if (this.fullList(this.isFill) == true) {
-                            this._blockRight = true;
-                        }
+
+                this.moveSound.play();
+                this.tempArray(this.checkList, this.isFill);
+                this.goRight_1(this.fillTable);
+                this.goRight_2(this.fillTable);
+                this.goRight_3(this.fillTable);
+                if (!this.equal_Array(this.isFill, this.checkList))
+                    this.addItemInBox(this.isFill);
+                else {
+                    if (this.fullList(this.isFill) == true) {
+                        this._blockRight = true;
                     }
-                
+                }
+
                 break;
             case cc.macro.KEY.left:
-                    this.moveSound.play();
-                    this.tempArray(this.checkList, this.isFill);
-                    this.goLeft_1(this.fillTable);
-                    this.goLeft_2(this.fillTable);
-                    this.goLeft_3(this.fillTable);
-                    if (!this.equal_Array(this.isFill, this.checkList))
-                        this.addItemInBox(this.isFill);
-                    else {
-                        if (this.fullList(this.isFill) == true) {
-                            this._blockLeft = true;
-                        }
+                this.moveSound.play();
+                this.tempArray(this.checkList, this.isFill);
+                this.goLeft_1(this.fillTable);
+                this.goLeft_2(this.fillTable);
+                this.goLeft_3(this.fillTable);
+                if (!this.equal_Array(this.isFill, this.checkList))
+                    this.addItemInBox(this.isFill);
+                else {
+                    if (this.fullList(this.isFill) == true) {
+                        this._blockLeft = true;
                     }
-                
+                }
+
                 break;
             case cc.macro.KEY.up:
-                    this.moveSound.play();
-                    this.tempArray(this.checkList, this.isFill);
-                    this.goUp_1(this.fillTable);
-                    this.goUp_2(this.fillTable);
-                    this.goUp_3(this.fillTable);
-                    if (!this.equal_Array(this.isFill, this.checkList))
-                        this.addItemInBox(this.isFill);
-                    else {
-                        if (this.fullList(this.isFill) == true) {
-                            this._blockUp = true;
-                        }
+                this.moveSound.play();
+                this.tempArray(this.checkList, this.isFill);
+                this.goUp_1(this.fillTable);
+                this.goUp_2(this.fillTable);
+                this.goUp_3(this.fillTable);
+                if (!this.equal_Array(this.isFill, this.checkList))
+                    this.addItemInBox(this.isFill);
+                else {
+                    if (this.fullList(this.isFill) == true) {
+                        this._blockUp = true;
                     }
+                }
                 break;
             case cc.macro.KEY.down:
-                    this.moveSound.play();
-                    this.tempArray(this.checkList, this.isFill);
-                    this.goDown_1(this.fillTable);
-                    this.goDown_2(this.fillTable);
-                    this.goDown_3(this.fillTable);
-                    if (!this.equal_Array(this.isFill, this.checkList))
-                        this.addItemInBox(this.isFill);
-                    else {
-                        if (this.fullList(this.isFill) == true) {
-                            this._blockDown = true;
-                        }
+                this.moveSound.play();
+                this.tempArray(this.checkList, this.isFill);
+                this.goDown_1(this.fillTable);
+                this.goDown_2(this.fillTable);
+                this.goDown_3(this.fillTable);
+                if (!this.equal_Array(this.isFill, this.checkList))
+                    this.addItemInBox(this.isFill);
+                else {
+                    if (this.fullList(this.isFill) == true) {
+                        this._blockDown = true;
                     }
-                
+                }
+
                 break;
         }
-    
+
         if (parseInt(this.bestScore.string) <= parseInt(this.score.string)) {
             this.bestScore.string = this.score.string;
         }
         //=============================== GAME OVER ====================================
         if (this._blockDown == true && this._blockUp == true && this._blockLeft == true && this._blockRight == true) {
-           
-            if(!this._blockMove){
+
+            if (!this._blockMove) {
                 this.gameOverPopUp.x = 380;
                 this.gameOverPopUp.y = 1670;
                 this.gameOverPopUp.scale = 1;
-                // let top = cc.instantiate(this.topRankPrefabs);
-                // top.getChildByName("name").getComponent(cc.Label).string = "Top " + ++this._topPlay + ": ";
-                // top.getChildByName("score").getComponent(cc.Label).string = parseInt(this.score.string);
-                this.yourScore.string = this.score.string;
+                let top = cc.instantiate(this.topRankPrefabs);
+                top.getChildByName("name").getComponent(cc.Label).string = "Top " + ++this._topPlay + ": ";
+                top.getChildByName("score").getComponent(cc.Label).string = parseInt(this.score.string);
+                this.topRank.node.addChild(top);
                 this.checkTopRank(this.topRank.node, this.score.string);
+                this.yourScore.string = this.score.string;
                 this.gameOverTrans.active = true
                 this.gameOverPopUp.active = true;
                 cc.log("GAME OVER");
@@ -317,28 +326,21 @@ cc.Class({
                 cc.log(JSON.parse(cc.sys.localStorage.getItem('Score')));
                 this._blockMove = true;
             }
-            
+
         }
     },
-    checkTopRank(topList, stringScore) {
-        if(topList.childrenCount > 0){
-                for (let i = 0; i < topList.childrenCount; i++) {
-                if (parseInt(topList.children[i].getChildByName("score").getComponent(cc.Label).string) < parseInt(stringScore)) {
+    checkTopRank(topList) {
+        if (topList.childrenCount > 0) {
+            for (let i = 0; i < topList.childrenCount - 1; i++) {
+                if (parseInt(topList.children[i].getChildByName("score").getComponent(cc.Label).string) < parseInt(topList.children[i + 1].getChildByName("score").getComponent(cc.Label).string)) {
                     let temp = topList.children[i].getChildByName("score").getComponent(cc.Label).string;
-                    topList.children[i].getChildByName("score").getComponent(cc.Label).string = node.getChildByName("score").getComponent(cc.Label).string;
-                    node.getChildByName("score").getComponent(cc.Label).string = temp;
-                    topList.addChild(node);
+                    topList.children[i].getChildByName("score").getComponent(cc.Label).string = topList.children[i + 1].getChildByName("score").getComponent(cc.Label).string;
+                    topList.children[i + 1].getChildByName("score").getComponent(cc.Label).string = temp;
                 }
-                
+
             }
         }
-        else{
-            let top = cc.instantiate(this.topRankPrefabs);
-            top.getChildByName("name").getComponent(cc.Label).string = "Top " + ++this._topPlay + ": ";
-            top.getChildByName("score").getComponent(cc.Label).string = parseInt(this.score.string);
-            // top.getChildByName("score").getComponent(cc.Label).string = parseInt(stringScore);
-            topList.addChild(top);
-        }
+
     },
     fullList(array) {
         for (let i = 0; i < array.length; i++) {
@@ -362,7 +364,10 @@ cc.Class({
             arrayA[i] = arrayB[i];
         }
     },
-    goDown_1(array) {
+    goDown_1(array) {   //  2  2     0  0   
+        //  0  2 =>  0  0
+        //  2  0     2  2
+        //  0  0     2  2
         for (let i = array.length - 1; i >= 0; i--) {
             let k = i;
             if (i >= 4) {
@@ -382,6 +387,7 @@ cc.Class({
                         this.setColor(array[i]);
                         this.isFill[k - 4] = 0;
                         this.isFill[i] = parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
+                        array[k - 4].children[1].destroy();
                         array[k - 4].removeChild(array[k - 4].children[1]);
                         k -= 4;
 
@@ -390,7 +396,10 @@ cc.Class({
             }
         }
     },
-    goDown_2(array) {
+    goDown_2(array) {   //      2   0           0   0
+        //      2   2   =>      4   0
+        //      2   2           0   4
+        //      2   0           4   0
         for (let i = array.length - 1; i >= 0; i--) {
             let k = i;
             if (i >= 4) {
@@ -407,6 +416,7 @@ cc.Class({
                                     array[i].runAction(action);
                                     this.score.string = parseInt(this.score.string) + parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
                                     this.isFill[i] = parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
+                                    array[k - 4].children[1].destroy();
                                     array[k - 4].removeChild(array[k - 4].children[1]);
                                 }
                             }
@@ -417,7 +427,10 @@ cc.Class({
             }
         }
     },
-    goDown_3(array) {
+    goDown_3(array) {   //  0   4           0   0
+        //  4   8   =>      0   4
+        //  4   2           4   8
+        //  0   0           4   0
         for (let i = array.length - 1; i >= 0; i--) {
             let k = i;
             if (i >= 4) {
@@ -435,6 +448,7 @@ cc.Class({
                         this.setColor(array[i]);
                         this.isFill[k - 4] = 0;
                         this.isFill[i] = parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
+                        array[k - 4].children[1].destroy();
                         array[k - 4].removeChild(array[k - 4].children[1])
                         k -= 4;
                         // this.aniFlag = true;
@@ -460,6 +474,7 @@ cc.Class({
                         this.setColor(array[i]);
                         this.isFill[k + 4] = 0;
                         this.isFill[i] = parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
+                        array[k + 4].children[1].destroy();
                         array[k + 4].removeChild(array[k + 4].children[1]);
                         k += 4;
                     }
@@ -484,6 +499,7 @@ cc.Class({
                                     this.score.string = parseInt(this.score.string) + parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
                                     this.isFill[k + 4] = 0;
                                     this.isFill[i] = parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
+                                    array[k + 4].children[1].destroy();
                                     array[k + 4].removeChild(array[k + 4].children[1]);
                                 }
                             }
@@ -511,6 +527,7 @@ cc.Class({
                         this.setColor(array[i]);
                         this.isFill[k + 4] = 0;
                         this.isFill[i] = parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
+                        array[k + 4].children[1].destroy();
                         array[k + 4].removeChild(array[k + 4].children[1])
                         k += 4;
                     }
@@ -534,6 +551,7 @@ cc.Class({
                         this.setColor(array[i]);
                         this.isFill[k + 1] = 0;
                         this.isFill[i] = parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
+                        array[k + 1].children[1].destroy();
                         array[k + 1].removeChild(array[k + 1].children[1]);
                         k++;
                     }
@@ -559,6 +577,7 @@ cc.Class({
                                     array[i].runAction(action);
                                     this.isFill[k + 1] = 0;
                                     this.isFill[i] = parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
+                                    array[k + 1].children[1].destroy();
                                     array[k + 1].removeChild(array[k + 1].children[1]);
                                 }
                             }
@@ -586,6 +605,7 @@ cc.Class({
                         this.setColor(array[i]);
                         this.isFill[k + 1] = 0;
                         this.isFill[i] = parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
+                        array[k + 1].children[1].destroy();
                         array[k + 1].removeChild(array[k + 1].children[1])
                         k++;
                     }
@@ -609,6 +629,7 @@ cc.Class({
                         this.setColor(array[i]);
                         this.isFill[i] = parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
                         this.isFill[k - 1] = 0;
+                        array[k - 1].children[1].destroy();
                         array[k - 1].removeChild(array[k - 1].children[1]);
                         k--;
                     }
@@ -634,6 +655,7 @@ cc.Class({
 
                                     this.isFill[i] = parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
                                     this.isFill[k - 1] = 0;
+                                    array[k - 1].children[1].destroy();
                                     array[k - 1].removeChild(array[k - 1].children[1]);
                                 }
                             }
@@ -661,6 +683,7 @@ cc.Class({
                         this.setColor(array[i]);
                         this.isFill[i] = parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
                         this.isFill[k - 1] = 0;
+                        array[k - 1].children[1].destroy();
                         array[k - 1].removeChild(array[k - 1].children[1])
                         k--;
                     }

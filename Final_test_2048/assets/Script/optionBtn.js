@@ -29,13 +29,15 @@ cc.Class({
         gameOverPopUp: cc.Node,
         gameOverTrans: cc.Node,
         backgroundMusic: cc.AudioSource,
+        gameplayScene: cc.Node,
     },
 
 
     onLoad() {
+        cc.log(this.optionBtn, "Option button");
         this.backgroundMusic.play();
         this.backgroundMusic.loop = true;
-        cc.log(this.optionBtn, "Option button");
+
     },
     optionClickBtn() {
         if (this._isClick) {
@@ -77,23 +79,27 @@ cc.Class({
         if (this._soundClick) {
             this.soundBtn.node.getChildByName("Background").getComponent(cc.Sprite).spriteFrame = this.muteSprite;
             this._soundClick = false;
+            Emitter.instance.emit("OFFSOUND");
+            this.backgroundMusic.pause();
         }
         else {
             this.soundBtn.node.getChildByName("Background").getComponent(cc.Sprite).spriteFrame = this.soundSprite;
             this._soundClick = true;
+            Emitter.instance.emit("ONSOUND");
+            this.backgroundMusic.resume();
+            this.backgroundMusic.loop = true;
         }
     },
     musicClick() {
         this.clickSound.play();
         if (this._musicClick) {
             this.musicBtn.node.getChildByName("Background").getComponent(cc.Sprite).spriteFrame = this.unmusicSprite;
-            this.backgroundMusic.pause();
+            Emitter.instance.emit("OFFBGM");
             this._musicClick = false;
         }
         else {
             this.musicBtn.node.getChildByName("Background").getComponent(cc.Sprite).spriteFrame = this.musicSprite;
-            this.backgroundMusic.resume();
-            this.backgroundMusic.loop = true;
+            Emitter.instance.emit("ONBGM");
             this._musicClick = true;
         }
     },
