@@ -32,14 +32,10 @@ cc.Class({
         gameOverTrans: cc.Node,
         _topPlay: 0,
         yourScore: cc.Label,
+        yourScoreWin: cc.Label,
         _blockMove: false,
-        isMute: false,
-    },
-    offMoveSound() {
-        this.moveSound.volume = 0;
-    },
-    onMoveSound() {
-        this.moveSound.volume = 1;
+        winnerPopUp: cc.Node,
+        _testwin: 2048,
     },
     createTable() {
         for (let i = 0; i < 16; i++) {
@@ -74,8 +70,8 @@ cc.Class({
         Emitter.instance.registerEvent("MOVEUP", this.swipeUp.bind(this));
         Emitter.instance.registerEvent("MOVEDOWN", this.swipeDown.bind(this));
         Emitter.instance.registerEvent("RESETGAME", this.resetGame.bind(this));
-        Emitter.instance.registerEvent("ONSOUND", this.onMoveSound.bind(this));
-        Emitter.instance.registerEvent("OFFSOUND", this.offMoveSound.bind(this));
+        Emitter.instance.registerEvent("ONMOVESOUND",this.onMoveSound.bind(this));
+        Emitter.instance.registerEvent("OFFMOVESOUND", this.offMoveSound.bind(this));
         if (parseInt(this.bestScore.string) <= cc.sys.localStorage.getItem("Score")) {
             this.bestScore.string = cc.sys.localStorage.getItem("Score");
         }
@@ -89,9 +85,34 @@ cc.Class({
         if (!this._blockMove) {
             cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.move2048, this);
         }
-
-
-
+    },
+    winnerGame(){
+        if (!this._blockMove) {
+            this.winnerPopUp.x = 380;
+            this.winnerPopUp.y = 1670;
+            this.winnerPopUp.scale = 1;
+            let top = cc.instantiate(this.topRankPrefabs);
+            top.getChildByName("name").getComponent(cc.Label).string = "Top " + ++this._topPlay + ": ";
+            top.getChildByName("score").getComponent(cc.Label).string = parseInt(this.score.string);
+            this.topRank.node.addChild(top);
+            this.checkTopRank(this.topRank.node, this.score.string);
+            this.yourScoreWin.string = this.score.string;
+            this.gameOverTrans.active = true
+            this.winnerPopUp.active = true;
+            cc.log("CONGLATULATION");
+            var action = cc.moveTo(1, 380, 640);
+            action.easing(cc.easeBounceOut(1));
+            this.winnerPopUp.runAction(action);
+            cc.sys.localStorage.setItem('Score', JSON.stringify(parseInt(this.score.string)));
+            cc.log(JSON.parse(cc.sys.localStorage.getItem('Score')));
+            this._blockMove = true;
+        }
+    },
+    onMoveSound(){
+        this.moveSound.volume = 1;
+    },
+    offMoveSound(){
+        this.moveSound.volume = 0;
     },
     resetGame() {
         this._blockMove = false;
@@ -146,6 +167,16 @@ cc.Class({
             node.children[1].getComponent(cc.Sprite).spriteFrame = this.arrFrame[7];
         } else if (node.children[1].getChildByName("numb").getComponent(cc.Label).string == 512) {
             node.children[1].getComponent(cc.Sprite).spriteFrame = this.arrFrame[8];
+        }else if (node.children[1].getChildByName("numb").getComponent(cc.Label).string == 1024) {
+            node.children[1].getComponent(cc.Sprite).spriteFrame = this.arrFrame[9];
+        }else if (node.children[1].getChildByName("numb").getComponent(cc.Label).string == 2048) {
+            node.children[1].getComponent(cc.Sprite).spriteFrame = this.arrFrame[10];
+        }else if (node.children[1].getChildByName("numb").getComponent(cc.Label).string == 4096) {
+            node.children[1].getComponent(cc.Sprite).spriteFrame = this.arrFrame[11];
+        }else if (node.children[1].getChildByName("numb").getComponent(cc.Label).string == 8192) {
+            node.children[1].getComponent(cc.Sprite).spriteFrame = this.arrFrame[12];
+        }else if (node.children[1].getChildByName("numb").getComponent(cc.Label).string == 16386) {
+            node.children[1].getComponent(cc.Sprite).spriteFrame = this.arrFrame[13];
         }
     },
     addItemInBox(listItem) {    //random item
@@ -239,7 +270,7 @@ cc.Class({
     move2048: function (event) {
         switch (event.keyCode) {
             case cc.macro.KEY.right:
-
+            if(!this._blockMove){
                 this.moveSound.play();
                 this.tempArray(this.checkList, this.isFill);
                 this.goRight_1(this.fillTable);
@@ -252,10 +283,11 @@ cc.Class({
                         this._blockRight = true;
                     }
                 }
-
+            }
                 break;
             case cc.macro.KEY.left:
-                this.moveSound.play();
+                if(!this._blockMove){
+                    this.moveSound.play();
                 this.tempArray(this.checkList, this.isFill);
                 this.goLeft_1(this.fillTable);
                 this.goLeft_2(this.fillTable);
@@ -267,10 +299,12 @@ cc.Class({
                         this._blockLeft = true;
                     }
                 }
+            }
 
                 break;
             case cc.macro.KEY.up:
-                this.moveSound.play();
+                if(!this._blockMove){
+                    this.moveSound.play();
                 this.tempArray(this.checkList, this.isFill);
                 this.goUp_1(this.fillTable);
                 this.goUp_2(this.fillTable);
@@ -281,10 +315,11 @@ cc.Class({
                     if (this.fullList(this.isFill) == true) {
                         this._blockUp = true;
                     }
-                }
+                }}
                 break;
             case cc.macro.KEY.down:
-                this.moveSound.play();
+                if(!this._blockMove){
+                    this.moveSound.play();
                 this.tempArray(this.checkList, this.isFill);
                 this.goDown_1(this.fillTable);
                 this.goDown_2(this.fillTable);
@@ -295,7 +330,7 @@ cc.Class({
                     if (this.fullList(this.isFill) == true) {
                         this._blockDown = true;
                     }
-                }
+                }}
 
                 break;
         }
@@ -305,7 +340,6 @@ cc.Class({
         }
         //=============================== GAME OVER ====================================
         if (this._blockDown == true && this._blockUp == true && this._blockLeft == true && this._blockRight == true) {
-
             if (!this._blockMove) {
                 this.gameOverPopUp.x = 380;
                 this.gameOverPopUp.y = 1670;
@@ -364,10 +398,7 @@ cc.Class({
             arrayA[i] = arrayB[i];
         }
     },
-    goDown_1(array) {   //  2  2     0  0   
-        //  0  2 =>  0  0
-        //  2  0     2  2
-        //  0  0     2  2
+    goDown_1(array) {
         for (let i = array.length - 1; i >= 0; i--) {
             let k = i;
             if (i >= 4) {
@@ -396,10 +427,7 @@ cc.Class({
             }
         }
     },
-    goDown_2(array) {   //      2   0           0   0
-        //      2   2   =>      4   0
-        //      2   2           0   4
-        //      2   0           4   0
+    goDown_2(array) {
         for (let i = array.length - 1; i >= 0; i--) {
             let k = i;
             if (i >= 4) {
@@ -410,6 +438,9 @@ cc.Class({
                                 if (array[i].children[1].getChildByName("numb").getComponent(cc.Label).string == array[k - 4].children[1].getChildByName("numb").getComponent(cc.Label).string) {
                                     array[i].children[1].getChildByName("numb").getComponent(cc.Label).string = parseInt(array[k - 4].children[1].getChildByName("numb").getComponent(cc.Label).string)
                                         + parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
+                                        if(parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string) == 2048){
+                                            this.winnerGame();
+                                        }
                                     this.setColor(array[i]);
                                     this.isFill[k - 4] = 0;
                                     var action = cc.sequence(cc.scaleTo(0.25, 1.25), cc.scaleTo(0.25, 1));
@@ -494,6 +525,9 @@ cc.Class({
                                     array[i].children[1].getChildByName("numb").getComponent(cc.Label).string = parseInt(array[k + 4].children[1].getChildByName("numb").getComponent(cc.Label).string)
                                         + parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
                                     this.setColor(array[i]);
+                                    if(parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string) == 2048){
+                                        this.winnerGame();
+                                    }
                                     var action = cc.sequence(cc.scaleTo(0.25, 1.25), cc.scaleTo(0.25, 1));
                                     array[i].runAction(action);
                                     this.score.string = parseInt(this.score.string) + parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
@@ -570,6 +604,9 @@ cc.Class({
                                 if (array[i].children[1].getChildByName("numb").getComponent(cc.Label).string == array[k + 1].children[1].getChildByName("numb").getComponent(cc.Label).string) {
                                     array[i].children[1].getChildByName("numb").getComponent(cc.Label).string = parseInt(array[k + 1].children[1].getChildByName("numb").getComponent(cc.Label).string)
                                         + parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
+                                        if(parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string) == 2048){
+                                            this.winnerGame();
+                                        }
                                     this.score.string = parseInt(this.score.string) + parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
                                     this.setColor(array[i]);
                                     this.setColor(array[i]);
@@ -648,6 +685,9 @@ cc.Class({
                                 if (array[i].children[1].getChildByName("numb").getComponent(cc.Label).string == array[k - 1].children[1].getChildByName("numb").getComponent(cc.Label).string) {
                                     array[i].children[1].getChildByName("numb").getComponent(cc.Label).string = parseInt(array[k - 1].children[1].getChildByName("numb").getComponent(cc.Label).string)
                                         + parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
+                                        if(parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string) == 2048){
+                                            this.winnerGame();
+                                        }
                                     this.score.string = parseInt(this.score.string) + parseInt(array[i].children[1].getChildByName("numb").getComponent(cc.Label).string);
                                     this.setColor(array[i]);
                                     var action = cc.sequence(cc.scaleTo(0.25, 1.25), cc.scaleTo(0.25, 1));
@@ -704,5 +744,27 @@ cc.Class({
             this.fillTable[index] = this.mainScene.children[index];
         }
 
+    },
+    checkGameOVER(){
+        if (!this._blockMove) {
+            this.gameOverPopUp.x = 380;
+            this.gameOverPopUp.y = 1670;
+            this.gameOverPopUp.scale = 1;
+            let top = cc.instantiate(this.topRankPrefabs);
+            top.getChildByName("name").getComponent(cc.Label).string = "Top " + ++this._topPlay + ": ";
+            top.getChildByName("score").getComponent(cc.Label).string = parseInt(this.score.string);
+            this.topRank.node.addChild(top);
+            this.checkTopRank(this.topRank.node, this.score.string);
+            this.yourScore.string = this.score.string;
+            this.gameOverTrans.active = true
+            this.gameOverPopUp.active = true;
+            cc.log("GAME OVER");
+            var action = cc.moveTo(1, 380, 640);
+            action.easing(cc.easeBounceOut(1));
+            this.gameOverPopUp.runAction(action);
+            cc.sys.localStorage.setItem('Score', JSON.stringify(parseInt(this.score.string)));
+            cc.log(JSON.parse(cc.sys.localStorage.getItem('Score')));
+            this._blockMove = true;
+        }
     }
 });

@@ -13,11 +13,13 @@ cc.Class({
         backgroundMusic: cc.AudioSource,
         bgm: cc.Slider,
         soundCheck: cc.Toggle,
+        clickBtn: cc.AudioSource,
     },
     volumeBGM() {
         this.backgroundMusic.volume = this.bgm.progress;
     },
     tutorialScenee() {
+        this.clickBtn.play();
         this.tutorial.active = true;
         this.tutorial.x = 357.19;
         this.tutorial.y = 640.162;
@@ -25,11 +27,13 @@ cc.Class({
         this.option.active = false;
     },
     optionScene() {
+        this.clickBtn.play();
         this.menu.active = false;
         this.tutorial.active = false;
         this.option.active = true;
     },
     menuScene() {
+        this.clickBtn.play();
         this.tutorial.active = false;
         this.option.active = false;
         this.menu.active = true;
@@ -44,15 +48,13 @@ cc.Class({
         this.page3.on(cc.Node.EventType.MOUSE_DOWN, this.mouseDown, this);
         this.page3.on(cc.Node.EventType.MOUSE_UP, this.mouseUp, this);
         Emitter.instance = new Emitter();
-        Emitter.instance.registerEvent("ONBGM", this.onBGM.bind(this));
-        Emitter.instance.registerEvent("OFFBGM", this.offBGM.bind(this));
     },
     muteSound() {
         if (this.soundCheck.isChecked == false) {
-            this.backgroundMusic.pause();
+            this.clickBtn.volume = 0;
         }
         else {
-            this.backgroundMusic.resume();
+            this.clickBtn.volume = 1;
         }
     },
     onBGM() {
