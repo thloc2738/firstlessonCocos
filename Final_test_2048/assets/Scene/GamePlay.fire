@@ -165,7 +165,7 @@
       "__type__": "cc.Vec3",
       "x": 0,
       "y": 0,
-      "z": 443.4050067376326
+      "z": 346.1936551628294
     },
     "_scale": {
       "__type__": "cc.Vec3",
@@ -1508,7 +1508,7 @@
     "_position": {
       "__type__": "cc.Vec3",
       "x": 286,
-      "y": 699.056,
+      "y": 700,
       "z": 0
     },
     "_scale": {
@@ -6345,7 +6345,9 @@
     "backgroundMusic": {
       "__id__": 52
     },
-    "gameplayScene": null,
+    "scrollMusic": {
+      "__id__": 149
+    },
     "_id": "88rte1ST1Gao07bEkmgUrO"
   },
   {
@@ -6475,8 +6477,8 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": -177,
-      "y": 699.056,
+      "x": 286,
+      "y": 700,
       "z": 0
     },
     "_scale": {
@@ -6619,7 +6621,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "New Slider",
+    "_name": "BGM",
     "_objFlags": 0,
     "_parent": {
       "__id__": 139
@@ -6650,7 +6652,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 300,
+      "width": 286.7,
       "height": 20
     },
     "_anchorPoint": {
@@ -6660,8 +6662,8 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": 1.646,
-      "y": -75.581,
+      "x": 0,
+      "y": -90,
       "z": 0
     },
     "_scale": {
@@ -6756,7 +6758,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "31d8962d-babb-4ec7-be19-8e9f54a4ea99"
+      "__uuid__": "f3d8e035-eee7-47d0-b3ff-db59ab853ab2"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -6801,8 +6803,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 32,
-      "height": 32
+      "width": 58,
+      "height": 20
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -6849,10 +6851,10 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "e7aba14b-f956-4480-b254-8d57832e273f"
+      "__uuid__": "d5b3df0a-9784-49e3-9035-32117a749852"
     },
     "_type": 1,
-    "_sizeMode": 2,
+    "_sizeMode": 0,
     "_fillType": 0,
     "_fillCenter": {
       "__type__": "cc.Vec2",
@@ -7096,7 +7098,7 @@
     "_position": {
       "__type__": "cc.Vec3",
       "x": 286,
-      "y": 699.056,
+      "y": 700,
       "z": 0
     },
     "_scale": {
@@ -7372,7 +7374,7 @@
     "_position": {
       "__type__": "cc.Vec3",
       "x": 286,
-      "y": 699.056,
+      "y": 700,
       "z": 0
     },
     "_scale": {
@@ -7648,7 +7650,7 @@
     "_position": {
       "__type__": "cc.Vec3",
       "x": 286,
-      "y": 699.056,
+      "y": 700,
       "z": 0
     },
     "_scale": {

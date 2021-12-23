@@ -29,7 +29,7 @@ cc.Class({
         gameOverPopUp: cc.Node,
         gameOverTrans: cc.Node,
         backgroundMusic: cc.AudioSource,
-        gameplayScene: cc.Node,
+        scrollMusic: cc.Slider,
     },
 
 
@@ -37,39 +37,52 @@ cc.Class({
         cc.log(this.optionBtn, "Option button");
         this.backgroundMusic.play();
         this.backgroundMusic.loop = true;
-
+        this.scrollMusic.node.on('slide', this.volumeBGM, this);
+        var action = cc.repeatForever(cc.sequence(cc.rotateTo(3,45), cc.rotateTo(3,-45)));
+        this.optionBtn.node.runAction(action);
+        var a = cc.spawn(cc.delayTime(1),cc.repeatForever(cc.sequence(cc.rotateTo(3,45), cc.rotateTo(3,-45))));
+        this.exitBtn.node.runAction(a);
+        // var action = cc.delayTime(1,cc.repeatForever(cc.sequence(cc.rotateTo(3,45), cc.rotateTo(3,-45))));
+        // this.menuBtn.node.runAction(action);
+        // var action = cc.repeatForever(cc.sequence(cc.delayTime(1.5),cc.rotateTo(3,45), cc.rotateTo(3,-45)));
+        // this.soundBtn.node.runAction(action);
+        // var action = cc.repeatForever(cc.sequence(cc.delayTime(2),cc.rotateTo(3,45), cc.rotateTo(3,-45)));
+        // this.musicBtn.node.runAction(action);
+    },
+    volumeBGM() {
+        this.backgroundMusic.volume = this.scrollMusic.progress;
     },
     optionClickBtn() {
         if (this._isClick) {
             this.clickSound.play();
             this.optionBtn.node.getChildByName("Background").getComponent(cc.Sprite).spriteFrame = this.backSprite;
             this._isClick = false;
-            var music = cc.moveTo(.5, -177, 635);
+            var music = cc.moveTo(.5, -177, 700);
             this.musicBtn.node.runAction(music);
 
-            var sound = cc.moveTo(.5, -59, 635);
+            var sound = cc.moveTo(.5, -59, 700);
             this.soundBtn.node.runAction(sound);
 
-            var menu = cc.moveTo(.5, 51, 635);
+            var menu = cc.moveTo(.5, 51, 700);
             this.menuBtn.node.runAction(menu);
 
-            var exit = cc.moveTo(.5, 171, 635);
+            var exit = cc.moveTo(.5, 171, 700);
             this.exitBtn.node.runAction(exit);
         }
         else {
             this.clickSound.play();
             this.optionBtn.node.getChildByName("Background").getComponent(cc.Sprite).spriteFrame = this.optionSprite;
             this._isClick = true;
-            var music = cc.moveTo(.5, 286, 635);
+            var music = cc.moveTo(.5, 286, 700);
             this.musicBtn.node.runAction(music);
 
-            var sound = cc.moveTo(.5, 286, 635);
+            var sound = cc.moveTo(.5, 286, 700);
             this.soundBtn.node.runAction(sound);
 
-            var menu = cc.moveTo(.5, 286, 635);
+            var menu = cc.moveTo(.5, 286, 700);
             this.menuBtn.node.runAction(menu);
 
-            var exit = cc.moveTo(.5, 286, 635);
+            var exit = cc.moveTo(.5, 286, 700);
             this.exitBtn.node.runAction(exit);
         }
 
@@ -80,26 +93,33 @@ cc.Class({
             this.soundBtn.node.getChildByName("Background").getComponent(cc.Sprite).spriteFrame = this.muteSprite;
             this._soundClick = false;
             Emitter.instance.emit("OFFSOUND");
-            this.backgroundMusic.pause();
+            // this.backgroundMusic.pause();
         }
         else {
             this.soundBtn.node.getChildByName("Background").getComponent(cc.Sprite).spriteFrame = this.soundSprite;
             this._soundClick = true;
             Emitter.instance.emit("ONSOUND");
             this.backgroundMusic.resume();
-            this.backgroundMusic.loop = true;
+            // this.backgroundMusic.loop = true;
         }
     },
     musicClick() {
         this.clickSound.play();
         if (this._musicClick) {
-            this.musicBtn.node.getChildByName("Background").getComponent(cc.Sprite).spriteFrame = this.unmusicSprite;
-            Emitter.instance.emit("OFFBGM");
+            this.scrollMusic.node.active = true;
+            this.scrollMusic.node.x = 0;
+            this.scrollMusic.node.y = 0;
+            this.scrollMusic.node.scale = 0;
+            var action = cc.spawn(cc.scaleTo(1,1), cc.moveTo(1,0,-90));
+            this.scrollMusic.node.runAction(action);
             this._musicClick = false;
         }
         else {
-            this.musicBtn.node.getChildByName("Background").getComponent(cc.Sprite).spriteFrame = this.musicSprite;
-            Emitter.instance.emit("ONBGM");
+            this.scrollMusic.node.x = 0;
+            this.scrollMusic.node.y = -90;
+            this.scrollMusic.node.scale = 1;
+            var action = cc.spawn(cc.scaleTo(.5,0), cc.moveTo(.5,0,0));
+            this.scrollMusic.node.runAction(action);
             this._musicClick = true;
         }
     },
